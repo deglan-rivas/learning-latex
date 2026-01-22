@@ -1,0 +1,187 @@
+% ============================================
+% PLANTILLA DE TESIS - LaTeX
+% Incluye: índice, tablas, imágenes, anexos,
+% enlaces externos, citas APA/IEEE
+% ============================================
+
+\documentclass[12pt, a4paper]{report}
+
+% ---- CODIFICACIÓN Y IDIOMA ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% ---- MÁRGENES ----
+\usepackage[margin=2.5cm]{geometry}
+
+% ---- IMÁGENES ----
+\usepackage{graphicx}
+\graphicspath{{imagenes/}}
+
+% ---- TABLAS MEJORADAS ----
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+
+% ---- ENLACES (internos y externos) ----
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=green,
+    pdftitle={Mi Tesis},
+    pdfauthor={Tu Nombre},
+}
+
+% ---- BIBLIOGRAFÍA (cambiar apa por ieee si prefieres) ----
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+% Para IEEE usar: style=ieee
+\addbibresource{referencias.bib}
+
+% ---- ANEXOS ----
+\usepackage[toc,page]{appendix}
+
+% ---- ÍNDICE DE FIGURAS Y TABLAS ----
+\usepackage{tocloft}
+
+% ---- CÓDIGO FUENTE (opcional) ----
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single
+}
+
+% ============================================
+% INICIO DEL DOCUMENTO
+% ============================================
+\begin{document}
+
+% ---- PORTADA ----
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries Título de la Tesis\par}
+    \vspace{1.5cm}
+    {\Large Subtítulo o línea descriptiva\par}
+    \vspace{2cm}
+    {\large\itshape Tu Nombre Completo\par}
+    \vspace{1cm}
+    {\large Director: Dr. Nombre del Director\par}
+    \vfill
+    {\large Universidad / Institución\par}
+    {\large Facultad / Departamento\par}
+    \vspace{1cm}
+    {\large Enero 2026\par}
+\end{titlepage}
+
+% ---- ÍNDICES ----
+\tableofcontents          % Índice general
+\listoffigures            % Índice de figuras
+\listoftables             % Índice de tablas
+\newpage
+
+% ---- CAPÍTULOS ----
+\chapter{Introducción}
+\label{cap:introduccion}
+
+Este es un ejemplo de tesis en \LaTeX. Aquí puedes escribir la introducción de tu trabajo.
+
+\section{Contexto del problema}
+El problema que aborda esta tesis es muy importante según \textcite{knuth1984}.
+
+\section{Objetivos}
+\subsection{Objetivo general}
+Demostrar el uso de \LaTeX{} para tesis académicas.
+
+\subsection{Objetivos específicos}
+\begin{itemize}
+    \item Aprender a usar tablas y figuras
+    \item Dominar el sistema de citas
+    \item Crear documentos profesionales
+\end{itemize}
+
+% ---- EJEMPLO DE ENLACE EXTERNO ----
+Para más información, visita \href{https://www.latex-project.org/}{el sitio oficial de LaTeX}.
+
+\chapter{Marco Teórico}
+\label{cap:marco}
+
+\section{Fundamentos}
+Según \textcite{lamport1994}, \LaTeX{} es un sistema de preparación de documentos de alta calidad.
+
+También se puede citar entre paréntesis \parencite{knuth1984}.
+
+% ---- EJEMPLO DE FIGURA ----
+\section{Figuras}
+La Figura \ref{fig:ejemplo} muestra un diagrama de ejemplo.
+
+\begin{figure}[htbp]
+    \centering
+    % Descomentar cuando tengas una imagen:
+    % \includegraphics[width=0.7\textwidth]{mi_imagen.png}
+    \fbox{\parbox{0.6\textwidth}{\centering\vspace{3cm}[Aquí va tu imagen]\\mi\_imagen.png\vspace{3cm}}}
+    \caption{Descripción de la figura de ejemplo}
+    \label{fig:ejemplo}
+\end{figure}
+
+% ---- EJEMPLO DE TABLA ----
+\section{Tablas}
+La Tabla \ref{tab:ejemplo} presenta datos de ejemplo.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparación de características}
+    \label{tab:ejemplo}
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Característica} & \textbf{Opción A} & \textbf{Opción B} \\
+        \midrule
+        Velocidad & Alta & Media \\
+        Costo & Bajo & Alto \\
+        Facilidad & Media & Alta \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\chapter{Metodología}
+\label{cap:metodologia}
+
+Aquí describes tu metodología. Puedes referenciar capítulos anteriores como el Capítulo \ref{cap:introduccion}.
+
+\chapter{Resultados}
+\label{cap:resultados}
+
+Presenta tus resultados aquí.
+
+\chapter{Conclusiones}
+\label{cap:conclusiones}
+
+Tus conclusiones van aquí.
+
+% ---- BIBLIOGRAFÍA ----
+\printbibliography[heading=bibintoc, title={Referencias}]
+
+% ---- ANEXOS ----
+\begin{appendices}
+\chapter{Datos adicionales}
+\label{anexo:datos}
+
+Aquí van tus anexos. Puedes incluir tablas extensas, código fuente, cuestionarios, etc.
+
+\begin{lstlisting}[language=Python, caption={Código de ejemplo}]
+def hola_mundo():
+    print("Hola desde LaTeX!")
+    return True
+\end{lstlisting}
+
+\chapter{Cuestionario utilizado}
+\label{anexo:cuestionario}
+
+El cuestionario completo se presenta a continuación...
+
+\end{appendices}
+
+\end{document}
