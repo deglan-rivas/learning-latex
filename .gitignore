@@ -1,4 +1,26 @@
-.claude/*
-!.claude/.gitkeep
-
+# Directorio de salida (build)
+dist/
 tmp/
+
+# Archivos auxiliares de LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Archivos de backup
+*.bak
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
