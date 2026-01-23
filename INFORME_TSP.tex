@@ -188,37 +188,63 @@ A mí por la dedicación invertida.
 \section{Descripción del problema}
 \label{sec:descripcion-problema}
 
-Actualmente, la administración pública en el Perú tiene una carencia de sistemas automatizados y centralizados que garanticen una adecuada rendición de cuentas y un proceso ordenado de transferencia de gestión. Esta limitación constituye una debilidad estructural en el control y aprovechamiento eficaz de los recursos estatales. Aunque a nivel internacional se han desarrollado avances normativos y tecnológicos significativos, gran parte de las instituciones públicas aún dependen de procedimientos manuales, aislados y carentes de estandarización. Esto obstaculiza el monitoreo de la gestión administrativa, la trazabilidad del gasto público y la evaluación oportuna de los resultados. En consecuencia, no solo se afecta la eficiencia operativa, sino que también se generan condiciones favorables para la falta de transparencia, la discrecionalidad y la corrupción.
+El Jurado Nacional de Elecciones (JNE), como máximo órgano de administración de justicia electoral en el Perú, enfrenta desafíos significativos derivados de la escasa automatización de sus plataformas jurídicas y la ausencia de estandarización en numerosos procesos operativos. Esta situación ocasiona un uso ineficiente de recursos institucionales, traducido en mayor inversión de tiempo, presupuesto y esfuerzo humano, además de incrementar la vulnerabilidad a errores en procedimientos críticos para la democracia nacional.
 
-El marco normativo peruano establece obligaciones claras respecto a la rendición de cuentas. La Constitución Política del Perú \cite{constitucion1993} y la Ley Orgánica del Sistema Nacional de Control \cite{ley27785} establecen que todas las entidades del Estado deben rendir cuentas sobre el uso de los recursos públicos. Sin embargo, la Contraloría General de la República reportó en 2020 que el 67.5\% de las entidades públicas aún no presentaba adecuadamente su rendición de cuentas \cite{contraloria2020}.
+\subsection{Contexto de las elecciones 2026}
 
-La Figura~\ref{fig:proceso-actual} muestra el proceso actual de rendición de cuentas utilizado por las entidades fiscalizadoras, caracterizado por su naturaleza manual, fragmentada y propensa a errores.
+Las Elecciones Generales (EG) 2026 representan un hito histórico para el sistema electoral peruano, al coincidir por primera vez en dos décadas con las Elecciones Regionales y Municipales (ERM). Este evento excepcional ---que ocurre cada 20 años debido a que las EG se realizan cada 5 años y las ERM cada 4 años--- ha sido calificado por la Oficina Nacional de Procesos Electorales (ONPE) como ``las elecciones más complejas de la historia'' del país \cite{onpe2022erm}.
+
+La magnitud del proceso electoral 2026 se evidencia en las cifras: a nivel nacional se elegirán 198 autoridades, incluyendo presidente, 2 vicepresidentes, 130 diputados, 60 senadores y 5 parlamentarios andinos. Simultáneamente, las ERM contemplarán la elección de 25 gobernaciones regionales, 196 alcaldías provinciales y 1696 alcaldías distritales \cite{elcomercio2025erm}. Este escenario se complejiza aún más por el récord histórico de participación política: para las ERM 2026 se han inscrito 150 organizaciones políticas ---55 partidos y 95 movimientos---, superando ampliamente las 147 organizaciones que participaron en las ERM 2022, cuando se eligieron aproximadamente 13,000 autoridades \cite{jne2025candidatos}.
+
+Román Campos, integrante del Gabinete de Asesores del JNE, proyecta que ``estamos hablando de aproximadamente medio millón de candidatos que podrían, potencialmente, presentarse'' \cite{jne2025candidatos}, estimación que se sitúa entre 500,000 y 700,000 candidatos considerando ambos procesos electorales simultáneos. Esta magnitud sin precedentes representa un desafío operativo sustancial para las capacidades actuales del sistema electoral.
+
+\subsection{Restricciones presupuestales}
+
+El contexto presupuestal agrava significativamente la situación. Para el año fiscal 2025, el JNE solicitó S/ 864 millones, pero el Ministerio de Economía y Finanzas (MEF) asignó inicialmente solo S/ 500 millones, representando un recorte de aproximadamente 42\% \cite{convoca2025presupuesto}. En conjunto, el Sistema Electoral conformado por el JNE, ONPE y Registro Nacional de Identificación y Estado Civil (RENIEC) proyecta necesitar casi S/ 4,000 millones para gestionar adecuadamente los procesos electorales de 2026 \cite{rpp2025elecciones}.
+
+Esta brecha presupuestal subraya la necesidad crítica de optimizar recursos mediante soluciones tecnológicas que incrementen la eficiencia operativa sin comprometer la calidad del proceso de fiscalización electoral.
+
+\subsection{Proceso actual de calificación de inscripciones}
+
+El procedimiento vigente para la inscripción de listas de candidatos, ilustrado en la Figura~\ref{fig:flujo-sin-eleccia}, comprende las siguientes etapas:
+
+\begin{enumerate}
+    \item El personero legal de la organización política accede a la plataforma DECLARA+ del JNE.
+    \item Registra la solicitud de inscripción y carga documentación oficial de la organización.
+    \item Completa las Hojas de Vida correspondientes a cada candidato propuesto.
+    \item El sistema genera automáticamente un expediente digital en el Sistema Integrado Judicial Electoral (SIJE).
+    \item Los abogados especializados del JNE califican manualmente cada expediente, verificando el cumplimiento de requisitos legales establecidos en la normativa electoral.
+    \item Se elabora un proyecto de resolución con uno de tres resultados posibles:
+    \begin{itemize}
+        \item \textbf{ADMISIBLE}: La lista cumple todos los requisitos y se aprueba su inscripción.
+        \item \textbf{INADMISIBLE}: Existen observaciones subsanables; la organización dispone de 3 días hábiles para corregir las deficiencias.
+        \item \textbf{IMPROCEDENTE}: La solicitud presenta deficiencias no subsanables y se rechaza definitivamente.
+    \end{itemize}
+\end{enumerate}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Proceso actual de Rendición de cuentas de la entidad fiscalizadora.png}
-    \caption{Proceso actual de rendición de cuentas de la entidad fiscalizadora}
-    \label{fig:proceso-actual}
+    \includegraphics[width=0.95\textwidth]{flujo_sin_eleccia.png}
+    \caption{Proceso manual de calificación de expedientes de inscripción de listas}
+    \label{fig:flujo-sin-eleccia}
 \end{figure}
 
-Los resultados de esta debilidad reflejaron que, en el 2023, Perú tuvo pérdidas de más de S/ 24,000 millones a causa de actos de corrupción y otras irregularidades en entidades públicas a nivel nacional \cite{infobae2024}. Según la Contraloría, más de 420 entidades públicas fueron señaladas con elementos de presunta corrupción en ese periodo, siendo las municipalidades y gobiernos regionales los más afectados. A ello se suma el hecho de que aproximadamente el 54\% de entidades estatales realizó contrataciones con proveedores impedidos o sin cumplir con los controles establecidos \cite{elobjetivo2024}.
+Este procedimiento, completamente manual en su fase de calificación jurídica, presenta vulnerabilidades significativas ante el volumen extraordinario de expedientes proyectado para 2026. La revisión exhaustiva de documentos extensos ---como planes de gobierno que pueden superar cientos de páginas--- exige capacidades humanas que se ven sobrecargadas, incrementando el riesgo de errores por omisión, inconsistencias en la aplicación de criterios de evaluación y demoras en los plazos de calificación establecidos por el calendario electoral.
 
-Los casos emblemáticos de autoridades investigadas o sentenciadas por delitos de corrupción como peculado, colusión y falsedad documental evidencian un patrón de ausencia de mecanismos preventivos y de fiscalización efectiva. Para el 2023, según la Defensoría del Pueblo, se registraron más de 6,000 casos de corrupción, de los cuales más de 1,300 corresponden a peculado doloso, generando perjuicios directos en los servicios públicos y obras paralizadas en todo el país \cite{defensoria2024}.
+\subsection{Propuesta: Sistema EleccIA}
 
-Otro problema crucial es que los procesos de transferencia de gestión, al término del periodo de una autoridad, son frecuentemente incompletos, inadecuadamente documentados o manipulables. En muchas entidades, se siguen entregando informes de forma impresa, firmados manualmente y sin estandarización, lo que dificulta la verificación posterior, la continuidad de los proyectos y la identificación de responsabilidades. Este procedimiento mecánico y vulnerable no cumple con los principios modernos de gobernanza ni con las exigencias de los órganos de control.
-
-Ante este panorama, se hace evidente la urgencia de implementar un sistema digital integral que no solo automatice la rendición de cuentas y la transferencia de gestión, sino que también centralice, estandarice y garantice la trazabilidad de la información administrativa y financiera. El sistema, al cual denominaremos SIRCTGE (Sistema Integral de Rendición de Cuentas y Transferencia de Gestión), permitirá que todas las entidades, ya sean gobiernos regionales, municipalidades, ministerios u organismos autónomos, puedan cargar sus datos mediante interfaces maestras, generar informes comparativos automatizados y firmar electrónicamente la documentación oficial, facilitando así las auditorías y reduciendo el margen de error y corrupción.
-
-La Figura~\ref{fig:proceso-nuevo} ilustra el proceso renovado y digitalizado que implementa el SIRCTGE, evidenciando la transformación hacia un sistema centralizado, automatizado y auditable.
+Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone el desarrollo del sistema EleccIA, una herramienta de apoyo a la calificación jurídica que integra técnicas de inteligencia artificial para asistir a los profesionales del JNE en la evaluación de expedientes de inscripción. La Figura~\ref{fig:flujo-con-eleccia} ilustra el proceso optimizado mediante esta solución tecnológica.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{Proceso nuevo de rendición de cuentas con el SIRCTGE.png}
-    \caption{Proceso nuevo de rendición de cuentas con el SIRCTGE}
-    \label{fig:proceso-nuevo}
+    \includegraphics[width=0.95\textwidth]{flujo_con_eleccia.png}
+    \caption{Proceso asistido de calificación mediante el sistema EleccIA}
+    \label{fig:flujo-con-eleccia}
 \end{figure}
 
-Este proyecto se propone como una respuesta técnica y normativa a una de las problemáticas más urgentes del país: el control en la gestión pública y la falta de transparencia, que año tras año afecta la calidad de vida de los peruanos y erosiona la confianza en las instituciones.
+Es fundamental enfatizar que EleccIA se concibe como una \textit{herramienta de apoyo}, no como un sistema de decisión autónoma. La revisión y validación final de cada expediente permanece bajo responsabilidad exclusiva de los profesionales del derecho del JNE, preservando el criterio humano especializado en la interpretación normativa y la garantía del debido proceso electoral. El sistema proporciona análisis preliminares, detecta inconsistencias potenciales y organiza información, permitiendo que los abogados concentren su experticia en casos que requieren interpretación jurídica compleja.
+
+Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la rigurosidad técnico-jurídica que caracteriza la función del JNE como garante de la legalidad electoral en el Perú.
 
 \section{Objetivos del trabajo}
 \label{sec:objetivos}
