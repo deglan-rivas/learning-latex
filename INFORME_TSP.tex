@@ -274,84 +274,97 @@ Desarrollar e implementar un sistema web de apoyo para la calificación de exped
 \section{Soluciones existentes}
 \label{sec:soluciones-existentes}
 
-A nivel internacional y regional existen diversas iniciativas que abordan problemáticas similares relacionadas con la transparencia, rendición de cuentas y participación ciudadana en la gestión pública. A continuación se presentan las soluciones más relevantes identificadas durante la investigación:
+La implementación de inteligencia artificial en sistemas de gestión documental y validación de expedientes ha experimentado un desarrollo significativo en el ámbito judicial y electoral de América Latina durante la última década. Esta sección examina las soluciones tecnológicas más relevantes que han abordado problemáticas similares a las que enfrenta el sistema electoral peruano, con especial énfasis en la automatización de procesos de revisión documental, extracción de información y validación de datos.
 
-\subsection{OpenGov}
+\subsection{Sistemas de gestión judicial automatizada}
 
-OpenGov es una plataforma comercial desarrollada en Estados Unidos que incluye una Enterprise Resource Planning (ERP) en la nube, reportes financieros en tiempo real y presupuestos abiertos \cite{opengov2025}. Su arquitectura está basada en Software as a Service (SaaS), opera completamente en la nube y ofrece APIs para garantizar interoperabilidad con otros sistemas gubernamentales.
+\subsubsection{Proyecto Victor (Supremo Tribunal Federal de Brasil)}
 
-La plataforma es utilizada por más de 1,900 entidades públicas en Estados Unidos y ofrece módulos especializados para presupuestación, contabilidad, adquisiciones y reportes ciudadanos. Su principal ventaja es la integración completa de procesos financieros, aunque su costo de licenciamiento representa una barrera para economías emergentes.
+El Supremo Tribunal Federal de Brasil desarrolló el Proyecto Victor como respuesta a la necesidad de procesar volúmenes masivos de documentación judicial \cite{stf2021victor}. Este sistema representa uno de los casos de éxito más destacados en la aplicación de inteligencia artificial al ámbito judicial latinoamericano.
 
-\subsection{Partícipes}
+Victor implementa un proceso secuencial de tres etapas principales. En primer lugar, utiliza tecnología de reconocimiento óptico de caracteres (OCR) que ha procesado más de 10 millones de páginas hasta mayo de 2021. Posteriormente, emplea un módulo denominado \textit{Splitter} que realiza la segmentación automática de documentos, identificando y separando las diferentes piezas procesales que componen cada expediente. Finalmente, aplica algoritmos de aprendizaje automático y aprendizaje profundo para la clasificación de documentos, alcanzando niveles de precisión superiores al 94\% \cite{stf2021victor}.
 
-Partícipes es una herramienta de código abierto desarrollada en Argentina con frameworks como Django o Ruby, diseñada para el seguimiento de metas gubernamentales con interacción bidireccional con la ciudadanía \cite{metas2025}. La plataforma permite a los gobiernos locales y regionales publicar sus compromisos de gestión y que la población realice seguimiento en tiempo real del cumplimiento de estas metas.
+El impacto en la eficiencia del tribunal ha sido sustancial. El tiempo de procesamiento por expediente se redujo de aproximadamente 30 minutos, cuando se realizaba manualmente, a 5 segundos mediante el sistema automatizado. Esta mejora representa una ganancia de eficiencia del 99.7\%, liberando recursos humanos especializados para tareas que requieren análisis jurídico complejo.
 
-La Figura~\ref{fig:participes-interfaz} muestra la interfaz principal de la aplicación Partícipes implementada en Mendoza, Argentina, donde se visualizan las metas gubernamentales y su nivel de avance.
+\subsubsection{Pretoria (Corte Constitucional de Colombia)}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{Interfaz principal de Metas, aplicación Partícipes en Mendoza.png}
-    \caption{Interfaz principal de Metas, aplicación Partícipes en Mendoza}
-    \label{fig:participes-interfaz}
-\end{figure}
+La Corte Constitucional de Colombia implementó Pretoria como herramienta de apoyo para la gestión de expedientes de tutela \cite{corteconstitucional2020pretoria}. Este sistema procesa anualmente más de 620,000 expedientes, aplicando 33 criterios de selección previamente establecidos por la jurisprudencia constitucional.
 
-Esta solución destaca por fomentar la participación ciudadana activa y generar confianza mediante transparencia en tiempo real. Sin embargo, no aborda directamente procesos de auditoría ni transferencia de gestión formal.
+Pretoria realiza la categorización y generación de resúmenes de sentencias en cuestión de segundos, facilitando la identificación de casos que requieren revisión constitucional. Sin embargo, el diseño del sistema enfatiza explícitamente el principio de \textit{human-in-the-loop} (humano en el bucle): el sistema no reemplaza la función decisoria del juez, sino que actúa como un auxiliar inteligente que prepara y organiza la información para el análisis humano posterior \cite{corteconstitucional2020pretoria}.
 
-\subsection{Decidim}
+\subsubsection{Prometea (Ministerio Público Fiscal de Argentina)}
 
-Decidim es una plataforma digital española de código abierto, construida sobre Ruby on Rails, diseñada para participación democrática y procesos deliberativos ciudadanos. Actualmente es utilizada en más de 30 países y más de 400 instituciones \cite{decidim2025}.
+El Ministerio Público Fiscal de la Ciudad de Buenos Aires desarrolló Prometea con el objetivo de automatizar tareas repetitivas en la elaboración de dictámenes fiscales \cite{bid2020prometea}. El sistema logra automatizar el 57\% de las tareas asociadas a la preparación de documentos legales estándar.
 
-La plataforma permite crear procesos participativos, presupuestos participativos, consultas ciudadanas, iniciativas y asambleas. Incluye módulos de contabilidad participativa y democracia digital. Su arquitectura modular permite adaptar funcionalidades según las necesidades específicas de cada institución.
+La implementación de Prometea ha reducido el tiempo promedio de preparación de un dictamen de 72 minutos a 18 minutos, representando una mejora del 75\% en eficiencia \cite{bid2020prometea}. El sistema mantiene un modelo de interacción humano-IA que requiere la validación y aprobación del fiscal antes de la emisión de cualquier documento oficial.
 
-La Figura~\ref{fig:decidim-convocatoria} muestra un ejemplo de convocatoria a la población para participar en los presupuestos participativos, evidenciando la interfaz amigable y accesible de la plataforma.
+\subsubsection{Amauta Pro (Poder Judicial del Perú)}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{Convocatoria a la población de los presupuestos participativos del 2024 – 2027.png}
-    \caption{Convocatoria a la población de los presupuestos participativos del 2024--2027 en Decidim}
-    \label{fig:decidim-convocatoria}
-\end{figure}
+En el contexto peruano, el Poder Judicial implementó Amauta Pro para la generación automatizada de resoluciones en casos de violencia familiar \cite{pj2023amauta}. El sistema genera resoluciones en aproximadamente 40 segundos y cuenta con un modelo predictivo de clasificación de riesgo.
 
-Decidim es particularmente fuerte en participación ciudadana, pero no está orientado específicamente a auditoría gubernamental ni rendición de cuentas administrativa formal.
+Amauta Pro constituye un antecedente directo relevante para el ámbito electoral peruano, dado que demuestra la viabilidad técnica y la aceptación institucional de sistemas de generación automatizada de resoluciones en el marco jurídico nacional \cite{pj2023amauta}.
 
-\subsection{SISREC}
+\subsection{Sistemas de validación electoral}
 
-El Sistema de Rendición Electrónica de Cuentas (SISREC) de la Contraloría General de Chile es una plataforma estatal utilizada por más de 1,000 entidades públicas del país \cite{contraloria-chile2025}. SISREC permite la carga estandarizada de información financiera, administrativa y de personal de todas las entidades del Estado chileno.
+\subsubsection{Sistema Nacional de Registro (INE México)}
 
-El sistema garantiza interoperabilidad con otros sistemas gubernamentales, genera reportes automatizados para auditoría y permite trazabilidad completa de las transacciones. Su implementación ha sido clave en la modernización del control gubernamental en Chile, convirtiéndose en referencia regional.
+El Instituto Nacional Electoral de México ha desarrollado uno de los sistemas de validación de identidad y verificación electoral más avanzados de la región \cite{ine2022registro}. El sistema utiliza tecnología de lectura de zona de lectura mecanizada (MRZ, por sus siglas en inglés) y códigos QR presentes en las credenciales de elector.
 
-\subsection{Plataforma digital FONAE}
+La arquitectura del sistema integra verificación biométrica facial en tiempo real, contrastando automáticamente los datos capturados con el Padrón Electoral nacional. Adicionalmente, el sistema se integra con el Sistema Integral de Fiscalización (SIF) para la validación cruzada de información \cite{ine2022registro}. Esta arquitectura de validación multi-fuente representa un referente para sistemas que requieren alta confiabilidad en la verificación de identidad.
 
-Lanzada en diciembre de 2024 por la Contraloría General de Paraguay, esta plataforma fue desarrollada específicamente para el programa social Hambre Cero \cite{contraloria-paraguay2024}. Permite la carga estandarizada de datos, auditoría en tiempo real y generación de reportes de cumplimiento.
+\subsection{Soluciones comerciales de procesamiento inteligente de documentos}
 
-Aunque su alcance es limitado a un programa específico, representa un caso de éxito reciente en Latinoamérica de digitalización de procesos de control gubernamental con resultados medibles en corto plazo.
+\subsubsection{OCR ID de Rubricae}
 
-\subsection{Cuadro comparativo}
+Rubricae, empresa española especializada en identificación digital, desarrolló OCR ID como solución para la extracción automatizada de datos de documentos de identidad \cite{rubricae2023ocrid}. El sistema no solo extrae información textual, sino que también valida la legitimidad del documento y contrasta los datos extraídos contra listas de control y bases de datos de seguridad.
 
-La Tabla~\ref{tab:comparativo-soluciones} presenta un análisis comparativo de las principales características de cada solución analizada, facilitando la comprensión de sus fortalezas y limitaciones.
+\subsubsection{DocuWare IDP}
+
+DocuWare ofrece una plataforma de procesamiento inteligente de documentos (IDP, por sus siglas en inglés) que combina OCR con extracción de entidades clave y validación contra sistemas externos como ERP y CRM \cite{docuware2023idp}. La arquitectura modular de DocuWare permite la integración con múltiples fuentes de validación, característica relevante para sistemas que requieren contrastar información con diversas APIs públicas.
+
+\subsubsection{Regula}
+
+Regula ha desarrollado una base de datos con más de 16,000 plantillas de documentos de identidad de América Latina y el mundo \cite{regula2023templates}. Su sistema de \textit{matching} multi-fuente permite la verificación cruzada de información documental, tecnología particularmente útil en contextos donde se manejan documentos de múltiples jurisdicciones.
+
+\subsection{Análisis comparativo}
+
+La Tabla~\ref{tab:comparacion-sistemas} presenta una comparación sistemática de los principales sistemas analizados en términos de país de implementación, tecnologías empleadas y mejoras en eficiencia temporal.
 
 \begin{table}[H]
 \centering
-\caption{Cuadro comparativo de soluciones existentes de rendición de cuentas y transparencia}
-\label{tab:comparativo-soluciones}
-\begin{tabularx}{\textwidth}{|l|l|l|X|}
-\hline
-\textbf{Sistema} & \textbf{Naturaleza} & \textbf{Cobertura} & \textbf{Funcionalidades clave} \\
-\hline
-OpenGov & Comercial & +1,900 entidades (EE.UU.) & ERP Cloud, finanzas en tiempo real, presupuestos abiertos, APIs \\
-\hline
-Partícipes & Código abierto & Locales/regionales en AL & Seguimiento interactivo de metas, participación ciudadana \\
-\hline
-Decidim & Código abierto & Europa, +30 países & Democracia digital, presupuestos participativos, consultas \\
-\hline
-SISREC & Estatal (Chile) & Todas las entidades públicas & Rendición electrónica, interoperabilidad, auditoría \\
-\hline
-FONAE & Estatal (Paraguay) & Programa social Hambre Cero & Carga estandarizada, auditoría en tiempo real \\
-\hline
-\end{tabularx}
+\caption{Comparación de sistemas automatizados de gestión documental y validación}
+\label{tab:comparacion-sistemas}
+\small
+\begin{tabular}{@{}p{2.5cm}p{1.6cm}p{3.2cm}p{2cm}p{2cm}p{1.4cm}@{}}
+\toprule
+\textbf{Sistema} & \textbf{País} & \textbf{Tecnología} & \textbf{Tiempo manual} & \textbf{Tiempo auto.} & \textbf{Mejora} \\
+\midrule
+Proyecto Victor & Brasil & OCR + ML + Deep Learning & 30 min & 5 seg & 99.7\% \\
+\addlinespace
+Pretoria & Colombia & ML + NLP & N/D & Segundos & N/D \\
+\addlinespace
+Prometea & Argentina & IA generativa + ML & 72 min & 18 min & 75\% \\
+\addlinespace
+Amauta Pro & Perú & ML predictivo & N/D & 40 seg & N/D \\
+\addlinespace
+Sistema INE & México & MRZ + QR + Biometría & Minutos & Tiempo real & N/D \\
+\addlinespace
+OCR ID & España & OCR + Validación & Minutos & Segundos & N/D \\
+\addlinespace
+DocuWare IDP & Global & OCR + APIs & Variable & Segundos & Variable \\
+\addlinespace
+Regula & Global & Matching multi-fuente & Variable & Segundos & Variable \\
+\bottomrule
+\end{tabular}
 \end{table}
 
-Del análisis comparativo se concluye que, si bien existen soluciones parciales, ninguna aborda de manera integral los requerimientos específicos del contexto peruano: rendición de cuentas formal, transferencia de gestión estandarizada, auditoría automatizada y cobertura nacional para todas las entidades del Estado. El SIRCTGE busca llenar este vacío combinando las mejores prácticas internacionales adaptadas a la realidad normativa e institucional del Perú.
+\subsection{Síntesis y relevancia para el contexto electoral peruano}
+
+El análisis de las soluciones existentes revela patrones tecnológicos y arquitectónicos consistentes. En primer lugar, los sistemas exitosos combinan múltiples tecnologías complementarias: OCR para digitalización, aprendizaje automático para clasificación y extracción, y validación cruzada contra bases de datos autoritativas. En segundo lugar, todos los sistemas analizados en el ámbito judicial mantienen explícitamente el principio de \textit{human-in-the-loop}, donde la tecnología asiste pero no reemplaza el juicio humano especializado.
+
+En tercer lugar, las mejoras en eficiencia documentadas oscilan entre 75\% y 99.7\%, liberando tiempo profesional para tareas de mayor complejidad analítica. Finalmente, la integración con APIs públicas y sistemas externos constituye un componente crítico para la validación de información en tiempo real.
+
+EleccIA se fundamenta en estos principios probados, combinando tecnología de extracción de información mediante procesamiento de lenguaje natural, validación cruzada con APIs del Registro Nacional de Identificación y Estado Civil (RENIEC) y otros servicios públicos, y un modelo de asistencia que preserva la competencia decisoria de los operadores electorales del JNE. La solución propuesta adapta las lecciones aprendidas de los sistemas analizados al contexto específico de la calificación de expedientes de inscripción de candidaturas electorales en el Perú.
 
 \section{Metodologías}
 \label{sec:metodologias}
