@@ -361,59 +361,28 @@ EleccIA se fundamenta en estos principios probados, combinando tecnología de ex
 \section{Metodologías}
 \label{sec:metodologias}
 
-\subsection{SCRUM}
-\label{subsec:scrum}
+\subsection{Modelo en Cascada}
+\label{subsec:cascada}
 
-SCRUM es un marco de trabajo ágil desarrollado por Ken Schwaber y Jeff Sutherland en 1995, que se basa en ciclos iterativos e incrementales llamados sprints \cite{schwaber2017}. Este framework permite gestionar proyectos complejos de desarrollo de software mediante entregas parciales y funcionales del producto, facilitando la adaptación rápida a cambios y la retroalimentación continua.
+El modelo en Cascada es un enfoque de desarrollo de software secuencial propuesto por Winston Royce en 1970 \cite{royce1970managing}, que organiza el proceso de desarrollo en fases discretas que se ejecutan de manera lineal. Cada fase debe completarse antes de iniciar la siguiente, y los entregables de una fase constituyen la entrada de la fase subsecuente, lo que enfatiza la planificación exhaustiva y la documentación detallada desde las etapas iniciales del proyecto.
 
-Los elementos fundamentales de SCRUM incluyen:
+Este modelo se caracteriza por su estructura rígida y predecible, donde los cambios en fases avanzadas resultan costosos debido a la naturaleza secuencial del proceso. A pesar de sus limitaciones en proyectos con requisitos cambiantes, el modelo en Cascada mantiene su relevancia en contextos donde los requisitos son estables, bien comprendidos desde el inicio, y la documentación formal es un requisito crítico.
 
-\begin{itemize}
-    \item \textbf{Product Backlog}: Lista priorizada de todos los requerimientos del sistema.
-    \item \textbf{Sprint}: Ciclo de desarrollo de duración fija (típicamente 2-4 semanas).
-    \item \textbf{Sprint Planning}: Reunión donde se seleccionan los ítems del backlog a desarrollar.
-    \item \textbf{Daily Scrum}: Reunión diaria de sincronización del equipo.
-    \item \textbf{Sprint Review}: Presentación del incremento desarrollado.
-    \item \textbf{Sprint Retrospective}: Análisis de mejoras del proceso.
-\end{itemize}
+Las fases principales del modelo en Cascada son:
 
-La Figura~\ref{fig:scrum-flujo} ilustra el flujo completo de un proceso de desarrollo utilizando SCRUM, mostrando la relación entre los diferentes elementos y ceremonias.
+\begin{enumerate}
+    \item \textbf{Análisis de requisitos}: Recopilación, análisis y especificación exhaustiva de todos los requisitos funcionales y no funcionales del sistema.
+    \item \textbf{Diseño del sistema}: Definición de la arquitectura del software, diseño de componentes, interfaces y estructuras de datos.
+    \item \textbf{Implementación}: Codificación de los componentes del sistema según las especificaciones de diseño establecidas.
+    \item \textbf{Pruebas (verificación)}: Validación del sistema completo mediante pruebas de unidad, integración y sistema para verificar el cumplimiento de los requisitos.
+    \item \textbf{Despliegue}: Instalación del sistema en el entorno de producción y entrega al cliente o usuarios finales.
+    \item \textbf{Mantenimiento}: Corrección de defectos, adaptación a nuevos entornos y mejoras al sistema desplegado.
+\end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{Flujo de un proceso utilizando SCRUM.png}
-    \caption{Flujo de un proceso utilizando SCRUM}
-    \label{fig:scrum-flujo}
-\end{figure}
+\subsection{Aplicación del modelo en Cascada al proyecto EleccIA}
+\label{subsec:aplicacion-cascada}
 
-\subsection{Aplicación de SCRUM al proyecto SIRCTGE}
-
-Para la implementación del SIRCTGE se adoptó SCRUM como metodología principal, definiendo ocho sprints de tres semanas cada uno, organizados temáticamente para garantizar entregas incrementales de valor. La distribución de sprints fue la siguiente:
-
-\begin{itemize}
-    \item \textbf{Sprint 1 y 2}: Mantenimientos maestros y sistema de autenticación (Login). Se desarrollaron las tablas base del sistema, los catálogos de entidades, usuarios, roles básicos y el módulo de login con autenticación JWT.
-
-    \item \textbf{Sprint 3}: Configuradores del sistema. Se implementaron interfaces para configuración de parámetros, periodos fiscales, tipos de documentos y plantillas de informes.
-
-    \item \textbf{Sprint 4}: Gestión de Roles y permisos. Se desarrolló el módulo RBAC (Role-Based Access Control) que permite asignar permisos granulares a diferentes perfiles de usuario.
-
-    \item \textbf{Sprint 5 y 6}: Sistemas Administrativos. Constituyen el núcleo funcional del SIRCTGE, incluyendo los módulos de carga de información financiera, administrativa, de personal, proyectos de inversión y generación de reportes automáticos.
-
-    \item \textbf{Sprint 7}: Indicadores y dashboard de control. Se desarrollaron cuadros de mando ejecutivos que permiten visualizar en tiempo real el cumplimiento de las entidades en la presentación de informes.
-
-    \item \textbf{Sprint 8}: Informes oficiales y constancias. Implementación de generación automática de documentos PDF con firma electrónica, informes comparativos entre periodos y constancias de presentación.
-\end{itemize}
-
-La Figura~\ref{fig:modulos-sirctge} presenta el diagrama de módulos del SIRCTGE, mostrando cómo se organizan los diferentes componentes desarrollados a lo largo de los sprints.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{Diagrama de módulos del SIRCTGE.png}
-    \caption{Diagrama de módulos del SIRCTGE}
-    \label{fig:modulos-sirctge}
-\end{figure}
-
-Cada sprint finalizó con una demostración funcional al Product Owner (representantes de la Contraloría) y sesiones de retrospectiva que permitieron ajustar prioridades y mejorar continuamente el proceso de desarrollo. Esta metodología resultó fundamental para manejar la complejidad del proyecto, que involucró más de 400 requerimientos funcionales y constantes ajustes normativos durante el desarrollo.
+[TODO] Contenido pendiente de completar cuando se disponga del cronograma de entregables en MS Project.
 
 % ============================================
 % CAPÍTULO II: INGENIERÍA DE REQUERIMIENTOS
