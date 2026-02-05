@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # Guía para Agentes - Proyecto INFORME_TSP (EleccIA)
 
 Este proyecto contiene un documento LaTeX para un Trabajo de Suficiencia Profesional sobre el sistema **EleccIA** - un sistema de automatización inteligente para la calificación de expedientes electorales del JNE (Jurado Nacional de Elecciones) del Perú.
@@ -12,21 +16,22 @@ Antes de modificar el documento, **SIEMPRE** consulta estos archivos:
 |---------|-----------|---------------|
 | [`STRUCTURE.md`](../STRUCTURE.md) | Estructura completa del documento con labels y líneas | Para ubicar secciones, conocer labels existentes |
 | [`LATEX_RULES.md`](../LATEX_RULES.md) | Convenciones y reglas de formato LaTeX | Para aplicar el formato correcto a figuras, tablas, citas |
-| [`CONTENT_MAP.md`](../CONTENT_MAP.md) | Estado de adaptación EleccIA vs SIRCTGE | Para saber qué contenido adaptar y prioridades |
+| [`CONTENT_MAP.md`](../CONTENT_MAP.md) | Mapa de contenido y estado de desarrollo | Para saber qué secciones están completas y cuáles pendientes |
 
 ---
 
 ## Contexto del proyecto
 
-### Sistema EleccIA (tema del TSP)
-- **Propósito**: Herramienta de apoyo para la calificación de expedientes de inscripción de candidaturas electorales
-- **Institución**: Jurado Nacional de Elecciones (JNE) del Perú
+### Sistema EleccIA (tema actual del TSP)
+- **Autor**: Deglan Jesus Rivas Romero
+- **Asesor**: Felix Melchor Santos Lopez
+- **Institución**: Pontificia Universidad Católica del Perú
+- **Propósito**: Herramienta de apoyo IA para la calificación de expedientes de inscripción de candidaturas electorales
+- **Cliente**: Jurado Nacional de Elecciones (JNE) del Perú
 - **Enfoque**: IA como asistente, NO decisor autónomo (human-in-the-loop)
-- **Contexto**: Elecciones 2026 (EG + ERM simultáneas)
-
-### Sistema SIRCTGE (contenido heredado a adaptar)
-- **Propósito original**: Sistema de Rendición de Cuentas para la Contraloría
-- **Estado**: Capítulos II-V y Anexo A contienen contenido de SIRCTGE que debe adaptarse a EleccIA
+- **Contexto**: Elecciones 2026 (EG + ERM simultáneas - "las elecciones más complejas de la historia")
+- **Magnitud**: ~500,000-700,000 candidatos proyectados
+- **Tecnologías**: Modelos de Lenguaje (LLM), OCR, NLP, validación con APIs públicas (RENIEC)
 
 ---
 
@@ -88,49 +93,52 @@ El autor menciona \cite{clave_referencia}
 
 ## Flujo de trabajo recomendado
 
-### Para adaptar contenido SIRCTGE → EleccIA
-
-1. Identificar sección en `CONTENT_MAP.md`
-2. Leer contenido actual del `.tex`
-3. Reescribir manteniendo estructura LaTeX
-4. Actualizar figuras/tablas si es necesario
-5. Verificar compilación: `./compilar_informe.sh`
-
-### Para agregar nuevo contenido
+### Para agregar nuevo contenido (capítulos II-V, Anexo A)
 
 1. Verificar ubicación en `STRUCTURE.md`
-2. Aplicar formato según `LATEX_RULES.md`
-3. Usar labels consistentes con el patrón existente
-4. Agregar referencias cruzadas donde corresponda
-5. Compilar y verificar PDF en `dist/`
+2. Leer `CONTENT_MAP.md` para conocer el contenido esperado
+3. Aplicar formato según `LATEX_RULES.md`
+4. Usar labels consistentes con el patrón existente (`cap:nombre`, `sec:nombre`, `fig:nombre-kebab`, `tab:nombre-kebab`)
+5. Agregar referencias cruzadas donde corresponda (`\ref{label}`, `Figura~\ref{fig:nombre}`)
+6. Compilar y verificar PDF: `./compilar_informe.sh`
+7. Revisar salida en `dist/INFORME_TSP.pdf`
 
 ---
 
-## Prioridades de adaptación
+## Estado del documento
 
 Según `CONTENT_MAP.md`:
 
-| Prioridad | Sección | Descripción |
-|-----------|---------|-------------|
-| **Alta** | Resumen | [TODO] - Redactar para EleccIA |
-| **Alta** | Cap II | Requerimientos de EleccIA (no SIRCTGE) |
-| **Alta** | Cap III | Arquitectura de EleccIA |
-| **Alta** | Cap V | Conclusiones de EleccIA |
-| **Media** | Cap IV | Costos reales de EleccIA |
-| **Media** | Sec 1.4.2 | Cronograma con MS Project |
-| **Media** | Anexo A | Lista de RF de EleccIA |
+| Sección | Estado | Prioridad |
+|---------|--------|-----------|
+| Cap I: Problemática | ✓ Completo | - |
+| Resumen | [TODO] - Pendiente | Alta |
+| Cap II: Ingeniería de Requerimientos | [PENDIENTE] | Alta |
+| Cap III: Diseño | [PENDIENTE] | Alta |
+| Cap V: Conclusiones | [PENDIENTE] | Alta |
+| Cap IV: Costos | [PENDIENTE] | Media |
+| Sec 1.4.2: Aplicación Cascada | [TODO] | Media |
+| Anexo A: Requerimientos Funcionales | [PENDIENTE] | Media |
 
 ---
 
 ## Compilación
 
 ```bash
-# Compilación automática
+# Compilación automática (recomendado)
 ./compilar_informe.sh
+
+# Compilación manual (si necesitas ejecutar paso a paso)
+pdflatex INFORME_TSP.tex
+biber INFORME_TSP
+pdflatex INFORME_TSP.tex
+pdflatex INFORME_TSP.tex
 
 # Salida
 dist/INFORME_TSP.pdf
 ```
+
+**Nota**: Se requiere compilar 3 veces con `pdflatex` (después de `biber`) para que se actualicen correctamente todos los índices y referencias cruzadas.
 
 ---
 
@@ -159,7 +167,28 @@ learning-latex/
 
 ## Notas importantes
 
-- **NO modificar** contenido del Cap I (ya está adaptado a EleccIA)
-- **Preservar** el principio human-in-the-loop en toda redacción
-- **Mantener** consistencia con metadatos PDF (líneas 70-75)
-- **Verificar** que los índices se actualicen tras cambios (compilar 2 veces)
+- **Cap I está completo**: No modificar sin consultar al usuario (ya adaptado a EleccIA)
+- **Preservar human-in-the-loop**: EleccIA es herramienta de APOYO, no toma decisiones autónomas
+- **REGLA DE ANONIMIZACIÓN**: NO mencionar nombres específicos de instituciones PERUANAS. Usar descripciones funcionales genéricas:
+  - **SOLO anonimizar instituciones peruanas**, NO organizaciones/proyectos internacionales
+  - ❌ JNE (Jurado Nacional de Elecciones)
+  - ✅ "el máximo órgano de administración de justicia electoral del Perú"
+  - ❌ ONPE (Oficina Nacional de Procesos Electorales)
+  - ✅ "el organismo responsable de la administración y ejecución de los procesos electorales"
+  - ❌ RENIEC (Registro Nacional de Identificación y Estado Civil)
+  - ✅ "el organismo de registro de identificación y estado civil"
+  - ❌ Contraloría General de la República
+  - ✅ "el órgano superior del sistema nacional de control"
+  - ❌ "integrante del Gabinete de Asesores del JNE"
+  - ✅ "especialista en temas electorales"
+  - **Mantener nombres de**: organizaciones internacionales, proyectos extranjeros (Proyecto Victor, Pretoria, INE México, etc.)
+  - **Regla general**: Reemplazar nombres de instituciones peruanas por descripciones funcionales, mantener consistencia en las referencias
+- **Consistencia de metadatos**: Verificar que título, autor y palabras clave sean coherentes en:
+  - Líneas 65-67: `\title`, `\author`, `\date`
+  - Líneas 71-76: `\hypersetup` (metadatos PDF)
+  - Líneas 97-113: Portada
+- **Referencias bibliográficas**:
+  - Agregar nuevas entradas en `referencias.bib`
+  - Estilo IEEE (numérico), compilar con `biber`
+  - Citar con `\cite{clave}`
+- **Compilar múltiples veces**: Necesario para actualizar índices y referencias cruzadas

@@ -62,13 +62,15 @@
 % ============================================
 % INFORMACIÓN DEL DOCUMENTO
 % ============================================
-\title{Implementación de un Sistema de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje}
+\title{Sistema de
+Automatización Inteligente del de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje}
 \author{Deglan Jesus Rivas Romero}
 \date{Lima, 22 de enero del 2026}
 
 % Metadatos PDF
 \hypersetup{
-    pdftitle={Implementación de un Sistema de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje},
+    pdftitle={Sistema de
+Automatización Inteligente del de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje},
     pdfauthor={Deglan Jesus Rivas Romero},
     pdfsubject={Trabajo de Suficiencia Profesional - Ingeniería Mecatrónica},
     pdfkeywords={rendición de cuentas, transparencia, gestión pública, SIRCTGE, corrupción, Perú},
@@ -94,7 +96,8 @@
 
     \vspace{1.5cm}
 
-    {\huge\bfseries Implementación de un Sistema de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje\\[1.5cm]}
+    {\huge\bfseries Sistema de
+Automatización Inteligente del de Automatización Inteligente del Proceso de Calificación y Generación de Proyectos de Resolución de Expedientes mediante Modelos de Lenguaje\\[1.5cm]}
 
     {\Large\itshape Trabajo de Suficiencia Profesional\\[0.3cm]
     para optar el título profesional de\\[0.3cm]
@@ -180,19 +183,19 @@ Agradezco a mi equipo de trabajo por su colaboración y orientación constante.
 \section{Descripción del problema}
 \label{sec:descripcion-problema}
 
-El Jurado Nacional de Elecciones (JNE), como máximo órgano de administración de justicia electoral en el Perú, enfrenta desafíos significativos derivados de la escasa automatización de sus plataformas jurídicas y la ausencia de estandarización en numerosos procesos operativos. Esta situación ocasiona un uso ineficiente de recursos institucionales, traducido en mayor inversión de tiempo, presupuesto y esfuerzo humano, además de incrementar la vulnerabilidad a errores en procedimientos críticos para la democracia nacional.
+El máximo órgano de administración de justicia electoral del Perú enfrenta desafíos significativos derivados de la escasa automatización de sus plataformas jurídicas y la ausencia de estandarización en numerosos procesos operativos. Esta situación ocasiona un uso ineficiente de recursos institucionales, traducido en mayor inversión de tiempo, presupuesto y esfuerzo humano, además de incrementar la vulnerabilidad a errores en procedimientos críticos para la democracia nacional.
 
 \subsection{Contexto de las elecciones 2026}
 
-Las Elecciones Generales (EG) 2026 representan un hito histórico para el sistema electoral peruano, al coincidir por primera vez en dos décadas con las Elecciones Regionales y Municipales (ERM). Este evento excepcional ---que ocurre cada 20 años debido a que las EG se realizan cada 5 años y las ERM cada 4 años--- ha sido calificado por la Oficina Nacional de Procesos Electorales (ONPE) como ``las elecciones más complejas de la historia'' del país \cite{onpe2022erm}.
+Las Elecciones Generales (EG) 2026 representan un hito histórico para el sistema electoral peruano, al coincidir por primera vez en dos décadas con las Elecciones Regionales y Municipales (ERM). Este evento excepcional ---que ocurre cada 20 años debido a que las EG se realizan cada 5 años y las ERM cada 4 años--- ha sido calificado por el organismo responsable de la administración y ejecución de los procesos electorales como ``las elecciones más complejas de la historia'' del país \cite{onpe2022erm}.
 
 La magnitud del proceso electoral 2026 se evidencia en las cifras: a nivel nacional se elegirán 198 autoridades, incluyendo presidente, 2 vicepresidentes, 130 diputados, 60 senadores y 5 parlamentarios andinos. Simultáneamente, las ERM contemplarán la elección de 25 gobernaciones regionales, 196 alcaldías provinciales y 1696 alcaldías distritales \cite{elcomercio2025erm}. Este escenario se complejiza aún más por el récord histórico de participación política: para las ERM 2026 se han inscrito 150 organizaciones políticas ---55 partidos y 95 movimientos---, superando ampliamente las 147 organizaciones que participaron en las ERM 2022, cuando se eligieron aproximadamente 13,000 autoridades \cite{jne2025candidatos}.
 
-Román Campos, integrante del Gabinete de Asesores del JNE, proyecta que ``estamos hablando de aproximadamente medio millón de candidatos que podrían, potencialmente, presentarse'' \cite{jne2025candidatos}, estimación que se sitúa entre 500,000 y 700,000 candidatos considerando ambos procesos electorales simultáneos. Esta magnitud sin precedentes representa un desafío operativo sustancial para las capacidades actuales del sistema electoral.
+Román Campos, especialista en temas electorales, proyecta que ``estamos hablando de aproximadamente medio millón de candidatos que podrían, potencialmente, presentarse'' \cite{jne2025candidatos}, estimación que se sitúa entre 500,000 y 700,000 candidatos considerando ambos procesos electorales simultáneos. Esta magnitud sin precedentes representa un desafío operativo sustancial para las capacidades actuales del sistema electoral.
 
 \subsection{Restricciones presupuestales}
 
-El contexto presupuestal agrava significativamente la situación. Para el año fiscal 2025, el JNE solicitó S/ 864 millones, pero el Ministerio de Economía y Finanzas (MEF) asignó inicialmente solo S/ 500 millones, representando un recorte de aproximadamente 42\% \cite{convoca2025presupuesto}. En conjunto, el Sistema Electoral conformado por el JNE, ONPE y Registro Nacional de Identificación y Estado Civil (RENIEC) proyecta necesitar casi S/ 4,000 millones para gestionar adecuadamente los procesos electorales de 2026 \cite{rpp2025elecciones}.
+El contexto presupuestal agrava significativamente la situación. Para el año fiscal 2025, el máximo órgano de administración de justicia electoral solicitó S/ 864 millones, pero el Ministerio de Economía y Finanzas (MEF) asignó inicialmente solo S/ 500 millones, representando un recorte de aproximadamente 42\% \cite{convoca2025presupuesto}. En conjunto, el Sistema Electoral proyecta necesitar casi S/ 4,000 millones para gestionar adecuadamente los procesos electorales de 2026 \cite{rpp2025elecciones}.
 
 Esta brecha presupuestal subraya la necesidad crítica de optimizar recursos mediante soluciones tecnológicas que incrementen la eficiencia operativa sin comprometer la calidad del proceso de fiscalización electoral.
 
@@ -201,11 +204,11 @@ Esta brecha presupuestal subraya la necesidad crítica de optimizar recursos med
 El procedimiento vigente para la inscripción de listas de candidatos, ilustrado en la Figura~\ref{fig:flujo-sin-eleccia}, comprende las siguientes etapas:
 
 \begin{enumerate}
-    \item El personero legal de la organización política accede a la plataforma DECLARA+ del JNE.
+    \item El personero legal de la organización política accede a la plataforma DECLARA+.
     \item Registra la solicitud de inscripción y carga documentación oficial de la organización.
     \item Completa las Hojas de Vida correspondientes a cada candidato propuesto.
     \item El sistema genera automáticamente un expediente digital en el Sistema Integrado Judicial Electoral (SIJE).
-    \item Los abogados especializados del JNE califican manualmente cada expediente, verificando el cumplimiento de requisitos legales establecidos en la normativa electoral.
+    \item Los asistentes jurisdiccionales califican manualmente cada expediente, verificando el cumplimiento de requisitos legales establecidos en la normativa electoral.
     \item Se elabora un proyecto de resolución con uno de tres resultados posibles:
     \begin{itemize}
         \item \textbf{ADMISIBLE}: La lista cumple todos los requisitos y se aprueba su inscripción.
@@ -225,7 +228,7 @@ Este procedimiento, completamente manual en su fase de calificación jurídica, 
 
 \subsection{Propuesta: Sistema EleccIA}
 
-Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone el desarrollo del sistema EleccIA, una herramienta de apoyo a la calificación jurídica que integra técnicas de inteligencia artificial para asistir a los profesionales del JNE en la evaluación de expedientes de inscripción. La Figura~\ref{fig:flujo-con-eleccia} ilustra el proceso optimizado mediante esta solución tecnológica.
+Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone el desarrollo del sistema EleccIA, una herramienta de apoyo a la calificación jurídica que integra técnicas de inteligencia artificial para asistir a los asistente jurisdiccional (AJ) en la evaluación de expedientes de inscripción. La Figura~\ref{fig:flujo-con-eleccia} ilustra el proceso optimizado mediante esta solución tecnológica.
 
 \begin{figure}[H]
     \centering
@@ -234,9 +237,9 @@ Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone 
     \label{fig:flujo-con-eleccia}
 \end{figure}
 
-Es fundamental enfatizar que EleccIA se concibe como una \textit{herramienta de apoyo}, no como un sistema de decisión autónoma. La revisión y validación final de cada expediente permanece bajo responsabilidad exclusiva de los profesionales del derecho del JNE, preservando el criterio humano especializado en la interpretación normativa y la garantía del debido proceso electoral. El sistema proporciona análisis preliminares, detecta inconsistencias potenciales y organiza información, permitiendo que los abogados concentren su experticia en casos que requieren interpretación jurídica compleja.
+Es fundamental enfatizar que EleccIA se concibe como una \textit{herramienta de apoyo}, no como un sistema de decisión autónoma. La revisión y validación final de cada expediente permanece bajo responsabilidad exclusiva de los profesionales del derecho especializados en materia electoral, preservando el criterio humano especializado en la interpretación normativa y la garantía del debido proceso electoral. El sistema proporciona análisis preliminares, detecta inconsistencias potenciales y organiza información, permitiendo que los abogados concentren su experticia en casos que requieren interpretación jurídica compleja.
 
-Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la rigurosidad técnico-jurídica que caracteriza la función del JNE como garante de la legalidad electoral en el Perú.
+Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la rigurosidad técnico-jurídica que caracteriza la función del máximo órgano de administración de justicia electoral como garante de la legalidad electoral en el Perú.
 
 \section{Objetivos del trabajo}
 \label{sec:objetivos}
@@ -244,7 +247,7 @@ Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la 
 \subsection{Objetivos generales}
 \label{subsec:objetivos-generales}
 
-Desarrollar e implementar un sistema web de apoyo para la calificación de expedientes electorales y generación automatizada de resoluciones en el Jurado Nacional de Elecciones del Perú, mediante el procesamiento de información pública y técnicas de inteligencia artificial, con el propósito de optimizar los tiempos de respuesta y garantizar resultados de alta confiabilidad.
+Desarrollar e implementar un sistema web de apoyo para la calificación de expedientes electorales y generación automatizada de resoluciones en el máximo órgano de administración de justicia electoral del Perú, mediante el procesamiento de información pública y técnicas de inteligencia artificial, con el propósito de optimizar los tiempos de respuesta y garantizar resultados de alta confiabilidad.
 
 \subsection{Objetivos específicos}
 \label{subsec:objetivos-especificos}
@@ -356,7 +359,7 @@ El análisis de las soluciones existentes revela patrones tecnológicos y arquit
 
 En tercer lugar, las mejoras en eficiencia documentadas oscilan entre 75\% y 99.7\%, liberando tiempo profesional para tareas de mayor complejidad analítica. Finalmente, la integración con APIs públicas y sistemas externos constituye un componente crítico para la validación de información en tiempo real.
 
-EleccIA se fundamenta en estos principios probados, combinando tecnología de extracción de información mediante procesamiento de lenguaje natural, validación cruzada con APIs del Registro Nacional de Identificación y Estado Civil (RENIEC) y otros servicios públicos, y un modelo de asistencia que preserva la competencia decisoria de los operadores electorales del JNE. La solución propuesta adapta las lecciones aprendidas de los sistemas analizados al contexto específico de la calificación de expedientes de inscripción de candidaturas electorales en el Perú.
+EleccIA se fundamenta en estos principios probados, combinando tecnología de extracción de información mediante procesamiento de lenguaje natural, validación cruzada con APIs del organismo de registro de identificación y estado civil y otros servicios públicos, y un modelo de asistencia que preserva la competencia decisoria de los operadores electorales. La solución propuesta adapta las lecciones aprendidas de los sistemas analizados al contexto específico de la calificación de expedientes de inscripción de candidaturas electorales en el Perú.
 
 \section{Metodologías}
 \label{sec:metodologias}
