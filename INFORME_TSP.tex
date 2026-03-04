@@ -198,14 +198,14 @@ Esta brecha presupuestal subraya la necesidad crítica de optimizar recursos med
 
 \subsection{Proceso actual de calificación de inscripciones}
 
-El procedimiento vigente para la inscripción de listas de candidatos, ilustrado en la Figura~\ref{fig:flujo-sin-eleccia}, comprende las siguientes etapas:
+El procedimiento vigente para la inscripción de listas de candidatos, ilustrado en la Figura~\ref{fig:flujo-sin-ExpedientIA}, comprende las siguientes etapas:
 
 \begin{enumerate}
-    \item El personero legal de la organización política accede a la plataforma DECLARA+.
+    \item El personero legal de la organización política accede a la plataforma documental del organo electoral.
     \item Registra la solicitud de inscripción y carga documentación oficial de la organización.
     \item Completa las Hojas de Vida correspondientes a cada candidato propuesto.
-    \item El sistema genera automáticamente un expediente digital en el Sistema Integrado Judicial Electoral (SIJE).
-    \item Los asistentes jurisdiccionales califican manualmente cada expediente, verificando el cumplimiento de requisitos legales establecidos en la normativa electoral.
+    \item El sistema genera automáticamente un expediente digital en la plataforma jurisdiccional.
+    \item Los abogados especializados del organo electoral califican manualmente cada expediente, verificando el cumplimiento de requisitos legales establecidos en la normativa electoral.
     \item Se elabora un proyecto de resolución con uno de tres resultados posibles:
     \begin{itemize}
         \item \textbf{ADMISIBLE}: La lista cumple todos los requisitos y se aprueba su inscripción.
@@ -216,27 +216,27 @@ El procedimiento vigente para la inscripción de listas de candidatos, ilustrado
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{flujo_sin_eleccia.png}
+    \includegraphics[width=0.95\textwidth]{flujo_sin_ExpedientIA.png}
     \caption{Proceso manual de calificación de expedientes de inscripción de listas}
-    \label{fig:flujo-sin-eleccia}
+    \label{fig:flujo-sin-ExpedientIA}
 \end{figure}
 
 Este procedimiento, completamente manual en su fase de calificación jurídica, presenta vulnerabilidades significativas ante el volumen extraordinario de expedientes proyectado para 2026. La revisión exhaustiva de documentos extensos ---como planes de gobierno que pueden superar cientos de páginas--- exige capacidades humanas que se ven sobrecargadas, incrementando el riesgo de errores por omisión, inconsistencias en la aplicación de criterios de evaluación y demoras en los plazos de calificación establecidos por el calendario electoral.
 
-\subsection{Propuesta: Sistema EleccIA}
+\subsection{Propuesta: Sistema ExpedientIA}
 
-Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone el desarrollo del sistema EleccIA, una herramienta de apoyo a la calificación jurídica que integra técnicas de inteligencia artificial para asistir a los asistente jurisdiccional (AJ) en la evaluación de expedientes de inscripción. La Figura~\ref{fig:flujo-con-eleccia} ilustra el proceso optimizado mediante esta solución tecnológica.
+Ante esta problemática, el presente Trabajo de Suficiencia Profesional propone el desarrollo del sistema ExpedientIA, una herramienta de apoyo a la calificación jurídica que integra técnicas de inteligencia artificial para asistir a los profesionales del organo electoral en la evaluación de expedientes de inscripción. La Figura~\ref{fig:flujo-con-ExpedientIA} ilustra el proceso optimizado mediante esta solución tecnológica.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\textwidth]{flujo_con_eleccia.png}
-    \caption{Proceso asistido de calificación mediante el sistema EleccIA}
-    \label{fig:flujo-con-eleccia}
+    \includegraphics[width=0.95\textwidth]{flujo_con_ExpedientIA.png}
+    \caption{Proceso asistido de calificación mediante el sistema ExpedientIA}
+    \label{fig:flujo-con-ExpedientIA}
 \end{figure}
 
-Es fundamental enfatizar que EleccIA se concibe como una \textit{herramienta de apoyo}, no como un sistema de decisión autónoma. La revisión y validación final de cada expediente permanece bajo responsabilidad exclusiva de los profesionales del derecho especializados en materia electoral, preservando el criterio humano especializado en la interpretación normativa y la garantía del debido proceso electoral. El sistema proporciona análisis preliminares, detecta inconsistencias potenciales y organiza información, permitiendo que los abogados concentren su experticia en casos que requieren interpretación jurídica compleja.
+Es fundamental enfatizar que ExpedientIA se concibe como una \textit{herramienta de apoyo}, no como un sistema de decisión autónoma. La revisión y validación final de cada expediente permanece bajo responsabilidad exclusiva de los profesionales del derecho del organo electoral, preservando el criterio humano especializado en la interpretación normativa y la garantía del debido proceso electoral. El sistema proporciona análisis preliminares, detecta inconsistencias potenciales y organiza información, permitiendo que los abogados concentren su experticia en casos que requieren interpretación jurídica compleja.
 
-Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la rigurosidad técnico-jurídica que caracteriza la función del máximo órgano de administración de justicia electoral como garante de la legalidad electoral en el Perú.
+Esta aproximación busca maximizar la eficiencia del proceso sin comprometer la rigurosidad técnico-jurídica que caracteriza la función del organo electoral como garante de la legalidad electoral en el Perú.
 
 \section{Objetivos del trabajo}
 \label{sec:objetivos}
@@ -250,7 +250,7 @@ Desarrollar e implementar un sistema web de apoyo para la calificación de exped
 \label{subsec:objetivos-especificos}
 
 \begin{enumerate}
-    \item Identificar y documentar los requisitos funcionales y no funcionales del sistema EleccIA mediante técnicas de ingeniería de requisitos aplicadas al contexto del proceso de calificación de expedientes electorales.
+    \item Identificar y documentar los requisitos funcionales y no funcionales del sistema ExpedientIA mediante técnicas de ingeniería de requisitos aplicadas al contexto del proceso de calificación de expedientes electorales.
 
     \item Diseñar la arquitectura del sistema, incluyendo la especificación de componentes del backend, el modelado de la base de datos y los prototipos de interfaz de usuario (mockups) del frontend.
 
@@ -258,7 +258,7 @@ Desarrollar e implementar un sistema web de apoyo para la calificación de exped
 
     \item Realizar el despliegue del sistema en ambiente productivo e implementar mecanismos de trazabilidad y monitoreo para la detección, registro y gestión de errores operacionales.
 
-    \item Construir un tablero de control (dashboard) que visualice las métricas clave sobre el uso del sistema EleccIA, permitiendo el análisis del comportamiento y la adopción por parte de los usuarios finales.
+    \item Construir un tablero de control (dashboard) que visualice las métricas clave sobre el uso del sistema ExpedientIA, permitiendo el análisis del comportamiento y la adopción por parte de los usuarios finales.
 
     \item Determinar los costos de implementación y operación del sistema, así como calcular el retorno de inversión (ROI) mediante la comparación con el proceso tradicional de calificación manual de expedientes.
 \end{enumerate}
@@ -356,7 +356,7 @@ El análisis de las soluciones existentes revela patrones tecnológicos y arquit
 
 En tercer lugar, las mejoras en eficiencia documentadas oscilan entre 75\% y 99.7\%, liberando tiempo profesional para tareas de mayor complejidad analítica. Finalmente, la integración con APIs públicas y sistemas externos constituye un componente crítico para la validación de información en tiempo real.
 
-EleccIA se fundamenta en estos principios probados, combinando tecnología de extracción de información mediante procesamiento de lenguaje natural, validación cruzada con APIs del organismo de registro de identificación y estado civil y otros servicios públicos, y un modelo de asistencia que preserva la competencia decisoria de los operadores electorales. La solución propuesta adapta las lecciones aprendidas de los sistemas analizados al contexto específico de la calificación de expedientes de inscripción de candidaturas electorales en el Perú.
+ExpedientIA se fundamenta en estos principios probados, combinando tecnología de extracción de información mediante procesamiento de lenguaje natural, validación cruzada con APIs de otros servicios públicos, y un modelo de asistencia que preserva la competencia decisoria de los operadores electorales. La solución propuesta adapta las lecciones aprendidas de los sistemas analizados al contexto específico de la calificación de expedientes de inscripción de candidaturas electorales en el Perú.
 
 \section{Metodologías}
 \label{sec:metodologias}
@@ -415,6 +415,749 @@ Procesamiento de comprobantes de pago (VOUCHER), tramitación de TACHA DE CANDID
 Cada iteración siguió un ciclo completo de análisis de requisitos específicos, diseño de componentes, implementación, pruebas de integración y validación con usuarios representativos del área de Fiscalización Electoral. La duración de las iteraciones fue variable, ajustándose a la complejidad del módulo funcional desarrollado: la primera iteración requirió aproximadamente tres semanas para establecer la infraestructura base y los componentes transversales; la segunda iteración, que constituye el núcleo funcional del sistema, se extendió por dos meses e incluyó el entrenamiento y ajuste fino de los modelos de lenguaje para la extracción de información de documentos electorales; la tercera iteración completó el espectro funcional en cuatro semanas adicionales.
 
 La aplicación de RUP al proyecto EleccIA permitió validar progresivamente el enfoque de automatización inteligente con casos de uso reales del proceso electoral, ajustar los umbrales de confianza del modelo de IA según la retroalimentación de especialistas legales, y gestionar el riesgo técnico inherente a la integración de modelos de lenguaje en un sistema de producción crítico. El resultado fue un sistema que equilibra capacidades avanzadas de procesamiento de lenguaje natural con los controles de calidad y auditabilidad requeridos en el ámbito de la administración electoral.
+
+% ============================================
+% CAPÍTULO II: INGENIERÍA DE REQUERIMIENTOS
+% ============================================
+\chapter{Ingeniería de Requerimientos}
+\label{cap:requerimientos}
+
+La ingeniería de requerimientos constituye una fase fundamental en el desarrollo de cualquier sistema de software, particularmente en el caso de ExpedientIA, donde la precisión y trazabilidad de los requisitos son críticas dado el contexto electoral en el que opera. Este capítulo presenta la especificación completa de los requerimientos funcionales y no funcionales del sistema ExpedientIA, organizados según el enfoque iterativo e incremental adoptado en el proyecto.
+
+El proceso de levantamiento de requerimientos se llevó a cabo mediante sesiones de trabajo colaborativo con los stakeholders del Jurado Nacional de Elecciones, incluyendo especialistas en procesos electorales, analistas funcionales y usuarios finales. Este proceso dio como resultado un total de 155 requisitos funcionales que fueron documentados formalmente en el documento OGTI-6-ExpedientIA-154-2025 REQ001, los cuales fueron organizados en 12 iteraciones de desarrollo para facilitar la implementación progresiva del sistema.
+
+% ============================================
+% SECCIÓN 2.1: DESARROLLO ITERATIVO
+% ============================================
+\section{Desarrollo iterativo de requerimientos}
+\label{sec:desarrollo-iterativo}
+
+El proyecto ExpedientIA adoptó una estrategia de desarrollo iterativo basada en el modelo en Cascada con entregables incrementales, tal como se describió en la Sección~\ref{sec:metodologias}. Esta aproximación permitió validar progresivamente la funcionalidad del sistema con los usuarios finales y ajustar los requerimientos conforme se profundizaba en el conocimiento del dominio electoral.
+
+Las iteraciones se organizaron en tres grandes bloques funcionales que reflejan la evolución natural del sistema desde su configuración inicial hasta las capacidades avanzadas de calificación automatizada. A continuación se describen las características principales de cada iteración.
+
+% --------------------------------------------
+% Subsección 2.1.1: Iteración 1
+% --------------------------------------------
+\subsection{Iteración 1: Configuración de Parámetros}
+\label{subsec:iteracion1-parametros}
+
+La primera iteración se enfocó en establecer los cimientos del sistema, abarcando los módulos de autenticación, parametrización inicial y las interfaces externas críticas para la integración con los sistemas corporativos del organo electoral. Esta iteración incluyó 67 requisitos funcionales distribuidos en los siguientes módulos:
+
+\begin{itemize}
+    \item \textbf{Módulo de Autenticación y Acceso} (RF-1 a RF-11): Implementación del sistema de login integrado con las credenciales del SIJE, validación de usuarios y gestión de sesiones seguras.
+    \item \textbf{Módulo de Bandeja de Expedientes} (RF-12 a RF-14): Funcionalidad básica para visualizar y seleccionar expedientes desde la mesa de partes virtual.
+    \item \textbf{Módulo de Parametrización} (RF-15 a RF-18): Configuración de parámetros maestros del sistema necesarios para la calificación de expedientes.
+    \item \textbf{Módulo de Administración} (RF-47 a RF-55): Herramientas de administración para visualizar estados del sistema, analizar expedientes y gestionar errores.
+    \item \textbf{Interfaces Externas} (RF-56 a RF-67): Integración con los sistemas SIJE, Declara+, ONPE, Gemini y nube de Amazon/Google.
+\end{itemize}
+
+La Tabla~\ref{tab:iteracion1-resumen} presenta un resumen cuantitativo de los requisitos funcionales implementados en esta iteración.
+
+\begin{table}[H]
+\centering
+\caption{Resumen de requisitos funcionales de la Iteración 1}
+\label{tab:iteracion1-resumen}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Módulo} & \textbf{Rango de RF} & \textbf{Total RF} \\
+\midrule
+Autenticación y Acceso & RF-1 a RF-11 & 11 \\
+Bandeja de Expedientes & RF-12 a RF-14 & 3 \\
+Parametrización & RF-15 a RF-18 & 4 \\
+Administración & RF-47 a RF-55 & 9 \\
+Interfaces Externas & RF-56 a RF-67 & 12 \\
+\midrule
+\textbf{Total Iteración 1} & & \textbf{39} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --------------------------------------------
+% Subsección 2.1.2: Iteración 2
+% --------------------------------------------
+\subsection{Iteración 2: Solicitud de Inscripción de Listas}
+\label{subsec:iteracion2-inscripcion}
+
+La segunda iteración representó el núcleo funcional del sistema ExpedientIA, implementando las capacidades de calificación automatizada asistida por inteligencia artificial para expedientes de inscripción de listas de candidatos. Esta iteración incluyó 33 requisitos funcionales enfocados en:
+
+\begin{itemize}
+    \item \textbf{Módulo de Calificación} (RF-19 a RF-25, RF-73 a RF-77): Funcionalidad principal para iniciar el proceso de calificación mediante IA, visualizar toda la información del expediente, registrar la calificación y permitir modificaciones manuales del resultado.
+    \item \textbf{Módulo de Edición de Expedientes} (RF-26 a RF-32): Capacidad de habilitar la edición de expedientes ya calificados con trazabilidad completa de cambios, guardado y cancelación de modificaciones.
+    \item \textbf{Módulo de Resoluciones} (RF-33 a RF-41): Generación automatizada de proyectos de resolución basados en las calificaciones realizadas, incluyendo la gestión de normativas aplicables y confirmación del usuario.
+    \item \textbf{Módulo de Trazabilidad y Auditoría} (RF-42 a RF-46): Registro automático de todas las operaciones críticas del sistema con marca de tiempo y usuario responsable, soportando alta demanda de solicitudes.
+    \item \textbf{Correcciones y Pruebas} (RF-68 a RF-72): Especificaciones de rendimiento, gestión de errores críticos e incidentes, y requisitos de calidad del software.
+\end{itemize}
+
+La Tabla~\ref{tab:iteracion2-resumen} presenta la distribución de requisitos funcionales de esta iteración.
+
+\begin{table}[H]
+\centering
+\caption{Resumen de requisitos funcionales de la Iteración 2}
+\label{tab:iteracion2-resumen}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Módulo} & \textbf{Rango de RF} & \textbf{Total RF} \\
+\midrule
+Calificación & RF-19 a RF-25, RF-73 a RF-77 & 12 \\
+Edición de Expedientes & RF-26 a RF-32 & 7 \\
+Resoluciones & RF-33 a RF-41 & 9 \\
+Trazabilidad y Auditoría & RF-42 a RF-46 & 5 \\
+Correcciones y Pruebas & RF-68 a RF-72 & 5 \\
+\midrule
+\textbf{Total Iteración 2} & & \textbf{38} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% --------------------------------------------
+% Subsección 2.1.3: Iteración 3
+% --------------------------------------------
+\subsection{Iteración 3: Otras Materias del Expediente}
+\label{subsec:iteracion3-otras-materias}
+
+La tercera iteración extendió las capacidades del sistema para cubrir la calificación de otras materias relacionadas con los expedientes de inscripción que van más allá de la solicitud inicial de inscripción de listas. Esta iteración abarcó 78 requisitos funcionales organizados en las siguientes categorías:
+
+\begin{itemize}
+    \item \textbf{Especificaciones de Protección} (RF-78 a RF-93): Mecanismos de seguridad incluyendo respaldos automáticos, autenticación mediante cuentas SIJE, trazabilidad de cambios, protección de información sensible, versionamiento en GitLab y cifrado de datos.
+    \item \textbf{Seguridad e Información Sensible} (RF-94 a RF-98): Gestión de roles de acceso, encriptación de prompts de IA, eliminación segura de información temporal, servidor SFTP y administración de credenciales de servicios externos.
+    \item \textbf{Factores Humanos y Ergonomía} (RF-99 a RF-108): Diseño de interfaz amigable e intuitiva, cumplimiento de criterios de accesibilidad, minimización de pasos para calificación, mensajes contextuales de normativa, compatibilidad con navegadores institucionales y equipos de recursos limitados.
+    \item \textbf{Definición de Datos y Base de Datos} (RF-109 a RF-129): Especificación completa del modelo de datos incluyendo almacenamiento de información de calificación, integración con datos de ONPE, SIJE y Declara+, mantenimiento de integridad referencial y exportación de datos en formato PDF.
+    \item \textbf{Instalación} (RF-130 a RF-132): Requisitos para el despliegue en múltiples ambientes, compatibilidad con infraestructura institucional o nube, y entrega de manuales técnicos.
+    \item \textbf{Aceptación del Producto} (RF-133 a RF-139): Criterios de aceptación formal mediante acta de conformidad, pruebas de usuario y secretaría general, estabilidad operativa y alineación a la normativa vigente.
+    \item \textbf{Documentación} (RF-140 a RF-155): Entregables documentales del proyecto incluyendo manuales, diagramas de arquitectura, acta de constitución, plan de gestión, cronograma, análisis y diseño, lecciones aprendidas, actas de pruebas y capacitación, e informe de cierre.
+\end{itemize}
+
+La Tabla~\ref{tab:iteracion3-resumen} resume la distribución de requisitos de la tercera iteración.
+
+\begin{table}[H]
+\centering
+\caption{Resumen de requisitos funcionales de la Iteración 3}
+\label{tab:iteracion3-resumen}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Categoría} & \textbf{Rango de RF} & \textbf{Total RF} \\
+\midrule
+Especificaciones de Protección & RF-78 a RF-93 & 16 \\
+Seguridad e Información Sensible & RF-94 a RF-98 & 5 \\
+Factores Humanos y Ergonomía & RF-99 a RF-108 & 10 \\
+Definición de Datos y BD & RF-109 a RF-129 & 21 \\
+Instalación & RF-130 a RF-132 & 3 \\
+Aceptación del Producto & RF-133 a RF-139 & 7 \\
+Documentación & RF-140 a RF-155 & 16 \\
+\midrule
+\textbf{Total Iteración 3} & & \textbf{78} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================
+% SECCIÓN 2.2: REQUERIMIENTOS FUNCIONALES
+% ============================================
+\section{Requerimientos funcionales}
+\label{sec:req-funcionales}
+
+Los requerimientos funcionales de ExpedientIA describen las capacidades y comportamientos específicos que debe exhibir el sistema para satisfacer las necesidades operativas del proceso de calificación de expedientes electorales. Estos requisitos se organizan por módulo funcional, facilitando su trazabilidad durante el desarrollo, pruebas y mantenimiento del sistema.
+
+A continuación se presenta la especificación detallada de los 155 requisitos funcionales identificados, agrupados por módulo según su función principal dentro del sistema.
+
+% --------------------------------------------
+% Subsección 2.2.1: Módulo de Autenticación
+% --------------------------------------------
+\subsection{Módulo de Autenticación y Acceso}
+\label{subsec:modulo-login}
+
+El módulo de autenticación garantiza el acceso seguro al sistema ExpedientIA mediante integración con el Sistema Integrado de Justicia Electoral (SIJE), validando las credenciales de los usuarios autorizados.
+
+\begin{itemize}
+    \item \textbf{RF-1}: El sistema debe permitir al usuario ingresar su nombre de usuario en un campo de texto.
+    \item \textbf{RF-2}: El sistema debe validar que el campo de nombre de usuario no se encuentre vacío.
+    \item \textbf{RF-3}: El sistema debe permitir al usuario ingresar su contraseña en un campo de texto seguro (enmascarado).
+    \item \textbf{RF-4}: El sistema debe validar que el campo de contraseña no esté vacío.
+    \item \textbf{RF-5}: El sistema debe permitir que el usuario active o desactive la visualización de la contraseña mediante un control visual.
+    \item \textbf{RF-6}: Al activar la opción de visualización, el campo de contraseña debe mostrar los caracteres sin enmascarar.
+    \item \textbf{RF-7}: Al desactivarla, la contraseña debe volver a modo oculto (asteriscos o puntos).
+    \item \textbf{RF-8}: El sistema debe permitir iniciar el proceso de autenticación al presionar el botón "Iniciar sesión".
+    \item \textbf{RF-9}: El sistema debe validar las credenciales ingresadas contra la base de datos del SIJE.
+    \item \textbf{RF-10}: Si las credenciales son correctas, debe redirigir al usuario a la ventana principal del sistema.
+    \item \textbf{RF-11}: Si las credenciales son incorrectas, debe mostrar un mensaje de error indicando que el usuario o contraseña son inválidos.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.2: Módulo de Expedientes
+% --------------------------------------------
+\subsection{Módulo de Gestión de Expedientes}
+\label{subsec:modulo-expedientes}
+
+Este módulo proporciona la funcionalidad para acceder y gestionar la bandeja de expedientes electorales que requieren calificación.
+
+\begin{itemize}
+    \item \textbf{RF-12}: El sistema debe permitir acceder al módulo "Mesa de Partes" desde el menú principal.
+    \item \textbf{RF-13}: El sistema debe mostrar la opción "Bandeja de expedientes" dentro del módulo "Mesa de Partes".
+    \item \textbf{RF-14}: El usuario debe poder seleccionar dicha bandeja para visualizar los expedientes disponibles para calificación.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.3: Módulo de Parametrización
+% --------------------------------------------
+\subsection{Módulo de Parametrización}
+\label{subsec:modulo-parametrizacion}
+
+El módulo de parametrización permite configurar los parámetros maestros necesarios para el correcto funcionamiento del sistema de calificación.
+
+\begin{itemize}
+    \item \textbf{RF-15}: El sistema debe mostrar el botón u opción "ExpedientIA" dentro de la bandeja de expedientes.
+    \item \textbf{RF-16}: El sistema debe permitir que el usuario seleccione "ExpedientIA" para acceder al módulo de parametrización de requisitos del expediente.
+    \item \textbf{RF-17}: El sistema ExpedientIA debe permitir modificar, registrar o actualizar los parámetros asociados al expediente.
+    \item \textbf{RF-18}: El sistema ExpedientIA debe permitir guardar los cambios realizados en la parametrización.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.4: Módulo de Calificación
+% --------------------------------------------
+\subsection{Módulo de Calificación}
+\label{subsec:modulo-calificacion}
+
+El módulo de calificación constituye el núcleo funcional de ExpedientIA, permitiendo la evaluación automatizada asistida por inteligencia artificial de los expedientes de inscripción.
+
+\begin{itemize}
+    \item \textbf{RF-19}: El sistema debe mostrar la opción "Calificar expedientes" dentro de la bandeja.
+    \item \textbf{RF-20}: El usuario debe poder seleccionar esta opción en el sistema para iniciar el proceso de calificación.
+    \item \textbf{RF-21}: El sistema debe mostrar la opción "ExpedientIA" dentro del apartado de calificación.
+    \item \textbf{RF-22}: El usuario debe poder seleccionar el botón "ExpedientIA" para abrir la vista de evaluación del expediente.
+    \item \textbf{RF-23}: El sistema debe permitir visualizar toda la información del expediente.
+    \item \textbf{RF-24}: El sistema ExpedientIA debe permitir registrar la calificación del expediente (admisible, inadmisible, observado u otro).
+    \item \textbf{RF-25}: El sistema ExpedientIA debe permitir guardar la calificación realizada.
+    \item \textbf{RF-73}: El sistema debe evaluar automáticamente el cumplimiento de los requisitos configurados en la parametrización.
+    \item \textbf{RF-74}: El sistema debe asignar un resultado en la calificación del expediente basado en la evaluación automatizada.
+    \item \textbf{RF-75}: El sistema debe evaluar en base a la resolución 0164-2025-organo electoral (normativa vigente).
+    \item \textbf{RF-76}: El sistema debe permitir modificación manual del resultado de calificación por parte del usuario autorizado.
+    \item \textbf{RF-77}: El sistema debe permitir descargar un resumen de la calificación realizada.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.5: Módulo de Edición
+% --------------------------------------------
+\subsection{Módulo de Edición de Expedientes}
+\label{subsec:modulo-edicion}
+
+Este módulo permite la modificación controlada de expedientes previamente calificados, manteniendo trazabilidad completa de los cambios realizados.
+
+\begin{itemize}
+    \item \textbf{RF-26}: El sistema ExpedientIA debe mostrar el botón "Habilitar edición" cuando el expediente se encuentra en estado editable.
+    \item \textbf{RF-27}: Al seleccionar el botón "Habilitar edición", el sistema ExpedientIA debe permitir que el usuario edite los valores de cada criterio de calificación (cumple, no cumple, alerta).
+    \item \textbf{RF-28}: Al habilitar la edición, el sistema debe mostrar los botones de acción: Guardar cambios, Cancelar edición.
+    \item \textbf{RF-29}: El sistema ExpedientIA debe permitir almacenar los cambios en los criterios al seleccionar "Guardar cambios".
+    \item \textbf{RF-30}: El sistema ExpedientIA debe registrar al usuario que modificó la calificación con marca de tiempo.
+    \item \textbf{RF-31}: Al seleccionar "Cancelar edición", el sistema debe restaurar los valores previos sin guardar modificaciones.
+    \item \textbf{RF-32}: Una vez que se guarden o cancelen los cambios, el sistema ExpedientIA debe mostrar nuevamente las opciones de visualización y generación de proyecto de resolución.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.6: Módulo de Resoluciones
+% --------------------------------------------
+\subsection{Módulo de Resoluciones}
+\label{subsec:modulo-resoluciones}
+
+El módulo de resoluciones permite visualizar las resoluciones generadas y producir automáticamente proyectos de resolución basados en la calificación realizada.
+
+\begin{itemize}
+    \item \textbf{RF-33}: El sistema debe mostrar el botón "Ver análisis de expedientes" dentro del módulo de resoluciones generadas.
+    \item \textbf{RF-34}: Al seleccionar el botón "Ver Resoluciones", el sistema debe redirigir al usuario a la ventana que contiene las resoluciones emitidas.
+    \item \textbf{RF-35}: El sistema ExpedientIA debe mostrar la opción "Generar proyecto de resolución" cuando el expediente esté listo para emitir resolución.
+    \item \textbf{RF-36}: Al seleccionar "Generar proyecto de resolución", si existen observaciones registradas, el sistema ExpedientIA debe mostrar una ventana emergente indicando: "¿Desea continuar con la generación de la resolución?".
+    \item \textbf{RF-37}: Tras confirmar, el sistema ExpedientIA debe mostrar una ventana con el título "Normativas aplicables".
+    \item \textbf{RF-38}: La ventana debe contener los encabezados de normativas en formato de leyes y reglamentos.
+    \item \textbf{RF-39}: La ventana de normativas debe incluir los botones: Cancelar, Confirmar y Generar resolución.
+    \item \textbf{RF-40}: Antes de generar la resolución, el sistema debe mostrar un consentimiento con los botones: Cancelar, Confirmar y Generar.
+    \item \textbf{RF-41}: Al seleccionar "Confirmar y generar", el sistema debe generar automáticamente el Proyecto de Resolución asistido por IA.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.7: Módulo de Trazabilidad
+% --------------------------------------------
+\subsection{Módulo de Trazabilidad y Auditoría}
+\label{subsec:modulo-trazabilidad}
+
+Este módulo garantiza la trazabilidad completa de todas las operaciones realizadas en el sistema, elemento crítico para la transparencia electoral.
+
+\begin{itemize}
+    \item \textbf{RF-42}: El sistema debe registrar automáticamente la fecha y hora de inicio y fin del proceso de calificación de expediente.
+    \item \textbf{RF-43}: El sistema debe registrar automáticamente la fecha y hora en que se inicia y finaliza la generación del proyecto de resolución.
+    \item \textbf{RF-44}: El sistema debe marcar todos los proyectos de resolución generados en ExpedientIA con un identificador único de origen y transmitir dicho identificador al SIJE durante su carga, de manera que pueda identificarse su procedencia de ExpedientIA y garantizar la trazabilidad en todo el flujo del documento.
+    \item \textbf{RF-45}: El sistema debe desarrollarse en Python y TypeScript para garantizar mantenibilidad y escalabilidad.
+    \item \textbf{RF-46}: El sistema debe soportar una alta demanda de solicitudes sin degradar el servicio.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.8: Módulo de Administración
+% --------------------------------------------
+\subsection{Módulo de Administración}
+\label{subsec:modulo-administracion}
+
+El módulo de administración proporciona herramientas para la supervisión y gestión operativa del sistema por parte de los administradores.
+
+\begin{itemize}
+    \item \textbf{RF-47}: El sistema debe permitir ver la información del sistema, versión, entorno y servidor.
+    \item \textbf{RF-48}: El sistema debe permitir visualizar los estados del proceso, señalizados con colores según su estado de avance.
+    \item \textbf{RF-49}: El sistema debe permitir visualizar el flujo de análisis de expedientes por 3 fases (parametrización, calificación, generación de resolución).
+    \item \textbf{RF-50}: El sistema debe permitir analizar expedientes por fases de procesamiento.
+    \item \textbf{RF-51}: El sistema debe mostrar los expedientes faltantes de calificación pendientes.
+    \item \textbf{RF-52}: El sistema debe mostrar los expedientes con error, debe detallar los campos código de expediente, organización política, código de error y la hora de análisis.
+    \item \textbf{RF-53}: El sistema debe permitir por fase volver a analizar el expediente en caso de error.
+    \item \textbf{RF-54}: El sistema debe mostrar el resumen general del total de expedientes procesados, con errores y con revisiones.
+    \item \textbf{RF-55}: El sistema debe permitir ver los expedientes con observaciones, debe mostrar el detalle como código de expediente, organización política, ubigeo, fecha, observaciones, estado y acciones.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.9: Interfaces Externas
+% --------------------------------------------
+\subsection{Interfaces Externas}
+\label{subsec:interfaces-externas}
+
+Las interfaces externas garantizan la integración de ExpedientIA con los sistemas corporativos del organo electoral y servicios externos necesarios para su operación.
+
+\begin{itemize}
+    \item \textbf{RF-56}: El sistema debe poder conectarse con el web api de SIJE para obtener información de expedientes.
+    \item \textbf{RF-57}: El sistema debe poder conectarse con el web api de la ventanilla única para acceder a documentación del candidato.
+    \item \textbf{RF-58}: El sistema debe poder interactuar con Declara+ mediante API para obtener información de declaraciones.
+    \item \textbf{RF-59}: El sistema debe tener un acceso desde SIJE mediante enlace directo al módulo ExpedientIA.
+    \item \textbf{RF-60}: El sistema debe mostrar el acceso a la validación de calificación solo si se completo la información en SIJE.
+    \item \textbf{RF-61}: El sistema debe integrarse con el banco de la nación y pagalo.pe, para validación de voucher de pago de tasas.
+    \item \textbf{RF-62}: El sistema debe integrar con la información de la ONPE sobre candidatos registrados.
+    \item \textbf{RF-63}: El sistema debe integrar con Gemini 2.5 o superior (modelo de lenguaje de Google).
+    \item \textbf{RF-64}: El sistema se debe trabajar en la nube de Amazon Web Services.
+    \item \textbf{RF-65}: El sistema debe trabajar en la nube de Google Cloud Platform.
+    \item \textbf{RF-66}: El sistema debe contener una cantidad superior a 13 mil tokens de contexto para procesamiento de documentos extensos.
+    \item \textbf{RF-67}: El sistema debe configurar con EKS para el despliegue de contenedores en AWS.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.10: Gestión de Datos
+% --------------------------------------------
+\subsection{Gestión de Datos}
+\label{subsec:gestion-datos}
+
+Este módulo especifica los requisitos relacionados con el almacenamiento, integridad y gestión de los datos del sistema ExpedientIA.
+
+\begin{itemize}
+    \item \textbf{RF-109}: El sistema debe almacenar la información del expediente recibido de sistemas externos.
+    \item \textbf{RF-110}: La base de datos debe mantener integridad referencial entre tablas relacionadas.
+    \item \textbf{RF-111}: El sistema debe permitir la exportación de datos en formato PDF.
+    \item \textbf{RF-112}: El sistema debe almacenar información de la calificación realizada (fecha, usuario, resultado, observaciones).
+    \item \textbf{RF-113}: El sistema debe almacenar información de la ONPE sobre candidatos (nombres, DNI, organización política).
+    \item \textbf{RF-114}: El sistema debe almacenar la información del SIJE sobre expedientes (número, fecha, estado, jurado electoral).
+    \item \textbf{RF-115}: El sistema debe almacenar la información del SIJE sobre candidatos (datos personales, cargo al que postula).
+    \item \textbf{RF-116}: El sistema debe almacenar la información del SIJE sobre organización política (nombre, siglas, representante).
+    \item \textbf{RF-117}: El sistema debe almacenar la información del SIJE sobre proceso electoral (tipo, ámbito, fecha).
+    \item \textbf{RF-118}: El sistema debe almacenar la información del SIJE sobre voucher de pago (número, monto, fecha, banco).
+    \item \textbf{RF-119}: El sistema debe almacenar la información del SIJE sobre escritos presentados (tipo, fecha, contenido).
+    \item \textbf{RF-120}: El sistema debe almacenar la información del SIJE sobre jurado electoral competente (JEE, ubicación).
+    \item \textbf{RF-121}: El sistema debe almacenar la información del Declara+ sobre solicitud de inscripción (fecha, estado).
+    \item \textbf{RF-122}: El sistema debe almacenar la información del Declara+ sobre hoja de vida del candidato (educación, experiencia).
+    \item \textbf{RF-123}: El sistema debe almacenar la información del Declara+ sobre datos personales del candidato (domicilio, contacto).
+    \item \textbf{RF-124}: El sistema debe almacenar la información del Declara+ sobre cargo de elección al que postula.
+    \item \textbf{RF-125}: El sistema debe almacenar la información del Declara+ sobre organización política a la que pertenece.
+    \item \textbf{RF-126}: El sistema debe almacenar la información del Declara+ sobre lista única de candidatos.
+    \item \textbf{RF-127}: El sistema debe almacenar la información del Declara+ sobre documentos adjuntos (tipo, ruta, fecha).
+    \item \textbf{RF-128}: El sistema debe almacenar la información del Declara+ sobre plan de gobierno presentado.
+    \item \textbf{RF-129}: El sistema debe almacenar la información del Declara+ sobre plan de trabajo presentado.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.11: Instalación y Despliegue
+% --------------------------------------------
+\subsection{Instalación y Despliegue}
+\label{subsec:instalacion}
+
+Estos requisitos especifican las condiciones y procedimientos para la instalación del sistema en los ambientes del organo electoral.
+
+\begin{itemize}
+    \item \textbf{RF-130}: El sistema debe ser desplegado en ambientes diferenciados (desarrollo, calidad, producción).
+    \item \textbf{RF-131}: La instalación debe incluir manuales técnicos y de configuración para el personal de TI.
+    \item \textbf{RF-132}: El sistema debe ser compatible con infraestructura institucional local o despliegue en la nube.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.12: Aceptación del Producto
+% --------------------------------------------
+\subsection{Aceptación del Producto}
+\label{subsec:aceptacion}
+
+Estos requisitos establecen los criterios que debe cumplir el sistema para su aceptación formal por parte del organo electoral.
+
+\begin{itemize}
+    \item \textbf{RF-133}: La aceptación del sistema debe ser formalizada mediante acta de conformidad firmada por las partes.
+    \item \textbf{RF-134}: El sistema debe superar satisfactoriamente la prueba de usuario realizada por los especialistas electorales.
+    \item \textbf{RF-135}: El sistema debe superar satisfactoriamente la prueba de aceptación de secretaría general del organo electoral.
+    \item \textbf{RF-136}: El sistema debe mostrar estabilidad operativa durante el período de prueba establecido.
+    \item \textbf{RF-137}: El sistema debe mantener consistencia en la información y los resultados de la calificación a lo largo de múltiples ejecuciones.
+    \item \textbf{RF-138}: Las observaciones clave identificadas durante las pruebas deben ser corregidas y documentadas antes de la aceptación final.
+    \item \textbf{RF-139}: El sistema debe alinearse a la normativa vigente "Resolución 0164-2025-organo electoral" que regula el proceso de inscripción de candidaturas.
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.2.13: Documentación
+% --------------------------------------------
+\subsection{Documentación}
+\label{subsec:documentacion}
+
+Los requisitos de documentación especifican los entregables documentales que deben acompañar al sistema.
+
+\begin{itemize}
+    \item \textbf{RF-140}: Se debe entregar manual de usuario y manual técnico del sistema ExpedientIA.
+    \item \textbf{RF-141}: La documentación debe incluir diagramas de arquitectura y flujo de procesos del sistema.
+    \item \textbf{RF-142}: La documentación debe estar actualizada y alineada a la versión final del sistema entregado.
+    \item \textbf{RF-143}: Se debe entregar acta de constitución de proyecto que formalice el inicio del proyecto ExpedientIA.
+    \item \textbf{RF-144}: Se debe entregar Plan de gestión de proyecto con alcance, cronograma, riesgos y recursos.
+    \item \textbf{RF-145}: Se debe entregar Cronograma de actividades detallando las fases y entregables del proyecto.
+    \item \textbf{RF-146}: Se debe entregar el análisis y diseño de software con especificación de arquitectura y componentes.
+    \item \textbf{RF-147}: Se debe entregar el documento de inicialización de datos con scripts y procedimientos de carga.
+    \item \textbf{RF-148}: Se debe entregar el documento de lecciones aprendidas durante el desarrollo del proyecto.
+    \item \textbf{RF-149}: Se debe entregar actas de pruebas realizadas (unitarias, integración, aceptación).
+    \item \textbf{RF-150}: Se debe entregar Acta de capacitación que certifique la formación de usuarios finales.
+    \item \textbf{RF-151}: Se debe entregar Actas de reuniones de seguimiento realizadas durante el proyecto.
+    \item \textbf{RF-152}: Se debe entregar Acta de pase a producción que autorice el despliegue en ambiente productivo.
+    \item \textbf{RF-153}: Se debe entregar el documento de Informe de avance periódico del proyecto.
+    \item \textbf{RF-154}: Se debe entregar El documento de Control integrado de cambios con trazabilidad de modificaciones.
+    \item \textbf{RF-155}: Se debe entregar el informe de cierre y acta de conformidad final del proyecto ExpedientIA.
+\end{itemize}
+
+% ============================================
+% SECCIÓN 2.3: REQUERIMIENTOS NO FUNCIONALES
+% ============================================
+\section{Requerimientos no funcionales}
+\label{sec:req-no-funcionales}
+
+Los requerimientos no funcionales de ExpedientIA establecen las restricciones, atributos de calidad y características operacionales que debe satisfacer el sistema para garantizar un desempeño adecuado en el contexto crítico de los procesos electorales. Estos requisitos se derivan directamente de los requisitos funcionales identificados en la sección anterior y se organizan en categorías que reflejan las dimensiones de calidad establecidas por estándares internacionales de ingeniería de software.
+
+A continuación se presenta la especificación de los 81 requerimientos no funcionales identificados, organizados por categoría según su naturaleza.
+
+% --------------------------------------------
+% Subsección 2.3.1: Rendimiento
+% --------------------------------------------
+\subsection{Rendimiento y Escalabilidad}
+\label{subsec:rnf-rendimiento}
+
+Los requisitos de rendimiento establecen los tiempos de respuesta esperados y la capacidad de procesamiento del sistema bajo condiciones normales y de alta demanda.
+
+\begin{itemize}
+    \item \textbf{RNF-1}: El sistema debe procesar un expediente completo en un tiempo máximo de 5 minutos (derivado de RF-68, RF-72).
+    \item \textbf{RNF-2}: El sistema debe resolver errores críticos en menos de 4 horas (derivado de RF-69).
+    \item \textbf{RNF-3}: El sistema debe resolver incidentes reportados en menos de 24 horas (derivado de RF-70).
+    \item \textbf{RNF-4}: El sistema debe soportar alta demanda de solicitudes concurrentes sin degradar el servicio (derivado de RF-46).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.2: Seguridad
+% --------------------------------------------
+\subsection{Seguridad y Protección}
+\label{subsec:rnf-seguridad}
+
+Los requisitos de seguridad garantizan la protección de la información sensible y la integridad de los datos procesados por el sistema.
+
+\begin{itemize}
+    \item \textbf{RNF-5}: El sistema debe contar con respaldos automáticos diarios de la base de datos (derivado de RF-78).
+    \item \textbf{RNF-6}: El sistema debe tener autenticación por cuenta SIJE integrada (derivado de RF-79).
+    \item \textbf{RNF-7}: El sistema debe tener trazabilidad completa de cambios realizados en expedientes (derivado de RF-80).
+    \item \textbf{RNF-8}: El sistema debe registrar el tiempo de duración en la calificación de cada expediente (derivado de RF-81).
+    \item \textbf{RNF-9}: El sistema no debe permitir doble calificación de un expediente ya calificado por el mismo usuario (derivado de RF-82).
+    \item \textbf{RNF-10}: El sistema debe permitir ver documentos asociados al expediente en formato seguro (derivado de RF-83).
+    \item \textbf{RNF-11}: El sistema debe proteger información frente a pérdida, alteración o eliminación no autorizada (derivado de RF-84).
+    \item \textbf{RNF-12}: El sistema debe eliminar el caché por cada calificación en IA para evitar contaminación cruzada (derivado de RF-85).
+    \item \textbf{RNF-13}: El sistema debe guardar el código fuente en GitLab del organo electoral con control de versiones (derivado de RF-86).
+    \item \textbf{RNF-14}: El sistema debe guardar cada funcionalidad versionada con etiquetas semánticas (derivado de RF-87).
+    \item \textbf{RNF-15}: El sistema debe guardar cada observación agregada con identificador de usuario y marca de tiempo (derivado de RF-88).
+    \item \textbf{RNF-16}: El sistema debe guardar la resolución emitida con trazabilidad completa (derivado de RF-89).
+    \item \textbf{RNF-17}: El sistema debe guardar la calificación del expediente con registro de auditoría (derivado de RF-90).
+    \item \textbf{RNF-18}: El sistema debe cifrar la información sensible en tránsito y en reposo (derivado de RF-91).
+    \item \textbf{RNF-19}: El sistema debe descargar la información temporal y eliminarla después de analizada (derivado de RF-92).
+    \item \textbf{RNF-20}: El sistema debe mantener una trazabilidad y auditoría completa de todas las operaciones críticas (derivado de RF-93).
+    \item \textbf{RNF-21}: El sistema debe contar con roles de acceso diferenciados (administrador, calificador, consulta) (derivado de RF-94).
+    \item \textbf{RNF-22}: El sistema debe contener los prompts de IA encriptados en base de datos (derivado de RF-95).
+    \item \textbf{RNF-23}: El sistema debe eliminar después de uso del prompt temporal generado para cada calificación (derivado de RF-96).
+    \item \textbf{RNF-24}: El sistema debe contar con servidor SFTP para transferencia segura de archivos (derivado de RF-97).
+    \item \textbf{RNF-25}: El sistema debe administrar las credenciales de los distintos servicios externos mediante gestión segura de secretos (derivado de RF-98).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.3: Usabilidad
+% --------------------------------------------
+\subsection{Usabilidad y Factores Humanos}
+\label{subsec:rnf-usabilidad}
+
+Los requisitos de usabilidad aseguran que el sistema sea accesible, intuitivo y eficiente para los usuarios finales.
+
+\begin{itemize}
+    \item \textbf{RNF-26}: El sistema debe contar con una interfaz amigable y de fácil navegación (derivado de RF-99).
+    \item \textbf{RNF-27}: El sistema debe ser accesible e intuitivo para usuarios con distintos niveles de experiencia tecnológica (derivado de RF-100).
+    \item \textbf{RNF-28}: El sistema debe cumplir con criterios de accesibilidad WCAG 2.1 nivel AA (derivado de RF-101).
+    \item \textbf{RNF-29}: El sistema debe minimizar los pasos necesarios para realizar la calificación de un expediente (derivado de RF-102).
+    \item \textbf{RNF-30}: El sistema debe advertir al usuario antes de realizar un cambio irreversible en la calificación (derivado de RF-103).
+    \item \textbf{RNF-31}: El sistema debe incorporar mensajes textuales de la normativa aplicable por cada criterio de calificación (derivado de RF-104).
+    \item \textbf{RNF-32}: El diseño debe alinearse a la identidad gráfica institucional del organo electoral (derivado de RF-105).
+    \item \textbf{RNF-33}: El sistema debe ser compatible con navegadores permitidos por la institución (Chrome, Edge, Firefox versiones actuales) (derivado de RF-106).
+    \item \textbf{RNF-34}: El sistema debe ser compatible con equipos de recursos limitados (mínimo 4GB RAM, procesador dual-core) (derivado de RF-107).
+    \item \textbf{RNF-35}: El sistema debe contener elementos interactivos claramente identificables (botones con etiquetas descriptivas y estados visuales) (derivado de RF-108).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.4: Integridad de Datos
+% --------------------------------------------
+\subsection{Integridad y Calidad de Datos}
+\label{subsec:rnf-datos}
+
+Los requisitos de integridad de datos garantizan la consistencia, exactitud y disponibilidad de la información almacenada.
+
+\begin{itemize}
+    \item \textbf{RNF-36}: La base de datos debe mantener integridad referencial entre tablas relacionadas mediante llaves foráneas (derivado de RF-110).
+    \item \textbf{RNF-37}: El sistema debe permitir la exportación de datos en formato PDF con formato estandarizado (derivado de RF-111).
+    \item \textbf{RNF-38}: El sistema debe almacenar información completa de la calificación (fecha, hora, usuario, resultado, criterios evaluados, observaciones) (derivado de RF-112).
+    \item \textbf{RNF-39}: El sistema debe almacenar información actualizada de la ONPE sobre candidatos registrados (derivado de RF-113).
+    \item \textbf{RNF-40}: El sistema debe almacenar la información del SIJE sobre expedientes con sincronización periódica (derivado de RF-114).
+    \item \textbf{RNF-41}: El sistema debe almacenar la información del SIJE sobre candidatos con trazabilidad de versiones (derivado de RF-115).
+    \item \textbf{RNF-42}: El sistema debe almacenar la información del SIJE sobre organización política actualizada (derivado de RF-116).
+    \item \textbf{RNF-43}: El sistema debe almacenar la información del SIJE sobre proceso electoral vigente (derivado de RF-117).
+    \item \textbf{RNF-44}: El sistema debe almacenar la información del SIJE sobre voucher de pago validado (derivado de RF-118).
+    \item \textbf{RNF-45}: El sistema debe almacenar la información del SIJE sobre escritos presentados digitalizados (derivado de RF-119).
+    \item \textbf{RNF-46}: El sistema debe almacenar la información del SIJE sobre jurado electoral competente (derivado de RF-120).
+    \item \textbf{RNF-47}: El sistema debe almacenar la información del Declara+ sobre solicitud de inscripción (derivado de RF-121).
+    \item \textbf{RNF-48}: El sistema debe almacenar la información del Declara+ sobre hoja de vida (derivado de RF-122).
+    \item \textbf{RNF-49}: El sistema debe almacenar la información del Declara+ sobre datos personales del candidato (derivado de RF-123).
+    \item \textbf{RNF-50}: El sistema debe almacenar la información del Declara+ sobre cargo de elección al que postula (derivado de RF-124).
+    \item \textbf{RNF-51}: El sistema debe almacenar la información del Declara+ sobre organización política a la que pertenece (derivado de RF-125).
+    \item \textbf{RNF-52}: El sistema debe almacenar la información del Declara+ sobre lista única de candidatos (derivado de RF-126).
+    \item \textbf{RNF-53}: El sistema debe almacenar la información del Declara+ sobre documentos adjuntos con metadata (derivado de RF-127).
+    \item \textbf{RNF-54}: El sistema debe almacenar la información del Declara+ sobre plan de gobierno presentado (derivado de RF-128).
+    \item \textbf{RNF-55}: El sistema debe almacenar la información del Declara+ sobre plan de trabajo presentado (derivado de RF-129).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.5: Instalación
+% --------------------------------------------
+\subsection{Instalación y Despliegue}
+\label{subsec:rnf-instalacion}
+
+Los requisitos de instalación especifican las condiciones del ambiente de despliegue y los procedimientos de implementación.
+
+\begin{itemize}
+    \item \textbf{RNF-56}: El sistema debe ser desplegado en ambientes diferenciados y aislados (desarrollo, calidad, producción) (derivado de RF-130).
+    \item \textbf{RNF-57}: La instalación debe incluir manuales técnicos detallados y de configuración para el personal de TI (derivado de RF-131).
+    \item \textbf{RNF-58}: El sistema debe ser compatible con infraestructura institucional local o despliegue en la nube (AWS, GCP) (derivado de RF-132).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.6: Pruebas y Aceptación
+% --------------------------------------------
+\subsection{Pruebas y Aceptación}
+\label{subsec:rnf-pruebas}
+
+Los requisitos de aceptación establecen los criterios de calidad que debe satisfacer el sistema para su aceptación formal.
+
+\begin{itemize}
+    \item \textbf{RNF-59}: La aceptación debe ser formalizada mediante acta de conformidad firmada por representantes del organo electoral y el proveedor (derivado de RF-133).
+    \item \textbf{RNF-60}: El sistema debe superar satisfactoriamente la prueba de usuario con tasa de éxito mayor al 95\% en casos de prueba (derivado de RF-134).
+    \item \textbf{RNF-61}: El sistema debe superar satisfactoriamente la prueba de aceptación de secretaría general del organo electoral (derivado de RF-135).
+    \item \textbf{RNF-62}: El sistema debe mostrar estabilidad operativa durante el período de prueba (mínimo 30 días sin errores críticos) (derivado de RF-136).
+    \item \textbf{RNF-63}: El sistema debe mantener consistencia en la información y los resultados de la calificación con varianza menor al 2\% (derivado de RF-137).
+    \item \textbf{RNF-64}: Las observaciones clave identificadas durante las pruebas deben ser corregidas y documentadas en log de cambios (derivado de RF-138).
+    \item \textbf{RNF-65}: El sistema debe alinearse a la normativa vigente "Resolución 0164-2025-organo electoral" y normativa complementaria (derivado de RF-139).
+\end{itemize}
+
+% --------------------------------------------
+% Subsección 2.3.7: Documentación
+% --------------------------------------------
+\subsection{Documentación}
+\label{subsec:rnf-documentacion}
+
+Los requisitos de documentación especifican la calidad, completitud y formato de los entregables documentales.
+
+\begin{itemize}
+    \item \textbf{RNF-66}: Se debe entregar manual de usuario con lenguaje claro y manual técnico con especificaciones detalladas (derivado de RF-140).
+    \item \textbf{RNF-67}: La documentación debe incluir diagramas de arquitectura en formato UML y flujo de procesos en BPMN (derivado de RF-141).
+    \item \textbf{RNF-68}: La documentación debe estar actualizada y alineada a la versión final del sistema, con control de versiones (derivado de RF-142).
+    \item \textbf{RNF-69}: Se debe entregar acta de constitución de proyecto firmada por las partes (derivado de RF-143).
+    \item \textbf{RNF-70}: Se debe entregar Plan de gestión de proyecto siguiendo estándares PMI o PRINCE2 (derivado de RF-144).
+    \item \textbf{RNF-71}: Se debe entregar Cronograma de actividades en formato MS Project o Primavera (derivado de RF-145).
+    \item \textbf{RNF-72}: Se debe entregar el análisis y diseño de software con diagramas UML (casos de uso, clases, secuencia, componentes) (derivado de RF-146).
+    \item \textbf{RNF-73}: Se debe entregar el documento de inicialización de datos con scripts SQL y procedimientos de carga (derivado de RF-147).
+    \item \textbf{RNF-74}: Se debe entregar el documento de lecciones aprendidas con formato estructurado (derivado de RF-148).
+    \item \textbf{RNF-75}: Se debe entregar actas de pruebas realizadas (unitarias, integración, sistema, aceptación) (derivado de RF-149).
+    \item \textbf{RNF-76}: Se debe entregar Acta de capacitación firmada por participantes que certifique la formación (derivado de RF-150).
+    \item \textbf{RNF-77}: Se debe entregar Actas de reuniones de seguimiento con acuerdos y compromisos (derivado de RF-151).
+    \item \textbf{RNF-78}: Se debe entregar Acta de pase a producción firmada por Jefe de Proyecto y responsable de TI (derivado de RF-152).
+    \item \textbf{RNF-79}: Se debe entregar el documento de Informe de avance periódico (quincenal o mensual) (derivado de RF-153).
+    \item \textbf{RNF-80}: Se debe entregar El documento de Control integrado de cambios con trazabilidad de modificaciones aprobadas (derivado de RF-154).
+    \item \textbf{RNF-81}: Se debe entregar el informe de cierre y acta de conformidad final firmada por autoridades del organo electoral (derivado de RF-155).
+\end{itemize}
+
+% ============================================
+% SECCIÓN 2.4: ÍNDICES DE REQUISITOS
+% ============================================
+\section{Índice de requisitos funcionales}
+\label{sec:indice-rf}
+
+La especificación completa de los 155 requisitos funcionales identificados se encuentra detallada en el Anexo~A de este documento, organizada por módulo funcional. Dicho anexo proporciona una matriz de trazabilidad que relaciona cada requisito con los componentes del sistema que lo implementan, facilitando las actividades de verificación y validación durante el ciclo de vida del proyecto.
+
+\section{Índice de requisitos no funcionales}
+\label{sec:indice-rnf}
+
+Los 81 requisitos no funcionales especificados en la Sección~\ref{sec:req-no-funcionales} derivan directamente de los requisitos funcionales y establecen los atributos de calidad que debe exhibir el sistema ExpedientIA. La matriz de trazabilidad RF-RNF que relaciona cada requisito funcional con los requisitos no funcionales derivados se encuentra disponible en el Anexo~B de este documento.
+
+% ============================================
+% CAPÍTULO III: DISEÑO
+% ============================================
+\chapter{Diseño}
+\label{cap:diseno}
+
+El presente capítulo aborda el diseño integral del sistema ExpedientIA, abarcando desde su arquitectura de software hasta el modelo de datos que sustenta su operación. Se presenta la estructura técnica del sistema, las decisiones arquitectónicas adoptadas, y el diseño de la interfaz de usuario que facilita la interacción de los operadores electorales con las capacidades de automatización inteligente. Estas especificaciones de diseño constituyen la base para la implementación del sistema y garantizan la trazabilidad entre los requisitos identificados en el Capítulo~\ref{cap:requerimientos} y la solución tecnológica propuesta.
+
+\section{Diseño de arquitectura de software}
+\label{sec:arquitectura}
+
+El diseño arquitectónico de ExpedientIA se documenta mediante la metodología C4 propuesta por Simon Brown, que organiza la arquitectura en cuatro niveles de abstracción progresiva: Contexto, Contenedores, Componentes y Código. El Nivel 1, denominado Diagrama de Contexto, establece el alcance del sistema al identificar los actores humanos que interactúan con él y los sistemas de software con los que se integra. En este nivel se distinguen dos perfiles de usuario: el \textbf{Asistente Jurisdiccional}, abogado que revisa las calificaciones generadas automáticamente y valida los proyectos de resolución; y el \textbf{Secretario General}, abogado responsable de configurar los parámetros por proceso electoral y de gestionar la re-calificación de expedientes cuando las condiciones normativas cambian. La Figura~\ref{fig:c4-contexto} ilustra el diagrama de contexto completo del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{C4_nivel1.jpg}
+    \caption{Diagrama de contexto C4 (Nivel 1) del sistema ExpedientIA}
+    \label{fig:c4-contexto}
+\end{figure}
+
+ExpedientIA se integra con tres sistemas de software internos del órgano electoral: la \textbf{Plataforma Jurisdiccional}, que aloja los expedientes existentes y genera nuevos expedientes por calificar; el \textbf{Proceso en Segundo Plano}, que ejecuta la calificación por lotes de manera automática cada medianoche; y el \textbf{Sistema de Correos Electrónicos (SMTP)}, encargado de enviar notificaciones a los operadores. Adicionalmente, el sistema consume cuatro servicios externos mediante HTTPS: el \textbf{Registro de Organizaciones Políticas (ROP)}, que valida candidatos y organizaciones; la \textbf{Plataforma de Interoperabilidad del Estado (PIDE)}, que verifica antecedentes policiales; el servicio de \textbf{Firma Digital}, que autentica la identidad del firmante y valida documentos electrónicos; y \textbf{Vertex AI de Google}, que provee la infraestructura para el desarrollo y despliegue de modelos de aprendizaje automático y modelos de lenguaje de gran escala (\textit{LLMs}) empleados en el procesamiento de documentos.
+
+% ----------------------------------------
+% SECCIÓN 3.2: DIAGRAMA DE COMPONENTES
+% ----------------------------------------
+\section{Diagrama de componentes}
+\label{sec:diagrama-componentes}
+
+Para implementar la arquitectura presentada, se diseñaron componentes especializados organizados en cuatro categorías: backend, dashboard, procesamiento batch y microservicios de IA. Esta modularización permite alta mantenibilidad y escalabilidad, facilitando principios de arquitectura hexagonal que separan reglas de negocio de detalles de infraestructura. La Figura~\ref{fig:diagrama-componentes} muestra la organización de los componentes del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{DIAGRAMA_COMPONENTES.png}
+    \caption{Diagrama de componentes del sistema ExpedientIA}
+    \label{fig:diagrama-componentes}
+\end{figure}
+
+\textbf{Componentes de backend principal.} Agrupa cinco componentes: \textit{Login de Usuario y Gestión de Roles} implementa dos perfiles (asistente jurisdiccional y configurador de parámetros); \textit{Configuración de Parámetros por Proceso Electoral} define parámetros de evaluadores antes de ejecutar calificaciones masivas; \textit{Strategies por Tipo de Expediente} aplica arquitectura hexagonal para Inscripción de Listas, con escalabilidad hacia Publicidad Estatal; \textit{Evaluadores por Requisito de Tipo de Materia} constituyen la unidad mínima de calificación, variando según tipo de materia; y \textit{Adaptador de Consultas a APIs y DB} facilita integración con servicios externos y bases de datos.
+
+\textbf{Componentes del dashboard.} El componente \textit{Métricas de Dashboard} mide cuantitativamente la influencia del sistema para asistentes jurisdiccionales, generando indicadores de desempeño y adopción.
+
+\textbf{Componentes del sistema batch.} Incluye dos componentes: \textit{Ejecución de Calificación de Expedientes por Lote} procesa en paralelo expedientes según capacidad del servidor de producción, y \textit{Observabilidad Notificador de Errores} realiza monitoreo de salud (\textit{healthcheck}) de endpoints y servicios externos, notificando por SMS, correo o WhatsApp errores de procesamiento o caídas de APIs externas.
+
+\textbf{Componentes microservicios de IA.} Comprende cuatro componentes: \textit{Extractor de Información de Documentos (OCR)} extrae datos estructurados de PDFs presentados por candidatos y organizaciones políticas; \textit{Web Scrapper} simula búsquedas web de asistentes jurisdiccionales; \textit{Analizador de Similitud} identifica jurisprudencia similar al expediente, permitiendo seleccionar artículos relevantes para la resolución; y \textit{Generador de Proyectos de Resoluciones} utiliza un modelo de lenguaje pequeño (\textit{SLM}) especializado mediante \textit{fine-tuning} en normativa legal peruana, redactando automáticamente el proyecto de resolución con el veredicto basado en la calificación obtenida.
+
+% ----------------------------------------
+% SECCIÓN 3.3: ARQUITECTURA DE LA APLICACIÓN
+% ----------------------------------------
+\section{Arquitectura de la aplicación}
+\label{sec:arquitectura-aplicacion}
+
+El sistema ExpedientIA implementa Arquitectura Hexagonal (Puertos y Adaptadores), separando la lógica de negocio de los detalles de infraestructura. Este patrón garantiza mantenibilidad, testabilidad y extensibilidad, permitiendo evolucionar componentes sin afectar el núcleo del dominio. La arquitectura distingue dos tipos de adaptadores: los \textbf{adaptadores consumidores} (puertos de entrada), que traducen peticiones externas hacia el dominio, y los \textbf{adaptadores consumidos} (puertos de salida), que el dominio invoca para interactuar con infraestructura y servicios externos. La Figura~\ref{fig:arquitectura-aplicacion} ilustra la organización completa con sus adaptadores.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{HEXAGONAL_ARCHITECTURE.png}
+    \caption{Arquitectura hexagonal del sistema ExpedientIA con adaptadores consumidores y consumidos}
+    \label{fig:arquitectura-aplicacion}
+\end{figure}
+
+% Descripción de las capas de la arquitectura hexagonal
+\textbf{Capa de dominio (núcleo).} Representa el centro del sistema, albergando las \textit{Estrategias} que encapsulan las reglas de calificación para cada tipo de expediente, los \textit{Evaluadores} como unidad mínima de validación de requisitos, y los \textit{Pipelines} que orquestan el flujo de procesamiento. Esta capa es completamente independiente de \textit{frameworks} y tecnologías de infraestructura.
+
+\textbf{Capa de aplicación.} Rodea al dominio y contiene los servicios que coordinan los casos de uso, actuando como intermediarios entre los adaptadores y la lógica de negocio sin incorporar reglas de dominio propias.
+
+\textbf{Adaptadores consumidores (puertos de entrada).} Constituyen los puntos de ingreso al sistema: la \textit{Aplicación Web} desarrollada en React para los operadores, el \textit{Cronjob de medianoche} que dispara el procesamiento automático por lotes, el \textit{Script de calificación por lotes} para re-calificaciones masivas, y las conexiones provenientes de la \textit{Plataforma Jurisdiccional}, el \textit{Asistente Jurisdiccional} y el \textit{Secretario General}.
+
+\textbf{Adaptadores consumidos (puertos de salida).} Proveen las implementaciones de infraestructura que el dominio utiliza: \textit{OracleDB} para persistencia relacional, \textit{Qdrant} para búsquedas vectoriales de jurisprudencia, \textit{FileZilla Server} para gestión documental, una \textit{Cola de Mensajes} para procesamiento asíncrono, el \textit{Generador de Resoluciones con GPU} para la redacción automática, y las APIs externas (SMTP, ROP, PIDE, API LLM Gemini y Firma Digital).
+
+La arquitectura hexagonal garantiza que el dominio permanezca inmune a cambios tecnológicos, facilitando la sustitución de componentes de infraestructura sin impactar la lógica de calificación electoral.
+
+% ----------------------------------------
+% SECCIÓN 3.4: GESTIÓN DE LA INFORMACIÓN
+% ----------------------------------------
+\section{Gestión de la información}
+\label{sec:gestion-informacion}
+
+ExpedientIA implementa una estrategia híbrida de gestión de información que combina tres enfoques complementarios de almacenamiento de datos. Cada enfoque está optimizado para información específica: datos estructurados transaccionales, búsquedas semánticas de jurisprudencia y gestión documental. Esta arquitectura permite eficiencia en consultas relacionales, recuperación contextual mediante \textit{embeddings} vectoriales y almacenamiento seguro de evidencia. La Figura~\ref{fig:modelo-datos} presenta el modelo de datos relacional del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{ELECCIA_ERD.png}
+    \caption{Modelo entidad-relación de la base de datos ExpedientIA}
+    \label{fig:modelo-datos}
+\end{figure}
+
+% Descripción de los tres enfoques de almacenamiento de información
+\textbf{Base de datos relacional Oracle 19.9c Enterprise.} Constituye el repositorio principal de información estructurada, almacenando entidades críticas como expedientes, candidatos, organizaciones políticas, calificaciones y resoluciones. La normalización del esquema garantiza integridad referencial y elimina redundancias, facilitando consultas transaccionales eficientes mediante SQL optimizado. Oracle proporciona capacidades empresariales de alta disponibilidad, respaldo automático y gestión de concurrencia necesarias para un sistema de producción electoral.
+
+\textbf{Base de datos vectorial Qdrant.} Implementa almacenamiento especializado para \textit{embeddings} de jurisprudencia electoral, tokenizando el contenido completo de resoluciones, sentencias y normativa relacionada con cada tipo de expediente. Esta arquitectura permite recuperación por similitud semántica mediante búsquedas vectoriales, identificando precedentes jurisprudenciales relevantes durante la generación automática de proyectos de resolución. Los \textit{embeddings} capturan el significado contextual de los documentos legales más allá de coincidencias léxicas simples.
+
+\textbf{Servidor SFTP para gestión documental.} Almacena la totalidad de archivos PDF presentados por candidatos y organizaciones políticas, incluyendo hojas de vida, declaraciones juradas, planes de gobierno y documentos probatorios. El protocolo SFTP garantiza transferencia segura y cifrada de archivos, manteniendo la trazabilidad de accesos mediante auditoría. Esta separación entre datos estructurados y documentos binarios optimiza el rendimiento de la base de datos relacional.
+
+La integración de estos tres sistemas permite a ExpedientIA combinar eficiencia transaccional, inteligencia semántica y gestión documental segura en una arquitectura unificada.
+
+% ----------------------------------------
+% SECCIÓN 3.5: DISEÑO DE INTERFACES DE USUARIO
+% ----------------------------------------
+\section{Diseño de Interfaces de Usuario}
+\label{sec:diseno-interfaces}
+
+El diseño de interfaces de usuario de ExpedientIA prioriza la usabilidad y claridad en la presentación de información compleja, facilitando a los evaluadores del órgano electoral la calificación eficiente de expedientes electorales. La interfaz proporciona acceso intuitivo a funcionalidades críticas del sistema, visualización estructurada de resultados de calificación automatizada, gestión de jurisprudencia aplicable y generación de proyectos de resolución. Cada pantalla se diseñó considerando los flujos de trabajo reales de los usuarios y los requerimientos de usabilidad especificados en la Sección~\ref{subsec:rnf-usabilidad}.
+
+\subsection*{Dashboard de expedientes calificados}
+
+El dashboard principal presenta una vista consolidada de los expedientes procesados por el sistema ExpedientIA, mostrando su estado de calificación actual y permitiendo navegación rápida hacia el detalle de cada caso. La interfaz visualiza expedientes con sus distintos estados (En Proceso, Calificado, Con Observaciones, Resuelto), facilitando la priorización del trabajo según urgencia y etapa procesal. Como se observa en la Figura~\ref{fig:ui-dashboard}, el diseño tabular con filtros y búsqueda permite a los evaluadores localizar expedientes específicos eficientemente.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_1.png}
+    \caption{Dashboard de expedientes calificados mostrando estado, organización política y tipo de expediente}
+    \label{fig:ui-dashboard}
+\end{figure}
+
+\subsection*{Resultado de calificación de expediente}
+
+La pantalla de detalle de calificación presenta el análisis automatizado realizado por ExpedientIA sobre un expediente individual, mostrando el veredicto técnico generado por el sistema. El resultado incluye la clasificación del expediente según tres categorías posibles: ADMISIBLE (cumple todos los requisitos), INADMISIBLE (presenta deficiencias subsanables) o IMPROCEDENTE (incumplimiento de requisitos esenciales). El campo Observación permite a cada Evaluador registrar hallazgos específicos, anotaciones técnicas y justificaciones que fundamentan la decisión final del Asistente Jurisdiccional. La Figura~\ref{fig:ui-calificacion} ilustra esta interfaz crítica para la validación humana del proceso automatizado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_2.png}
+    \caption{Resultado detallado de calificación de expediente con veredicto y observaciones del evaluador}
+    \label{fig:ui-calificacion}
+\end{figure}
+
+\subsection*{Jurisprudencia relacionada}
+
+El módulo de jurisprudencia proporciona acceso estructurado a precedentes legales relevantes para el expediente en calificación, recuperados mediante búsqueda vectorial semántica desde la base de datos Qdrant. Los evaluadores pueden visualizar artículos normativos, resoluciones previas del organo electoral y decretos electorales aplicables al caso, con funcionalidad para marcar o desmarcar elementos según su pertinencia. Esta selección manual refinada permite personalizar el contenido jurisprudencial que se incorporará al proyecto de resolución generado automáticamente. La Figura~\ref{fig:ui-jurisprudencia} muestra la interfaz de gestión de jurisprudencia con controles de selección.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_3.png}
+    \caption{Jurisprudencia relacionada al expediente con opciones de selección para generación de resoluciones}
+    \label{fig:ui-jurisprudencia}
+\end{figure}
+
+\subsection*{Proyectos de resolución}
+
+La sección de proyectos de resolución presenta los documentos preliminares generados automáticamente por ExpedientIA mediante modelos de lenguaje entrenados con jurisprudencia electoral. Es fundamental comprender que estos documentos constituyen borradores de trabajo que facilitan la redacción, no resoluciones oficiales con validez jurídica. Los proyectos generados deben ser validados, editados y aprobados por el Asistente Jurisdiccional antes de su carga a la plataforma jurisdiccional del organo electoral para firma digital y publicación oficial. Este flujo garantiza el principio \textit{human-in-the-loop} que fundamenta el diseño de ExpedientIA, donde la inteligencia artificial asiste pero no sustituye la decisión humana calificada. La Figura~\ref{fig:ui-proyectos-resolucion} muestra la interfaz de gestión de proyectos con opciones de descarga y edición.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_4.png}
+    \caption{Proyectos de Resolución generados automáticamente que requieren validación del Asistente Jurisdiccional}
+    \label{fig:ui-proyectos-resolucion}
+\end{figure}
+
+% ----------------------------------------
+% SECCIÓN 3.6: DISEÑO DE PRUEBAS
+% ----------------------------------------
+\section{Diseño de pruebas}
+\label{sec:diseno-pruebas}
+
+[TODO] Pendiente de desarrollar con la estrategia de pruebas del sistema.
 
 % ============================================
 % BIBLIOGRAFÍA
