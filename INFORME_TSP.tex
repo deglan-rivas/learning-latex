@@ -361,28 +361,60 @@ EleccIA se fundamenta en estos principios probados, combinando tecnología de ex
 \section{Metodologías}
 \label{sec:metodologias}
 
-\subsection{Modelo en Cascada}
-\label{subsec:cascada}
+\subsection{Rational Unified Process (RUP)}
+\label{subsec:rup}
 
-El modelo en Cascada es un enfoque de desarrollo de software secuencial propuesto por Winston Royce en 1970 \cite{royce1970managing}, que organiza el proceso de desarrollo en fases discretas que se ejecutan de manera lineal. Cada fase debe completarse antes de iniciar la siguiente, y los entregables de una fase constituyen la entrada de la fase subsecuente, lo que enfatiza la planificación exhaustiva y la documentación detallada desde las etapas iniciales del proyecto.
+El Rational Unified Process (RUP) es un marco de trabajo para el desarrollo de software basado en el paradigma orientado a objetos, desarrollado por Philippe Kruchten y el equipo de Rational Software Corporation \cite{kruchten2003rup}. A diferencia del modelo en Cascada tradicional, RUP adopta un enfoque iterativo e incremental que permite la evolución continua del sistema mediante ciclos de desarrollo repetidos, cada uno culminando en una versión ejecutable del producto.
 
-Este modelo se caracteriza por su estructura rígida y predecible, donde los cambios en fases avanzadas resultan costosos debido a la naturaleza secuencial del proceso. A pesar de sus limitaciones en proyectos con requisitos cambiantes, el modelo en Cascada mantiene su relevancia en contextos donde los requisitos son estables, bien comprendidos desde el inicio, y la documentación formal es un requisito crítico.
+La arquitectura fundamental de RUP se sustenta en dos dimensiones organizativas: una dimensión temporal que define cuatro fases secuenciales (Inicio, Elaboración, Construcción y Transición), y una dimensión de contenido que organiza las actividades en nueve disciplinas técnicas y de soporte. Esta estructura matricial permite que cada fase contenga múltiples iteraciones, durante las cuales se ejecutan actividades de todas las disciplinas en diferentes proporciones según las necesidades del momento del proyecto.
 
-Las fases principales del modelo en Cascada son:
+Las cuatro fases de RUP se caracterizan por objetivos específicos y criterios de culminación bien definidos:
 
 \begin{enumerate}
-    \item \textbf{Análisis de requisitos}: Recopilación, análisis y especificación exhaustiva de todos los requisitos funcionales y no funcionales del sistema.
-    \item \textbf{Diseño del sistema}: Definición de la arquitectura del software, diseño de componentes, interfaces y estructuras de datos.
-    \item \textbf{Implementación}: Codificación de los componentes del sistema según las especificaciones de diseño establecidas.
-    \item \textbf{Pruebas (verificación)}: Validación del sistema completo mediante pruebas de unidad, integración y sistema para verificar el cumplimiento de los requisitos.
-    \item \textbf{Despliegue}: Instalación del sistema en el entorno de producción y entrega al cliente o usuarios finales.
-    \item \textbf{Mantenimiento}: Corrección de defectos, adaptación a nuevos entornos y mejoras al sistema desplegado.
+    \item \textbf{Inicio (Inception)}: Establecimiento del alcance del proyecto, identificación de los casos de uso críticos del sistema, análisis de riesgos principales y estimación preliminar de recursos. El hito de esta fase es la aprobación del caso de negocio y el acuerdo sobre el alcance del proyecto.
+
+    \item \textbf{Elaboración (Elaboration)}: Análisis detallado del dominio del problema, establecimiento de la arquitectura base del sistema, eliminación de los riesgos técnicos de mayor prioridad, y refinamiento de las estimaciones del proyecto. El hito es la línea base de la arquitectura (\textit{Architectural Baseline}).
+
+    \item \textbf{Construcción (Construction)}: Desarrollo iterativo de todos los componentes y características del sistema, integración continua de subsistemas, y preparación del producto para su despliegue. El hito es alcanzar la capacidad operacional inicial (\textit{Initial Operational Capability}).
+
+    \item \textbf{Transición (Transition)}: Despliegue del sistema en el entorno de producción, capacitación de usuarios finales, conversión de datos legacy si aplica, y ajustes finales basados en retroalimentación de usuarios. El hito es la liberación del producto al cliente.
 \end{enumerate}
 
-\subsection{Aplicación del modelo en Cascada al proyecto EleccIA}
-\label{subsec:aplicacion-cascada}
+La naturaleza iterativa de RUP ofrece ventajas significativas frente al modelo en Cascada: permite la detección temprana y mitigación de riesgos mediante prototipos funcionales, facilita la adaptación a requisitos emergentes o cambiantes sin comprometer la estabilidad del proyecto, y proporciona visibilidad continua del progreso mediante entregables tangibles en cada iteración. Esta flexibilidad controlada resulta especialmente valiosa en proyectos de complejidad media a alta, donde la comprensión completa de los requisitos evoluciona durante el desarrollo, como es frecuente en sistemas que integran tecnologías emergentes o abordan procesos de negocio complejos.
 
-[TODO] Contenido pendiente de completar cuando se disponga del cronograma de entregables en MS Project.
+\subsection{Aplicación de RUP al proyecto EleccIA}
+\label{subsec:aplicacion-rup}
+
+El desarrollo del sistema EleccIA adoptó el marco de trabajo RUP con adaptaciones específicas al contexto institucional del Jurado Nacional de Elecciones. Dada la complejidad del dominio electoral peruano y la necesidad de integrar modelos de lenguaje de gran escala en un entorno regulatorio crítico, se determinó que un enfoque iterativo e incremental era más apropiado que una secuencia lineal tradicional.
+
+El proyecto se estructuró principalmente en la fase de Construcción de RUP, dado que la arquitectura base y los requisitos fundamentales habían sido establecidos en etapas previas de análisis institucional. Esta fase se dividió en tres iteraciones principales, cada una con objetivos específicos y entregables bien definidos:
+
+\begin{table}[H]
+\centering
+\caption{Iteraciones de RUP aplicadas al desarrollo de EleccIA}
+\label{tab:iteraciones-rup-eleccia}
+\begin{tabularx}{\textwidth}{|c|X|X|}
+\hline
+\textbf{Iteración} & \textbf{Alcance funcional} & \textbf{Entregables principales} \\
+\hline
+\textbf{1} &
+Configuración de Parámetros del sistema &
+Módulo de parametrización operativo, interfaces de administración de catálogos electorales, configuración de plantillas de resolución \\
+\hline
+\textbf{2} &
+Solicitud de Inscripción de Listas para cinco tipos de elección: SENADORES, DIPUTADOS, PARLAMENTO ANDINO, PRESIDENCIAL, y procesos subnacionales &
+Motor de calificación de requisitos formales, integración con servicios externos (RENIEC, ONPE), generación automatizada de observaciones, validación de firmas y documentación \\
+\hline
+\textbf{3} &
+Otras Materias: gestión de expedientes complementarios y procedimientos especiales &
+Procesamiento de comprobantes de pago (VOUCHER), tramitación de TACHA DE CANDIDATO, RENUNCIA DE CANDIDATO, RETIRO DE CANDIDATO, APELACIÓN, y QUEJA POR DENEGATORIA \\
+\hline
+\end{tabularx}
+\end{table}
+
+Cada iteración siguió un ciclo completo de análisis de requisitos específicos, diseño de componentes, implementación, pruebas de integración y validación con usuarios representativos del área de Fiscalización Electoral. La duración de las iteraciones fue variable, ajustándose a la complejidad del módulo funcional desarrollado: la primera iteración requirió aproximadamente tres semanas para establecer la infraestructura base y los componentes transversales; la segunda iteración, que constituye el núcleo funcional del sistema, se extendió por dos meses e incluyó el entrenamiento y ajuste fino de los modelos de lenguaje para la extracción de información de documentos electorales; la tercera iteración completó el espectro funcional en cuatro semanas adicionales.
+
+La aplicación de RUP al proyecto EleccIA permitió validar progresivamente el enfoque de automatización inteligente con casos de uso reales del proceso electoral, ajustar los umbrales de confianza del modelo de IA según la retroalimentación de especialistas legales, y gestionar el riesgo técnico inherente a la integración de modelos de lenguaje en un sistema de producción crítico. El resultado fue un sistema que equilibra capacidades avanzadas de procesamiento de lenguaje natural con los controles de calidad y auditabilidad requeridos en el ámbito de la administración electoral.
 
 % ============================================
 % BIBLIOGRAFÍA
