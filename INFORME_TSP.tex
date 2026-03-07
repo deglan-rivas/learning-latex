@@ -1157,7 +1157,7 @@ La sección de proyectos de resolución presenta los documentos preliminares gen
 \section{Pruebas y validación}
 \label{sec:diseno-pruebas}
 
-Durante el desarrollo de EleccIA se ejecutaron diferentes tipos de pruebas para garantizar la calidad, estabilidad y seguridad del sistema, siguiendo los lineamientos técnicos establecidos por el equipo de desarrollo. La estrategia adoptada fue diseñada en capas, distinguiendo entre validaciones locales aisladas, verificaciones de integración entre componentes, validaciones funcionales transversales, pruebas de rendimiento bajo carga y análisis de seguridad. Los informes completos de cobertura y resultados se presentan en los Anexos.
+Durante el desarrollo de ExpedientIA se ejecutaron diferentes tipos de pruebas para garantizar la calidad, estabilidad y seguridad del sistema, siguiendo los lineamientos técnicos establecidos por el equipo de desarrollo. La estrategia adoptada fue diseñada en capas, distinguiendo entre validaciones locales aisladas, verificaciones de integración entre componentes, validaciones funcionales transversales, pruebas de rendimiento bajo carga y análisis de seguridad. Los informes completos de cobertura y resultados se presentan en los Anexos.
 
 % --- 3.6.1 ---
 \subsection{Pruebas unitarias}
@@ -1214,9 +1214,9 @@ La Figura~\ref{fig:pruebas-regresion-bitacora} presenta la bitácora de pruebas 
 \subsection{Pruebas de rendimiento}
 \label{subsec:pruebas-rendimiento}
 
-Las pruebas de rendimiento evaluaron la capacidad del sistema para atender solicitudes concurrentes bajo condiciones de carga sostenida, con especial atención a los dos \textit{endpoints} que concentran la mayor carga computacional: la calificación del expediente (\texttt{POST /expedientes/calificar}) y la generación del proyecto de resolución (\texttt{POST /resoluciones/generar}). Para su ejecución se utilizó \textit{Locust}, herramienta de código abierto para pruebas de carga que permite definir escenarios en Python y genera reportes detallados de \textit{throughput}, tiempos de respuesta y tasas de error, integrada de forma natural al ecosistema tecnológico del proyecto basado en \textit{FastAPI}.
+Las pruebas de rendimiento evaluaron la capacidad del sistema para atender solicitudes concurrentes bajo condiciones de carga sostenida, con especial atención a los dos \textit{endpoints} que concentran la mayor carga computacional: la calificación del expediente (\texttt{POST /expediente/calificar-expediente}) y la generación del proyecto de resolución (\texttt{POST /resolucion/generar-resolucion}). Para su ejecución se utilizó \textit{Locust}, herramienta de código abierto para pruebas de carga que permite definir escenarios en Python y genera reportes detallados de \textit{throughput}, tiempos de respuesta y tasas de error, integrada de forma natural al ecosistema tecnológico del proyecto basado en \textit{FastAPI}.
 
-El primer \textit{endpoint} soportó hasta \textbf{600 peticiones síncronas concurrentes} con una tasa de éxito del 97.3\%, un tiempo de respuesta promedio de 2.4 segundos y un percentil 95 de 4.8 segundos, con un \textit{throughput} sostenido de aproximadamente 87 solicitudes por segundo. El segundo \textit{endpoint}, al involucrar la orquestación de múltiples microservicios internos y la inferencia sobre modelos de lenguaje, presentó el primer error a partir de las \textbf{120 peticiones concurrentes}, con un tiempo de respuesta promedio de 9.1 segundos y un percentil 95 de 17.3 segundos. Los análisis posteriores identificaron que el cuello de botella radicaba en la saturación de los microservicios de inferencia, limitando la capacidad de procesamiento simultáneo efectivo a aproximadamente 50 expedientes en paralelo. Este hallazgo queda registrado como área de mejora para fases de optimización futuras, en las que se contempla la implementación de colas de procesamiento asíncrono.
+El primer \textit{endpoint} soportó hasta \textbf{600 peticiones síncronas concurrentes} con una tasa de éxito del 97.3\%, un tiempo de respuesta promedio de 2.5 minutos y un percentil 95 de 3 minutos, con un \textit{throughput} sostenido de aproximadamente 4 solicitudes por segundo. El segundo \textit{endpoint}, al involucrar la orquestación de múltiples microservicios internos y la inferencia sobre modelos de lenguaje ejecutada sobre \textbf{8 GPUs NVIDIA} del servidor de producción, presentó el primer error a partir de las \textbf{120 peticiones concurrentes}, con un tiempo de respuesta promedio de 2.8 minutos, un percentil 95 de 3.5 minutos y un \textit{throughput} sostenido de aproximadamente 40 peticiones por minuto. Este hallazgo queda registrado como área de mejora para fases de optimización futuras, en las que se contempla la implementación de colas de procesamiento asíncrono.
 
 La Figura~\ref{fig:pruebas-rendimiento-reporte} muestra el reporte de \textit{Locust} con la distribución de tiempos de respuesta y la curva de errores para ambos \textit{endpoints}. El informe completo se incluye en los Anexos.
 
@@ -1240,7 +1240,7 @@ La Figura~\ref{fig:pruebas-sonarqube} muestra el \textit{dashboard} de \textit{S
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{365_pruebas_estaticas.png}
-    \caption{\textit{Dashboard} de análisis estático de código en \textit{SonarQube}: indicadores de calidad, seguridad y deuda técnica del proyecto EleccIA}
+    \caption{\textit{Dashboard} de análisis estático de código en \textit{SonarQube}: indicadores de calidad, seguridad y deuda técnica del proyecto ExpedientIA}
     \label{fig:pruebas-sonarqube}
 \end{figure}
 
