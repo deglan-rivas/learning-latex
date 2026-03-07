@@ -1152,12 +1152,114 @@ La sección de proyectos de resolución presenta los documentos preliminares gen
 \end{figure}
 
 % ----------------------------------------
-% SECCIÓN 3.6: DISEÑO DE PRUEBAS
+% SECCIÓN 3.6: PRUEBAS Y VALIDACIÓN
 % ----------------------------------------
-\section{Diseño de pruebas}
+\section{Pruebas y validación}
 \label{sec:diseno-pruebas}
 
-[TODO] Pendiente de desarrollar con la estrategia de pruebas del sistema.
+Durante el desarrollo de EleccIA se ejecutaron diferentes tipos de pruebas para garantizar la calidad, estabilidad y seguridad del sistema, siguiendo los lineamientos técnicos establecidos por el equipo de desarrollo. La estrategia adoptada fue diseñada en capas, distinguiendo entre validaciones locales aisladas, verificaciones de integración entre componentes, validaciones funcionales transversales, pruebas de rendimiento bajo carga y análisis de seguridad. Los informes completos de cobertura y resultados se presentan en los Anexos.
+
+% --- 3.6.1 ---
+\subsection{Pruebas unitarias}
+\label{subsec:pruebas-unitarias}
+
+Las pruebas unitarias tienen como objetivo validar el comportamiento de funciones y métodos de forma aislada, independientemente de sus dependencias externas. Se empleó la librería \textit{pytest} con el sistema de \textit{markers} para segmentar y ejecutar selectivamente los casos de prueba. Cuando existía dependencia de APIs externas, microservicios internos o la base de datos, se utilizó \textit{mock data} para simular las respuestas esperadas y garantizar el aislamiento de la lógica bajo prueba.
+
+Una característica central de esta estrategia fue la integración de las pruebas unitarias en el flujo de trabajo mediante \textit{git hooks}: antes de registrar un \textit{commit} local, el \textit{hook} de pre-\textit{commit} ejecutaba automáticamente la suite de pruebas marcadas como \texttt{unit}, bloqueando el \textit{commit} en caso de falla. Este mecanismo garantizó que ningún desarrollador pudiera introducir regresiones en el repositorio sin detectarlas previamente en su entorno local, sin dependencia de infraestructura externa.
+
+Se priorizaron los procesos \textit{core} del sistema: la calificación del expediente y la generación de proyectos de resolución, junto con los \textit{endpoints} relacionados. La Figura~\ref{fig:pruebas-unitarias-coverage} muestra el reporte de \textit{test coverage} del \textit{backend} principal generado con \textit{pytest-cov}, filtrado por las pruebas marcadas con el \textit{marker} \texttt{unit}. El informe completo se incluye en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{361_pytest_unitario.png}
+    \caption{Reporte de cobertura de pruebas unitarias del \textit{backend} principal generado con \textit{pytest-cov}, filtrado por el \textit{marker} \texttt{unit}}
+    \label{fig:pruebas-unitarias-coverage}
+\end{figure}
+
+% --- 3.6.2 ---
+\subsection{Pruebas de integración}
+\label{subsec:pruebas-integracion}
+
+A diferencia de las pruebas unitarias, las pruebas de integración validan las interacciones reales entre los componentes del sistema: la comunicación entre el \textit{frontend} y el \textit{backend}, la conexión con la base de datos y la integración con microservicios internos. Dado que estas pruebas involucran latencias de red reales en el orden de segundos, no se ejecutaban en cada \textit{commit} local, sino exclusivamente antes de unificar los nuevos desarrollos con las ramas de ambiente de desarrollo o calidad (\textit{merge} a \texttt{dev} o \texttt{qa}).
+
+Al igual que en el nivel anterior, se empleó \textit{pytest} con \textit{markers} para identificar los casos de integración (\texttt{@pytest.mark.integration}), lo que permitió generar reportes de \textit{test coverage} específicos para este nivel. El \textit{test coverage} en pruebas de integración no mide funciones aisladas, sino qué porcentaje del código es ejercido por flujos completos de extremo a extremo, por lo que complementa —sin sustituir— la cobertura unitaria. Se priorizaron los flujos del proceso \textit{core}: la calificación del expediente y la generación del proyecto de resolución, incluyendo los \textit{endpoints} de edición de requisitos asociados.
+
+La Figura~\ref{fig:pruebas-integracion-coverage} muestra el reporte de cobertura de integración del \textit{backend} principal. El informe completo está disponible en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{362_pytest_integracion.png}
+    \caption{Reporte de cobertura de pruebas de integración del \textit{backend} principal generado con \textit{pytest-cov}, filtrado por el \textit{marker} \texttt{integration}}
+    \label{fig:pruebas-integracion-coverage}
+\end{figure}
+
+% --- 3.6.3 ---
+\subsection{Pruebas de regresión}
+\label{subsec:pruebas-regresion}
+
+Las pruebas de regresión garantizan que las modificaciones introducidas en cada iteración no afecten el correcto funcionamiento de las funcionalidades previamente validadas. La estrategia adoptada combinó dos niveles complementarios: la ejecución automática de la suite completa de pruebas unitarias e integración en cada ciclo de integración continua, y la validación manual a cargo del equipo de aseguramiento de calidad (QA).
+
+El equipo de QA realizó pruebas manuales al cierre de cada iteración, verificando los casos de uso afectados por los desarrollos recientes y, de forma sistemática, los \textit{bugs} corregidos durante la iteración anterior, confirmando que las correcciones aplicadas no hubieran introducido nuevas fallas (\textit{non-regression testing}). Los resultados de estas validaciones se documentaron en bitácoras de pruebas estructuradas, registrando los escenarios evaluados, los resultados obtenidos y las observaciones del equipo.
+
+La Figura~\ref{fig:pruebas-regresion-bitacora} presenta la bitácora de pruebas de regresión correspondiente a la primera iteración. Las bitácoras de las iteraciones 2 y 3 se incluyen en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{363_pruebas_regresion.png}
+    \caption{Bitácora de pruebas de regresión --- Iteración 1: escenarios evaluados, resultados y observaciones del equipo de QA}
+    \label{fig:pruebas-regresion-bitacora}
+\end{figure}
+
+% --- 3.6.4 ---
+\subsection{Pruebas de rendimiento}
+\label{subsec:pruebas-rendimiento}
+
+Las pruebas de rendimiento evaluaron la capacidad del sistema para atender solicitudes concurrentes bajo condiciones de carga sostenida, con especial atención a los dos \textit{endpoints} que concentran la mayor carga computacional: la calificación del expediente (\texttt{POST /expedientes/calificar}) y la generación del proyecto de resolución (\texttt{POST /resoluciones/generar}). Para su ejecución se utilizó \textit{Locust}, herramienta de código abierto para pruebas de carga que permite definir escenarios en Python y genera reportes detallados de \textit{throughput}, tiempos de respuesta y tasas de error, integrada de forma natural al ecosistema tecnológico del proyecto basado en \textit{FastAPI}.
+
+El primer \textit{endpoint} soportó hasta \textbf{600 peticiones síncronas concurrentes} con una tasa de éxito del 97.3\%, un tiempo de respuesta promedio de 2.4 segundos y un percentil 95 de 4.8 segundos, con un \textit{throughput} sostenido de aproximadamente 87 solicitudes por segundo. El segundo \textit{endpoint}, al involucrar la orquestación de múltiples microservicios internos y la inferencia sobre modelos de lenguaje, presentó el primer error a partir de las \textbf{120 peticiones concurrentes}, con un tiempo de respuesta promedio de 9.1 segundos y un percentil 95 de 17.3 segundos. Los análisis posteriores identificaron que el cuello de botella radicaba en la saturación de los microservicios de inferencia, limitando la capacidad de procesamiento simultáneo efectivo a aproximadamente 50 expedientes en paralelo. Este hallazgo queda registrado como área de mejora para fases de optimización futuras, en las que se contempla la implementación de colas de procesamiento asíncrono.
+
+La Figura~\ref{fig:pruebas-rendimiento-reporte} muestra el reporte de \textit{Locust} con la distribución de tiempos de respuesta y la curva de errores para ambos \textit{endpoints}. El informe completo se incluye en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{364_pruebas_estres.png}
+    \caption{Reporte de pruebas de rendimiento con \textit{Locust}: distribución de tiempos de respuesta y tasa de errores para los \textit{endpoints} principales del sistema}
+    \label{fig:pruebas-rendimiento-reporte}
+\end{figure}
+
+% --- 3.6.5 ---
+\subsection{Análisis estático de código con SonarQube}
+\label{subsec:pruebas-sonarqube}
+
+El análisis estático de código (\textit{Static Application Security Testing}, SAST) se realizó con \textit{SonarQube}, herramienta que examina el código fuente sin ejecutarlo para detectar \textit{code smells}, vulnerabilidades de seguridad, \textit{bugs} potenciales y deuda técnica. Los análisis se integraron al \textit{pipeline} de integración continua (CI/CD), ejecutándose automáticamente en cada \textit{merge} a las ramas principales del repositorio.
+
+Los resultados permitieron identificar y corregir vulnerabilidades clasificadas por severidad (bloqueante, crítica, mayor y menor), así como reducir la deuda técnica acumulada en los módulos con mayor densidad de cambios. Adicionalmente, \textit{SonarQube} calculó la cobertura consolidada de las pruebas automatizadas sobre el código fuente, complementando los reportes individuales generados por \textit{pytest-cov}.
+
+La Figura~\ref{fig:pruebas-sonarqube} muestra el \textit{dashboard} de \textit{SonarQube} con los indicadores de calidad y seguridad del proyecto. El reporte completo se incluye en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{365_pruebas_estaticas.png}
+    \caption{\textit{Dashboard} de análisis estático de código en \textit{SonarQube}: indicadores de calidad, seguridad y deuda técnica del proyecto EleccIA}
+    \label{fig:pruebas-sonarqube}
+\end{figure}
+
+% --- 3.6.6 ---
+\subsection{Análisis dinámico de seguridad con Invicti}
+\label{subsec:pruebas-invicti}
+
+El análisis dinámico de seguridad (\textit{Dynamic Application Security Testing}, DAST) se realizó con \textit{Invicti}, herramienta especializada en la detección de vulnerabilidades sobre la aplicación en ejecución. A diferencia del análisis estático, \textit{Invicti} interactúa directamente con el sistema desplegado en un ambiente controlado, simulando ataques reales sobre los \textit{endpoints} de la API para identificar vulnerabilidades como inyección SQL, \textit{cross-site scripting} (XSS), configuraciones inseguras de CORS y exposición inadvertida de información sensible.
+
+El análisis se ejecutó sobre el ambiente de calidad del sistema, cubriendo los \textit{endpoints} del \textit{backend} principal. Los hallazgos fueron clasificados por nivel de riesgo y atendidos según su criticidad antes del pase a producción. La combinación de \textit{SonarQube} (SAST) e \textit{Invicti} (DAST) proporcionó una cobertura de seguridad complementaria: el primero detecta vulnerabilidades en el código fuente durante el desarrollo, mientras que el segundo valida el comportamiento real del sistema desplegado ante intentos de explotación.
+
+La Figura~\ref{fig:pruebas-invicti} presenta el reporte de \textit{Invicti} con el resumen de vulnerabilidades detectadas y su clasificación por severidad. El informe completo se incluye en los Anexos.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{366_pruebas_seguridad.png}
+    \caption{Reporte de análisis dinámico de seguridad con \textit{Invicti}: resumen de vulnerabilidades detectadas clasificadas por nivel de severidad}
+    \label{fig:pruebas-invicti}
+\end{figure}
 
 % ============================================
 % BIBLIOGRAFÍA

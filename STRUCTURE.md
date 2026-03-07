@@ -286,9 +286,33 @@ CAPÍTULO III: DISEÑO
 │       └── \subsection*{Proyectos de resolución}
 │       └── Figura 3.8 \label{fig:ui-proyectos-resolucion}
 │
-└── 3.6 Diseño de pruebas [TODO]
-    └── \section{Diseño de pruebas}
+└── 3.6 Pruebas y validación ✅ COMPLETO
+    └── \section{Pruebas y validación}
         └── \label{sec:diseno-pruebas}
+    ├── 3.6.1 Pruebas unitarias
+    │   └── \subsection{Pruebas unitarias}
+    │       └── \label{subsec:pruebas-unitarias}
+    │       └── Figura 3.9 \label{fig:pruebas-unitarias-coverage}
+    ├── 3.6.2 Pruebas de integración
+    │   └── \subsection{Pruebas de integración}
+    │       └── \label{subsec:pruebas-integracion}
+    │       └── Figura 3.10 \label{fig:pruebas-integracion-coverage}
+    ├── 3.6.3 Pruebas de regresión
+    │   └── \subsection{Pruebas de regresión}
+    │       └── \label{subsec:pruebas-regresion}
+    │       └── Figura 3.11 \label{fig:pruebas-regresion-bitacora}
+    ├── 3.6.4 Pruebas de rendimiento
+    │   └── \subsection{Pruebas de rendimiento}
+    │       └── \label{subsec:pruebas-rendimiento}
+    │       └── Figura 3.12 \label{fig:pruebas-rendimiento-reporte}
+    ├── 3.6.5 Análisis estático con SonarQube
+    │   └── \subsection{Análisis estático de código con SonarQube}
+    │       └── \label{subsec:pruebas-sonarqube}
+    │       └── Figura 3.13 \label{fig:pruebas-sonarqube}
+    └── 3.6.6 Análisis dinámico con Invicti
+        └── \subsection{Análisis dinámico de seguridad con Invicti}
+            └── \label{subsec:pruebas-invicti}
+            └── Figura 3.14 \label{fig:pruebas-invicti}
 ```
 
 ---
@@ -319,6 +343,12 @@ Los siguientes capítulos deben ser creados con contenido específico de EleccIA
 | `fig:ui-calificacion` | Resultado detallado de calificación de expediente con veredicto y observaciones del evaluador | Cap III |
 | `fig:ui-jurisprudencia` | Jurisprudencia relacionada al expediente con opciones de selección para generación de resoluciones | Cap III |
 | `fig:ui-proyectos-resolucion` | Proyectos de Resolución generados automáticamente que requieren validación del Asistente Jurisdiccional | Cap III |
+| `fig:pruebas-unitarias-coverage` | Reporte de cobertura de pruebas unitarias del backend principal (pytest-cov, marker unit) | Cap III §3.6.1 |
+| `fig:pruebas-integracion-coverage` | Reporte de cobertura de pruebas de integración del backend principal (pytest-cov, marker integration) | Cap III §3.6.2 |
+| `fig:pruebas-regresion-bitacora` | Bitácora de pruebas de regresión — Iteración 1 | Cap III §3.6.3 |
+| `fig:pruebas-rendimiento-reporte` | Reporte de pruebas de rendimiento con Locust: tiempos de respuesta y tasa de errores | Cap III §3.6.4 |
+| `fig:pruebas-sonarqube` | Dashboard de análisis estático de código en SonarQube | Cap III §3.6.5 |
+| `fig:pruebas-invicti` | Reporte de análisis dinámico de seguridad con Invicti | Cap III §3.6.6 |
 
 ---
 
@@ -359,7 +389,13 @@ Los siguientes capítulos deben ser creados con contenido específico de EleccIA
 - `sec:arquitectura-aplicacion` - 3.3 Arquitectura de la aplicación
 - `sec:gestion-informacion` - 3.4 Gestión de la información
 - `sec:diseno-interfaces` - 3.5 Diseño de Interfaces de Usuario
-- `sec:diseno-pruebas` - 3.6 Diseño de pruebas
+- `sec:diseno-pruebas` - 3.6 Pruebas y validación
+- `subsec:pruebas-unitarias` - 3.6.1 Pruebas unitarias
+- `subsec:pruebas-integracion` - 3.6.2 Pruebas de integración
+- `subsec:pruebas-regresion` - 3.6.3 Pruebas de regresión
+- `subsec:pruebas-rendimiento` - 3.6.4 Pruebas de rendimiento
+- `subsec:pruebas-sonarqube` - 3.6.5 Análisis estático con SonarQube
+- `subsec:pruebas-invicti` - 3.6.6 Análisis dinámico con Invicti
 
 ### Subsecciones - Capítulo I
 - `subsec:objetivos-generales` - 1.2.1 Objetivos generales
