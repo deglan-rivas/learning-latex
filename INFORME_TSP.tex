@@ -20,6 +20,8 @@
 \usepackage{graphicx}
 \graphicspath{{imagenes/}}
 \usepackage{float}
+\usepackage{pdflscape}
+\usepackage{afterpage}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{subcaption}
 
@@ -1081,14 +1083,21 @@ La arquitectura hexagonal garantiza que el dominio permanezca inmune a cambios t
 \section{Gestión de la información}
 \label{sec:gestion-informacion}
 
-ExpedientIA implementa una estrategia híbrida de gestión de información que combina tres enfoques complementarios de almacenamiento de datos. Cada enfoque está optimizado para información específica: datos estructurados transaccionales, búsquedas semánticas de jurisprudencia y gestión documental. Esta arquitectura permite eficiencia en consultas relacionales, recuperación contextual mediante \textit{embeddings} vectoriales y almacenamiento seguro de evidencia. La Figura~\ref{fig:modelo-datos} presenta el modelo de datos relacional del sistema.
+ExpedientIA implementa una estrategia híbrida de gestión de información que combina tres enfoques complementarios de almacenamiento de datos. Cada enfoque está optimizado para información específica: datos estructurados transaccionales, búsquedas semánticas de jurisprudencia y gestión documental. Esta arquitectura permite eficiencia en consultas relacionales, recuperación contextual mediante \textit{embeddings} vectoriales y almacenamiento seguro de evidencia. La Figura~\ref{fig:modelo-datos} presenta las principales tablas del modelo de datos relacional del sistema; las tablas complementarias se detallan en los Anexos.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.95\textwidth]{ELECCIA_ERD.png}
-    \caption{Modelo entidad-relación de la base de datos ExpedientIA}
-    \label{fig:modelo-datos}
-\end{figure}
+\afterpage{%
+    \newgeometry{left=1.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm}%
+    \begin{landscape}
+    \thispagestyle{empty}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.15\textwidth]{ELECCIA_ERD_recortada.png}% <-- ajustar zoom aquí
+        \caption{Principales tablas del modelo entidad-relación de la base de datos ExpedientIA}
+        \label{fig:modelo-datos}
+    \end{figure}
+    \end{landscape}
+    \restoregeometry%
+}
 
 % Descripción de los tres enfoques de almacenamiento de información
 \textbf{Base de datos relacional Oracle 19.9c Enterprise.} Constituye el repositorio principal de información estructurada, almacenando entidades críticas como expedientes, candidatos, organizaciones políticas, calificaciones y resoluciones. La normalización del esquema garantiza integridad referencial y elimina redundancias, facilitando consultas transaccionales eficientes mediante SQL optimizado. Oracle proporciona capacidades empresariales de alta disponibilidad, respaldo automático y gestión de concurrencia necesarias para un sistema de producción electoral.
