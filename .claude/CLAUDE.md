@@ -107,14 +107,14 @@ El autor menciona \cite{clave_referencia}
 
 ## Estado del documento
 
-Según `CONTENT_MAP.md`:
+Según `STRUCTURE.md` y `CONTENT_MAP.md`:
 
 | Sección | Estado | Prioridad |
 |---------|--------|-----------|
 | Cap I: Problemática | ✓ Completo | - |
+| Cap II: Ingeniería de Requerimientos | ✓ Completo (155 RF, 81 RNF) | - |
+| Cap III: Diseño | Parcial (3.1–3.6 listos; pendiente revisión) | Alta |
 | Resumen | [TODO] - Pendiente | Alta |
-| Cap II: Ingeniería de Requerimientos | [PENDIENTE] | Alta |
-| Cap III: Diseño | [PENDIENTE] | Alta |
 | Cap V: Conclusiones | [PENDIENTE] | Alta |
 | Cap IV: Costos | [PENDIENTE] | Media |
 | Sec 1.4.2: Aplicación Cascada | [TODO] | Media |
