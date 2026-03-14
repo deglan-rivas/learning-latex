@@ -1087,19 +1087,12 @@ La arquitectura hexagonal garantiza que el dominio permanezca inmune a cambios t
 
 ExpedientIA implementa una estrategia híbrida de gestión de información que combina tres enfoques complementarios de almacenamiento de datos. Cada enfoque está optimizado para información específica: datos estructurados transaccionales, búsquedas semánticas de jurisprudencia y gestión documental. Esta arquitectura permite eficiencia en consultas relacionales, recuperación contextual mediante \textit{embeddings} vectoriales y almacenamiento seguro de evidencia. La Figura~\ref{fig:modelo-datos} presenta las principales tablas del modelo de datos relacional del sistema; las tablas complementarias se detallan en los Anexos.
 
-\afterpage{%
-    \newgeometry{left=1.5cm,right=3.5cm,top=2.5cm,bottom=2.5cm}%
-    \begin{landscape}
-    \thispagestyle{empty}
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=1.15\textwidth]{ELECCIA_ERD_recortada.png}% <-- ajustar zoom aquí
-        \caption{Principales tablas del modelo entidad-relación de la base de datos ExpedientIA}
-        \label{fig:modelo-datos}
-    \end{figure}
-    \end{landscape}
-    \restoregeometry%
-}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.05\textwidth]{ELECCIA_ERD_recortada.png}
+    \caption{Principales tablas del modelo entidad-relación de la base de datos ExpedientIA}
+    \label{fig:modelo-datos}
+\end{figure}
 
 % Descripción de los tres enfoques de almacenamiento de información
 \textbf{Base de datos relacional Oracle 19.9c Enterprise.} Constituye el repositorio principal de información estructurada, almacenando entidades críticas como expedientes, candidatos, organizaciones políticas, calificaciones y resoluciones. La normalización del esquema garantiza integridad referencial y elimina redundancias, facilitando consultas transaccionales eficientes mediante SQL optimizado. Oracle proporciona capacidades empresariales de alta disponibilidad, respaldo automático y gestión de concurrencia necesarias para un sistema de producción electoral.
@@ -1168,7 +1161,7 @@ La sección de proyectos de resolución presenta los documentos preliminares gen
 \section{Pruebas y validación}
 \label{sec:diseno-pruebas}
 
-Durante el desarrollo de ExpedientIA se ejecutaron diferentes tipos de pruebas para garantizar la calidad, estabilidad y seguridad del sistema, siguiendo los lineamientos técnicos establecidos por el equipo de desarrollo. La estrategia adoptada fue diseñada en capas, distinguiendo entre validaciones locales aisladas, verificaciones de integración entre componentes, validaciones funcionales transversales, pruebas de rendimiento bajo carga y análisis de seguridad. Los informes completos de cobertura y resultados se presentan en los Anexos.
+Durante el desarrollo de ExpedientIA se ejecutaron diferentes tipos de pruebas para garantizar la calidad, estabilidad y seguridad del sistema, siguiendo los lineamientos técnicos establecidos por el equipo de desarrollo. La estrategia adoptada fue diseñada en capas, distinguiendo entre validaciones locales aisladas, verificaciones de integración entre componentes, validaciones funcionales transversales, pruebas de rendimiento bajo carga y análisis de seguridad. Los informes completos de cobertura y resultados se presentan en los Anexos de este documento: las pruebas unitarias (Sección~\ref{subsec:pruebas-unitarias}) en el Anexo~D; las pruebas de integración (Sección~\ref{subsec:pruebas-integracion}) en el Anexo~E; las bitácoras de regresión (Sección~\ref{subsec:pruebas-regresion}) en el Anexo~F; el informe de rendimiento (Sección~\ref{subsec:pruebas-rendimiento}) en el Anexo~G; el reporte de análisis estático (Sección~\ref{subsec:pruebas-sonarqube}) en el Anexo~H; y el reporte de análisis dinámico de seguridad (Sección~\ref{subsec:pruebas-invicti}) en el Anexo~I.
 
 % --- 3.6.1 ---
 \subsection{Pruebas unitarias}
@@ -1178,7 +1171,7 @@ Las pruebas unitarias tienen como objetivo validar el comportamiento de funcione
 
 Una característica central de esta estrategia fue la integración de las pruebas unitarias en el flujo de trabajo mediante \textit{git hooks}: antes de registrar un \textit{commit} local, el \textit{hook} de pre-\textit{commit} ejecutaba automáticamente la suite de pruebas marcadas como \texttt{unit}, bloqueando el \textit{commit} en caso de falla. Este mecanismo garantizó que ningún desarrollador pudiera introducir regresiones en el repositorio sin detectarlas previamente en su entorno local, sin dependencia de infraestructura externa.
 
-Se priorizaron los procesos \textit{core} del sistema: la calificación del expediente y la generación de proyectos de resolución, junto con los \textit{endpoints} relacionados. La Figura~\ref{fig:pruebas-unitarias-coverage} muestra el reporte de \textit{test coverage} del \textit{backend} principal generado con \textit{pytest-cov}, filtrado por las pruebas marcadas con el \textit{marker} \texttt{unit}. El informe completo se incluye en los Anexos.
+Se priorizaron los procesos \textit{core} del sistema: la calificación del expediente y la generación de proyectos de resolución, junto con los \textit{endpoints} relacionados. La Figura~\ref{fig:pruebas-unitarias-coverage} muestra el reporte de \textit{test coverage} del \textit{backend} principal generado con \textit{pytest-cov}, filtrado por las pruebas marcadas con el \textit{marker} \texttt{unit}. El reporte presenta cuatro columnas: \textit{Name} (ruta del módulo analizado), \textit{Stmts} (total de sentencias ejecutables del archivo), \textit{Miss} (sentencias no cubiertas por ninguna prueba) y \textit{Cover} (porcentaje de cobertura alcanzado, calculado como el cociente entre las sentencias cubiertas y el total). El informe completo se incluye en el Anexo~D.
 
 \begin{figure}[H]
     \centering
@@ -1195,7 +1188,7 @@ A diferencia de las pruebas unitarias, las pruebas de integración validan las i
 
 Al igual que en el nivel anterior, se empleó \textit{pytest} con \textit{markers} para identificar los casos de integración (\texttt{@pytest.mark.integration}), lo que permitió generar reportes de \textit{test coverage} específicos para este nivel. El \textit{test coverage} en pruebas de integración no mide funciones aisladas, sino qué porcentaje del código es ejercido por flujos completos de extremo a extremo, por lo que complementa —sin sustituir— la cobertura unitaria. Se priorizaron los flujos del proceso \textit{core}: la calificación del expediente y la generación del proyecto de resolución, incluyendo los \textit{endpoints} de edición de requisitos asociados.
 
-La Figura~\ref{fig:pruebas-integracion-coverage} muestra el reporte de cobertura de integración del \textit{backend} principal. El informe completo está disponible en los Anexos.
+La Figura~\ref{fig:pruebas-integracion-coverage} muestra el reporte de cobertura de integración del \textit{backend} principal. Al igual que en las pruebas unitarias, el reporte organiza la información en cuatro columnas: \textit{Name} (ruta del módulo), \textit{Stmts} (sentencias ejecutables totales del archivo), \textit{Miss} (sentencias no alcanzadas durante los flujos de integración) y \textit{Cover} (porcentaje de cobertura). El informe completo está disponible en el Anexo~E.
 
 \begin{figure}[H]
     \centering
@@ -1212,7 +1205,7 @@ Las pruebas de regresión garantizan que las modificaciones introducidas en cada
 
 El equipo de QA realizó pruebas manuales al cierre de cada iteración, verificando los casos de uso afectados por los desarrollos recientes y, de forma sistemática, los \textit{bugs} corregidos durante la iteración anterior, confirmando que las correcciones aplicadas no hubieran introducido nuevas fallas (\textit{non-regression testing}). Los resultados de estas validaciones se documentaron en bitácoras de pruebas estructuradas, registrando los escenarios evaluados, los resultados obtenidos y las observaciones del equipo.
 
-La Figura~\ref{fig:pruebas-regresion-bitacora} presenta la bitácora de pruebas de regresión correspondiente a la primera iteración. Las bitácoras de las iteraciones 2 y 3 se incluyen en los Anexos.
+La Figura~\ref{fig:pruebas-regresion-bitacora} presenta la bitácora de pruebas de regresión correspondiente a la primera iteración. Las bitácoras de las iteraciones 2 y 3 se incluyen en el Anexo~F.
 
 \begin{figure}[H]
     \centering
@@ -1229,7 +1222,7 @@ Las pruebas de rendimiento evaluaron la capacidad del sistema para atender solic
 
 El primer \textit{endpoint} soportó hasta \textbf{600 peticiones síncronas concurrentes} con una tasa de éxito del 97.3\%, un tiempo de respuesta promedio de 2.5 minutos y un percentil 95 de 3 minutos, con un \textit{throughput} sostenido de aproximadamente 4 solicitudes por segundo. El segundo \textit{endpoint}, al involucrar la orquestación de múltiples microservicios internos y la inferencia sobre modelos de lenguaje ejecutada sobre \textbf{8 GPUs NVIDIA} del servidor de producción, presentó el primer error a partir de las \textbf{120 peticiones concurrentes}, con un tiempo de respuesta promedio de 2.8 minutos, un percentil 95 de 3.5 minutos y un \textit{throughput} sostenido de aproximadamente 40 peticiones por minuto. Este hallazgo queda registrado como área de mejora para fases de optimización futuras, en las que se contempla la implementación de colas de procesamiento asíncrono.
 
-La Figura~\ref{fig:pruebas-rendimiento-reporte} muestra el reporte de \textit{Locust} con la distribución de tiempos de respuesta y la curva de errores para ambos \textit{endpoints}. El informe completo se incluye en los Anexos.
+La Figura~\ref{fig:pruebas-rendimiento-reporte} muestra el reporte de \textit{Locust} con la distribución de tiempos de respuesta y la curva de errores para ambos \textit{endpoints}. El informe completo se incluye en el Anexo~G.
 
 \begin{figure}[H]
     \centering
@@ -1246,7 +1239,7 @@ El análisis estático de código (\textit{Static Application Security Testing},
 
 Los resultados permitieron identificar y corregir vulnerabilidades clasificadas por severidad (bloqueante, crítica, mayor y menor), así como reducir la deuda técnica acumulada en los módulos con mayor densidad de cambios. Adicionalmente, \textit{SonarQube} calculó la cobertura consolidada de las pruebas automatizadas sobre el código fuente, complementando los reportes individuales generados por \textit{pytest-cov}.
 
-La Figura~\ref{fig:pruebas-sonarqube} muestra el \textit{dashboard} de \textit{SonarQube} con los indicadores de calidad y seguridad del proyecto. El reporte completo se incluye en los Anexos.
+La Figura~\ref{fig:pruebas-sonarqube} muestra el \textit{dashboard} de \textit{SonarQube} con los indicadores de calidad y seguridad del proyecto. El reporte completo se incluye en el Anexo~H.
 
 \begin{figure}[H]
     \centering
@@ -1263,7 +1256,7 @@ El análisis dinámico de seguridad (\textit{Dynamic Application Security Testin
 
 El análisis se ejecutó sobre el ambiente de calidad del sistema, cubriendo los \textit{endpoints} del \textit{backend} principal. Los hallazgos fueron clasificados por nivel de riesgo y atendidos según su criticidad antes del pase a producción. La combinación de \textit{SonarQube} (SAST) e \textit{Invicti} (DAST) proporcionó una cobertura de seguridad complementaria: el primero detecta vulnerabilidades en el código fuente durante el desarrollo, mientras que el segundo valida el comportamiento real del sistema desplegado ante intentos de explotación.
 
-La Figura~\ref{fig:pruebas-invicti} presenta el reporte de \textit{Invicti} con el resumen de vulnerabilidades detectadas y su clasificación por severidad. El informe completo se incluye en los Anexos.
+La Figura~\ref{fig:pruebas-invicti} presenta el reporte de \textit{Invicti} con el resumen de vulnerabilidades detectadas y su clasificación por severidad. El informe completo se incluye en el Anexo~I.
 
 \begin{figure}[H]
     \centering
