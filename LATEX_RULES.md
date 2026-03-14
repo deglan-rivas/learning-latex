@@ -141,6 +141,84 @@ Contenido largo que se ajusta & Dato & Dato \\
 | **Encabezados** | En negrita con `\textbf{}` |
 | **Espacio entre filas** | Usar `\addlinespace` para separación visual |
 
+### Tablas de costos con columnas descriptivas (patrón Cap IV)
+
+Patrón establecido para tablas con columnas descriptivas a la izquierda y columnas numéricas a la derecha. Usar **`\begin{tabular}`** (no `tabularx`) con anchos fijos en `p{}`.
+
+**Ancho de texto disponible**: A4 con márgenes (left=3cm, right=2.5cm) → `\textwidth` ≈ 15.5 cm.
+Con `@{}` en ambos extremos y N columnas → restar ≈ 0.42 cm por separador interno.
+
+#### Variante A — 1 columna descriptiva ancha + 3 columnas numéricas estrechas (tabla 4.1)
+
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{8cm}
+                   >{\centering\arraybackslash}p{2cm}
+                   >{\centering\arraybackslash}p{2cm}
+                   >{\centering\arraybackslash}p{2cm}@{}}
+\toprule
+\textbf{Rol} & \textbf{Cantidad} & \textbf{Tarifa mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Nombre del rol & 1 & 10{,}000.00 & 110{,}000.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total}} & \textbf{S/ 110{,}000.00} \\
+\bottomrule
+\end{tabular}
+```
+
+- Columna descriptiva: `p{8cm}` alineada a la izquierda (`\raggedright`)
+- Columnas numéricas: `p{2cm}` centradas (`\centering`)
+- Encabezados largos se parten en múltiples líneas automáticamente
+- Total: `\multicolumn{N-1}{r}{...} & valor`
+
+#### Variante B — 2 columnas descriptivas + 2 columnas numéricas (tablas 4.2, 4.3)
+
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
+                   >{\raggedright\arraybackslash}p{4.6cm}
+                   >{\centering\arraybackslash}p{2.5cm}
+                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Descripción} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Componente & Descripción del componente & 0.00 & 0.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total}} & \textbf{S/ 0.00} \\
+\bottomrule
+\end{tabular}
+```
+
+- Columnas descriptivas: `p{4.6cm}` c/u, alineadas a la izquierda
+- Columnas de valor: `p{2.5cm}` centradas
+- Suma: 4.6+4.6+2.5+2.5 = 14.2 cm (+ separadores ≈ 15.47 cm ≤ 15.5 cm ✓)
+
+#### Variante C — 1 columna descriptiva + 2 columnas numéricas (tabla 4.4)
+
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{9.5cm}
+                   >{\centering\arraybackslash}p{3cm}
+                   >{\centering\arraybackslash}p{3cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Nombre del concepto & 4{,}000.00 & 24{,}000.00 \\
+\midrule
+\multicolumn{2}{r}{\textbf{Total}} & \textbf{S/ 24{,}000.00} \\
+\bottomrule
+\end{tabular}
+```
+
+#### Legibilidad de números grandes — separador de miles
+
+Usar `{,}` como separador de miles para que LaTeX no interprete la coma como separador de argumento:
+
+```latex
+% Correcto
+1{,}243{,}000.00
+
+% Incorrecto (LaTeX puede malinterpretar)
+1,243,000.00
+```
+
 ### Tablas largas (longtable)
 
 ```latex

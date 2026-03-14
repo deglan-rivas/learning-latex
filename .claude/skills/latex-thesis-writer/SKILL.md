@@ -81,7 +81,7 @@ Mantener nombres de: Proyecto Victor (Brasil), Pretoria (Colombia), Prometea (Ar
 - Imagenes en directorio `imagenes/`
 - Ancho tipico: `0.85\textwidth` a `0.95\textwidth`
 
-### Tablas
+### Tablas — formato base
 ```latex
 \begin{table}[H]
 \centering
@@ -99,6 +99,63 @@ Dato & Dato & Dato \\
 - Caption ANTES del contenido
 - Usar booktabs: `\toprule`, `\midrule`, `\bottomrule`
 - Evitar lineas verticales
+
+### Tablas con columnas descriptivas + columnas de valores (patrón Cap IV)
+
+Usar `\begin{tabular}` (no `tabularx`) con anchos fijos en `p{}`. `\textwidth` ≈ 15.5 cm.
+
+**Variante A — 1 col descriptiva ancha (8 cm) + 3 cols numéricas (2 cm)**
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{8cm}
+                   >{\centering\arraybackslash}p{2cm}
+                   >{\centering\arraybackslash}p{2cm}
+                   >{\centering\arraybackslash}p{2cm}@{}}
+\toprule
+\textbf{Rol} & \textbf{Cantidad} & \textbf{Tarifa mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Nombre del rol & 1 & 10{,}000.00 & 110{,}000.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total}} & \textbf{S/ 110{,}000.00} \\
+\bottomrule
+\end{tabular}
+```
+
+**Variante B — 2 cols descriptivas iguales (4.6 cm) + 2 cols numéricas (2.5 cm)**
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
+                   >{\raggedright\arraybackslash}p{4.6cm}
+                   >{\centering\arraybackslash}p{2.5cm}
+                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Descripción} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Componente & Descripción breve & 0.00 & 0.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total}} & \textbf{S/ 0.00} \\
+\bottomrule
+\end{tabular}
+```
+
+**Variante C — 1 col descriptiva (9.5 cm) + 2 cols numéricas (3 cm)**
+```latex
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{9.5cm}
+                   >{\centering\arraybackslash}p{3cm}
+                   >{\centering\arraybackslash}p{3cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Nombre & 4{,}000.00 & 24{,}000.00 \\
+\midrule
+\multicolumn{2}{r}{\textbf{Total}} & \textbf{S/ 24{,}000.00} \\
+\bottomrule
+\end{tabular}
+```
+
+**Reglas clave:**
+- Columnas descriptivas: `>{\raggedright\arraybackslash}p{Xcm}` — izquierda, multilínea automática
+- Columnas numéricas: `>{\centering\arraybackslash}p{Xcm}` — centradas, encabezado parte en líneas
+- Separador de miles: `{,}` → `1{,}243{,}000.00` (nunca coma sin llaves)
+- Total al pie: `\multicolumn{N-1}{r}{\textbf{Total}} & \textbf{S/ valor}`
 
 ### Bibliografía (IEEE)
 ```latex
