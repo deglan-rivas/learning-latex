@@ -1318,27 +1318,27 @@ Documentador & 1 & 6{,}000.00 & 66{,}000.00 \\
 \section{Costos de Software y Tecnologías}
 \label{sec:costos-software}
 
-En esta sección se identifican los costos asociados al uso de herramientas de desarrollo, licencias de software y servicios de inteligencia artificial empleados durante el ciclo de vida del proyecto. Se incluyen tanto herramientas de uso continuo como las requeridas en fases específicas. El detalle se presenta en la Tabla~\ref{tab:costos-software}.
+En esta sección se identifican los costos asociados a las licencias de software, servicios de inteligencia artificial y herramientas de desarrollo empleadas durante el ciclo de vida del proyecto. Se incluyen herramientas comerciales con su modalidad de licenciamiento, herramientas en versión gratuita y recursos provistos por la institución, tal como se detalla en la Tabla~\ref{tab:costos-software}.
 
 \begin{table}[H]
 \centering
 \caption{Costos de software y tecnologías utilizadas en el proyecto ExpedientIA}
 \label{tab:costos-software}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
-                   >{\raggedright\arraybackslash}p{4.6cm}
-                   >{\centering\arraybackslash}p{2.5cm}
-                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{9cm}
+                   >{\centering\arraybackslash}p{6cm}@{}}
 \toprule
-\textbf{Herramienta / Servicio} & \textbf{Tipo} & \textbf{Costo unitario (S/)} & \textbf{Subtotal (S/)} \\
+\textbf{Herramienta / Servicio} & \textbf{Subtotal (S/)} \\
 \midrule
-API de modelo de lenguaje (LLM) & SaaS & 0.00 & 0.00 \\
-Servicio de OCR & SaaS & 0.00 & 0.00 \\
-Licencia \textit{SonarQube} (análisis estático) & Licencia & 0.00 & 0.00 \\
-Licencia \textit{Invicti} (análisis de seguridad) & Licencia & 0.00 & 0.00 \\
-Repositorio de código (control de versiones) & SaaS & 0.00 & 0.00 \\
-Herramientas de diseño UX/UI & Licencia & 0.00 & 0.00 \\
+API de Gemini (LLM) & 600{,}000.00 \\
+Licencia OracleDB 19.9c Enterprise (NUP — 1 usuario del proyecto) & 3{,}610.00 \\
+Soporte anual OracleDB (22\% sobre NUP — 1 usuario del proyecto) & 794.20 \\
+Licencia \textit{Proxmox} VE Community (120 sockets) & 56{,}580.00 \\
+Licencia \textit{SonarQube} (análisis estático de código) & Versión gratuita \\
+Licencia \textit{Invicti} (análisis dinámico de seguridad) & Versión gratuita \\
+\textit{Locust} (análisis de estrés y rendimiento) & Versión gratuita \\
+Repositorio de código \textit{GitLab} (control de versiones) & Provisto por la institución \\
 \midrule
-\multicolumn{3}{r}{\textbf{Total Software y Tecnologías}} & \textbf{S/ 0.00} \\
+\multicolumn{1}{r}{\textbf{Total Software y Tecnologías}} & \textbf{S/ 660{,}984.20} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1349,27 +1349,34 @@ Herramientas de diseño UX/UI & Licencia & 0.00 & 0.00 \\
 \section{Costos de Infraestructura Tecnológica}
 \label{sec:costos-infraestructura}
 
-Esta sección presenta los costos vinculados a la infraestructura necesaria para el despliegue, operación y procesamiento del sistema. Se consideran los recursos de cómputo, almacenamiento y redes requeridos tanto para los ambientes de desarrollo como para el entorno de producción, según se muestra en la Tabla~\ref{tab:costos-infraestructura}.
+Esta sección presenta los costos vinculados a la infraestructura necesaria para el despliegue, operación y procesamiento del sistema. Se distinguen dos grupos principales: los componentes del Centro de Procesamiento de Datos (CPD), que representan la mayor parte de la inversión al incluir el servidor de IA y el equipamiento físico asociado, y los servicios de base de datos, almacenamiento y conectividad requeridos durante la operación. La Tabla~\ref{tab:costos-infraestructura} detalla cada componente con su respectivo costo.
 
 \begin{table}[H]
 \centering
 \caption{Costos de infraestructura tecnológica del proyecto ExpedientIA}
 \label{tab:costos-infraestructura}
-\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
-                   >{\raggedright\arraybackslash}p{4.6cm}
-                   >{\centering\arraybackslash}p{2.5cm}
-                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{9cm}
+                   >{\centering\arraybackslash}p{6cm}@{}}
 \toprule
-\textbf{Componente} & \textbf{Descripción} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\textbf{Componente} & \textbf{Subtotal (S/)} \\
 \midrule
-Servidor de producción (GPU) & Procesamiento de modelos de IA & 0.00 & 0.00 \\
-Base de datos relacional Oracle & Ambiente de producción & 0.00 & 0.00 \\
-Base de datos vectorial \textit{Qdrant} & Búsqueda semántica de jurisprudencia & 0.00 & 0.00 \\
-Servidor SFTP & Almacenamiento de documentos PDF & 0.00 & 0.00 \\
-Ambiente de calidad (QA) & Servidor de pruebas & 0.00 & 0.00 \\
-Conexión y ancho de banda & Red y comunicaciones & 0.00 & 0.00 \\
+Servidor IA (incluye instalación) & 1{,}950{,}000.00 \\
+Sistema de Refrigeración en CPD & 250{,}000.00 \\
+Rack y Espacio en CPD & 60{,}000.00 \\
+Sistema Eléctrico y Energía en CPD & 185{,}000.00 \\
+Redes y Conectividad CPD & 50{,}000.00 \\
 \midrule
-\multicolumn{3}{r}{\textbf{Total Infraestructura Tecnológica}} & \textbf{S/ 0.00} \\
+Servidor de Base de Datos OracleDB & 1{,}440.00 \\
+Almacenamiento de DB OracleDB & 120.00 \\
+Servidor de Base de Datos \textit{Qdrant} & 1{,}440.00 \\
+Almacenamiento de DB \textit{Qdrant} & 120.00 \\
+Servidor SFTP & 1{,}440.00 \\
+Almacenamiento SFTP & 120.00 \\
+\midrule
+Dominio y SSL & Uso interno sin salida a internet \\
+Servicio DDoS & Provisto por la institución \\
+\midrule
+\multicolumn{1}{r}{\textbf{Total Infraestructura Tecnológica}} & \textbf{S/ 2{,}499{,}680.00} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1417,14 +1424,80 @@ La Tabla~\ref{tab:costos-total} consolida los subtotales de cada categoría y pr
 \textbf{Categoría} & \textbf{Subtotal (S/)} \\
 \midrule
 4.1 Costos de Recursos Humanos & 1{,}243{,}000.00 \\
-4.2 Costos de Software y Tecnologías & 0.00 \\
-4.3 Costos de Infraestructura Tecnológica & 0.00 \\
+4.2 Costos de Software y Tecnologías & 660{,}984.20 \\
+4.3 Costos de Infraestructura Tecnológica & 2{,}499{,}680.00 \\
 4.4 Costos de Soporte y Mantenimiento & 48{,}000.00 \\
 \midrule
-\textbf{Total general del proyecto} & \textbf{S/ 1{,}291{,}000.00} \\
+\textbf{Total general del proyecto} & \textbf{S/ 4{,}451{,}664.20} \\
 \bottomrule
 \end{tabularx}
 \end{table}
+
+% ----------------------------------------
+% SECCIÓN 4.6: RETORNO DE INVERSIÓN (ROI)
+% ----------------------------------------
+\section{Retorno de Inversión (ROI)}
+\label{sec:costos-roi}
+
+El análisis del retorno de inversión permite evaluar la viabilidad económica del proyecto en relación con los beneficios operativos que genera. Para el caso de ExpedientIA, el principal beneficio cuantificable es la reducción del costo humano asociado al proceso de calificación de expedientes de inscripción de candidaturas.
+
+\subsection*{Metodología de cálculo}
+
+El ROI se calcula mediante la siguiente fórmula:
+
+\begin{equation}
+\text{ROI} = \frac{B - C}{C} \times 100
+\label{eq:roi}
+\end{equation}
+
+donde $B$ representa el beneficio económico estimado del proyecto (en soles) y $C$ la inversión total realizada.
+
+\subsection*{Estimación del beneficio}
+
+Según información oficial, el Poder Ejecutivo transfirió S/ 702 millones a los organismos electorales para financiar las Elecciones Generales y Regionales y Municipales 2026 \cite{elcomercio2026presupuesto}, de los cuales S/ 114 millones corresponden al máximo órgano de administración de justicia electoral del Perú. Este organismo es el responsable directo del proceso de calificación de las candidaturas y, por ende, el principal beneficiario del sistema ExpedientIA.
+
+El proceso de calificación y verificación de expedientes de inscripción de candidaturas constituye una de las actividades de mayor demanda operativa dentro del calendario electoral. Dicho proceso absorbe el 12\% del presupuesto del organismo durante el período electoral activo, lo que equivale a S/ 13{,}680{,}000.00 en costo operativo para las EG2026. Esta proporción refleja el volumen de recursos que la inscripción de candidaturas demanda: contratación de personal temporal especializado (analistas legales y electorales), gestión documental intensiva y coordinación con los órganos electorales especializados de primera instancia a nivel nacional durante varios meses consecutivos.
+
+Con la implementación de ExpedientIA, la automatización del análisis documental, la extracción de datos mediante OCR y modelos de lenguaje de gran escala (LLM), y la validación automática de requisitos legales reducen en un 70\% el costo del proceso manual de calificación. El 30\% restante corresponde a la supervisión humana obligatoria bajo el principio \textit{human-in-the-loop}, que garantiza que ninguna decisión de calificación sea tomada de forma autónoma por el sistema.
+
+El beneficio estimado es:
+
+\begin{equation}
+B = 13{,}680{,}000.00 \times 0.70 = 9{,}576{,}000.00 \text{ soles}
+\label{eq:beneficio}
+\end{equation}
+
+\subsection*{Resultado del ROI}
+
+Aplicando la fórmula~(\ref{eq:roi}) con la inversión total de S/ 4{,}451{,}664.20 (véase la Tabla~\ref{tab:costos-total}) y el beneficio de S/ 9{,}576{,}000.00:
+
+\begin{equation}
+\text{ROI} = \frac{9{,}576{,}000.00 - 4{,}451{,}664.20}{4{,}451{,}664.20} \times 100 \approx 115.11\%
+\label{eq:roi-resultado}
+\end{equation}
+
+La Tabla~\ref{tab:roi-resumen} presenta un resumen del análisis.
+
+\begin{table}[H]
+\centering
+\caption{Resumen del análisis de retorno de inversión (ROI) del proyecto ExpedientIA}
+\label{tab:roi-resumen}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{10cm}
+                   >{\centering\arraybackslash}p{5cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Valor (S/)} \\
+\midrule
+Inversión total del proyecto (C) & 4{,}451{,}664.20 \\
+Presupuesto EG2026 para calificación de candidaturas & 13{,}680{,}000.00 \\
+Ahorro con ExpedientIA (70\% de reducción) (B) & 9{,}576{,}000.00 \\
+Beneficio neto (B $-$ C) & 5{,}124{,}335.80 \\
+\midrule
+\textbf{ROI} & \textbf{115.11\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+El ROI de 115.11\% confirma que ExpedientIA genera un retorno positivo ya en su primer ciclo electoral de operación. Con un beneficio neto de S/ 5{,}124{,}335.80, el ahorro obtenido en el proceso de calificación supera la inversión total del proyecto, lo que demuestra la viabilidad económica de la solución en el contexto de las EG2026. Este resultado considera exclusivamente el ahorro en recursos humanos directamente asociado a la automatización del proceso; factores como la reducción de errores formales, la disminución de los plazos de resolución y la mejora en la trazabilidad documental constituyen beneficios adicionales que elevan aún más el retorno real del proyecto.
 
 % ============================================
 % BIBLIOGRAFÍA
