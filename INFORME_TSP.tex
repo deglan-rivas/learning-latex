@@ -263,6 +263,8 @@ Desarrollar e implementar un sistema web de apoyo para la calificación de exped
     \item Construir un tablero de control (dashboard) que visualice las métricas clave sobre el uso del sistema ExpedientIA, permitiendo el análisis del comportamiento y la adopción por parte de los usuarios finales.
 
     \item Determinar los costos de implementación y operación del sistema, así como calcular el retorno de inversión (ROI) mediante la comparación con el proceso tradicional de calificación manual de expedientes.
+
+    \item Establecer las conclusiones y recomendaciones del proyecto, derivadas del análisis de los resultados obtenidos en cada etapa del ciclo de desarrollo.
 \end{enumerate}
 
 \section{Soluciones existentes}
@@ -1498,6 +1500,32 @@ Beneficio neto (B $-$ C) & 5{,}124{,}335.80 \\
 \end{table}
 
 El ROI de 115.11\% confirma que ExpedientIA genera un retorno positivo ya en su primer ciclo electoral de operación. Con un beneficio neto de S/ 5{,}124{,}335.80, el ahorro obtenido en el proceso de calificación supera la inversión total del proyecto, lo que demuestra la viabilidad económica de la solución en el contexto de las EG2026. Este resultado considera exclusivamente el ahorro en recursos humanos directamente asociado a la automatización del proceso; factores como la reducción de errores formales, la disminución de los plazos de resolución y la mejora en la trazabilidad documental constituyen beneficios adicionales que elevan aún más el retorno real del proyecto.
+
+% ============================================
+% CAPÍTULO V: CONCLUSIONES
+% ============================================
+\chapter{Conclusiones}
+\label{cap:conclusiones}
+
+El presente capítulo recoge las conclusiones del trabajo profesional, organizadas en correspondencia directa con cada uno de los siete objetivos específicos definidos en la Sección~\ref{subsec:objetivos-especificos}. Cada conclusión sintetiza los resultados obtenidos y su contribución al propósito general del proyecto.
+
+\begin{enumerate}
+
+    \item Para este trabajo profesional, se identificaron y documentaron 155 requerimientos funcionales y 81 requerimientos no funcionales del sistema ExpedientIA, organizados en ocho módulos: gestión de sesión, expedientes, parametrización, calificación, edición, resoluciones, trazabilidad y administración. La aplicación de técnicas de ingeniería de requerimientos al contexto del proceso de calificación electoral permitió capturar las necesidades del organismo encargado de la administración de justicia electoral y traducirlas en especificaciones técnicas completas, coherentes y verificables, que sirvieron como base contractual y funcional para el desarrollo del sistema.
+
+    \item Se diseñó la arquitectura del sistema ExpedientIA sobre el patrón de arquitectura hexagonal, estructurada en cuatro capas: presentación, aplicación, dominio e infraestructura. El diseño incluyó la especificación de componentes del \textit{backend} mediante el modelo C4, el modelado de la base de datos relacional y vectorial, y la elaboración de prototipos de interfaz de usuario para las pantallas principales del sistema. Esta arquitectura garantiza la separación de responsabilidades, la independencia tecnológica del núcleo de negocio y la escalabilidad del sistema ante la carga electoral proyectada para las EG2026.
+
+    \item Se ejecutaron pruebas de software en múltiples niveles —unitarias, de integración y de estrés— distribuidas a lo largo de las tres iteraciones de desarrollo. Los resultados validaron la funcionalidad de los módulos críticos, la correcta comunicación entre componentes y la estabilidad del sistema bajo condiciones de carga similares a las proyectadas para el período de inscripción de candidaturas. El proceso de pruebas permitió detectar y corregir defectos antes del despliegue en ambiente productivo, asegurando la calidad del producto en cada entrega iterativa.
+
+    \item Se realizó el despliegue del sistema en ambiente productivo y se implementaron mecanismos de trazabilidad y monitoreo que permiten la detección, el registro y la gestión de errores operacionales en tiempo real. La infraestructura desplegada comprende servidores dedicados para el procesamiento mediante modelos de lenguaje de gran escala (LLM), bases de datos relacionales y vectoriales, y servicios de almacenamiento seguro, en conformidad con los estándares de disponibilidad y seguridad exigidos para sistemas que soportan procesos electorales críticos.
+
+    \item Se construyó un tablero de control (\textit{dashboard}) que visualiza en tiempo real las métricas clave del sistema ExpedientIA: volumen de expedientes procesados, tiempos de calificación, tasas de aprobación y rechazo, e indicadores de adopción por parte de los usuarios finales. Esta herramienta proporciona al organismo electoral una visión integral del comportamiento del sistema durante el período de mayor demanda del proceso de inscripción y facilita la toma de decisiones operativas basadas en datos.
+
+    \item Se determinaron los costos de implementación y operación del sistema ExpedientIA, que ascienden a S/ 4{,}451{,}664.20, distribuidos en recursos humanos (S/ 1{,}243{,}000.00), software y tecnologías (S/ 660{,}984.20), infraestructura tecnológica (S/ 2{,}499{,}680.00) y soporte y mantenimiento (S/ 48{,}000.00). El análisis del retorno de inversión calculado en la Sección~\ref{sec:costos-roi} arrojó un ROI de 115.11\%, lo que confirma la viabilidad económica del proyecto y sustenta su implementación desde una perspectiva de eficiencia del gasto público en el proceso electoral.
+
+    \item El desarrollo del sistema ExpedientIA demuestra que la incorporación de inteligencia artificial en procesos electorales de alta complejidad es técnica y económicamente viable cuando se adopta bajo un enfoque de asistencia al decisor humano. El principio \textit{human-in-the-loop}, aplicado de forma estructural en el diseño del sistema, garantiza que la automatización no comprometa la integridad del proceso electoral, sino que la refuerce al reducir la carga operativa sobre los calificadores y elevar la consistencia de los criterios aplicados expediente a expediente. Como recomendación, se propone extender el alcance del sistema hacia la calificación de organizaciones políticas e incorporar mecanismos de aprendizaje continuo que permitan al sistema mejorar su precisión con los precedentes acumulados en cada ciclo electoral, consolidando así a ExpedientIA como una plataforma de largo plazo para la modernización del proceso electoral peruano.
+
+\end{enumerate}
 
 % ============================================
 % BIBLIOGRAFÍA
