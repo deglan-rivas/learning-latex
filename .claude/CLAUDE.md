@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. Usa un tono formal y legible sin utilizar palabras rebuscadas. Anonimiza los nombres reales, por ejemplo: cambia los nombre de EleccIA por ExpedienteIA, Jurado Nacional de Elecciones por organismo electoral encargado de velar por transparencia de los procesos electorales o similares
 
 # Guía para Agentes - Proyecto INFORME_TSP (EleccIA)
 

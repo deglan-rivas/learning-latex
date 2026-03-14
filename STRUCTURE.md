@@ -116,6 +116,7 @@ CAPÍTULO I: PROBLEMÁTICA (líneas 177-386)
 | I | ✅ COMPLETO | Problemática (líneas 177-386) |
 | II | ✅ COMPLETO | Ingeniería de Requerimientos (155 RF, 81 RNF) |
 | III | 🟡 PARCIAL | Diseño (arquitectura, componentes, arquitectura de aplicación, gestión de información e interfaces de usuario completos, pruebas pendiente) |
+| IV | 🟡 ESTRUCTURA | Costos (tablas con datos placeholder — requiere datos reales) |
 
 ---
 
@@ -323,7 +324,6 @@ Los siguientes capítulos deben ser creados con contenido específico de EleccIA
 
 | Capítulo | Título sugerido | Contenido |
 |----------|-----------------|-----------|
-| IV | Costos | Costos reales del proyecto EleccIA |
 | V | Conclusiones | Conclusiones específicas de EleccIA |
 | Anexo A | Requerimientos Funcionales | Lista detallada de RF de EleccIA |
 
@@ -360,6 +360,11 @@ Los siguientes capítulos deben ser creados con contenido específico de EleccIA
 | `tab:iteracion1-resumen` | Resumen de requisitos funcionales de la Iteración 1 | Cap II |
 | `tab:iteracion2-resumen` | Resumen de requisitos funcionales de la Iteración 2 | Cap II |
 | `tab:iteracion3-resumen` | Resumen de requisitos funcionales de la Iteración 3 | Cap II |
+| `tab:costos-rrhh` | Costos de recursos humanos del proyecto EleccIA | Cap IV §4.1 |
+| `tab:costos-software` | Costos de software y tecnologías utilizadas en el proyecto EleccIA | Cap IV §4.2 |
+| `tab:costos-infraestructura` | Costos de infraestructura tecnológica del proyecto EleccIA | Cap IV §4.3 |
+| `tab:costos-soporte` | Costos de soporte y mantenimiento del proyecto EleccIA | Cap IV §4.4 |
+| `tab:costos-total` | Resumen total de costos del proyecto EleccIA | Cap IV §4.5 |
 
 ---
 
@@ -452,12 +457,18 @@ Al agregar los capítulos pendientes, usar esta estructura:
 \label{sec:req-no-funcionales}
 ```
 
+### Capítulos / Labels existentes - Capítulo IV
+
+- `cap:costos` - Capítulo IV: Costos
+- `sec:costos-rrhh` - 4.1 Costos de Recursos Humanos
+- `sec:costos-software` - 4.2 Costos de Software y Tecnologías
+- `sec:costos-infraestructura` - 4.3 Costos de Infraestructura Tecnológica
+- `sec:costos-soporte` - 4.4 Costos de Soporte y Mantenimiento
+- `sec:costos-total` - 4.5 Resumen Total de Costos
+
 ### Labels sugeridos para nuevos capítulos
 
 | Capítulo | Label sugerido |
 |----------|----------------|
-| Ingeniería de Requerimientos | `cap:requerimientos` |
-| Diseño | `cap:diseno` |
-| Costos | `cap:costos` |
 | Conclusiones | `cap:conclusiones` |
 | Anexo A | `anexo:requerimientos-funcionales` |

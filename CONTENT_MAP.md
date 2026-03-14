@@ -22,7 +22,7 @@ Este documento mapea el estado del contenido del documento INFORME_TSP.tex para 
 | Cap I: Problemática | ✓ Completo | - |
 | Cap II: Ingeniería de Requerimientos | [PENDIENTE] | Alta |
 | Cap III: Diseño | [PENDIENTE] | Alta |
-| Cap IV: Costos | [PENDIENTE] | Media |
+| Cap IV: Costos | 🟡 Estructura creada (datos pendientes) | Media |
 | Cap V: Conclusiones | [PENDIENTE] | Alta |
 | Anexo A | [PENDIENTE] | Media |
 
@@ -166,31 +166,16 @@ Sistemas comparados:
 
 ---
 
-### Capítulo IV: Costos [PENDIENTE]
+### Capítulo IV: Costos 🟡 ESTRUCTURA CREADA
 
-**Contenido a desarrollar**:
+**Estado**: Tablas con datos placeholder (S/ 0.00) — rellenar con datos reales.
 
-1. **Costos de personal**
-   - Roles del equipo EleccIA
-   - Tarifas y tiempos
-
-2. **Costos de herramientas e infraestructura**
-   - APIs de LLM (OpenAI, Anthropic, etc.)
-   - Infraestructura cloud
-   - Licencias
-
-3. **Resumen de costos**
-   - Total del proyecto
-   - Comparación con proceso manual
-
-**Labels sugeridos**:
-- `cap:costos`
-- `sec:costos-personal`
-- `sec:costos-herramientas`
-- `sec:resumen-costos`
-- `tab:costos-personal`
-- `tab:costos-herramientas`
-- `tab:resumen-costos`
+**Secciones**:
+1. **4.1 Costos de Recursos Humanos** — `sec:costos-rrhh` / `tab:costos-rrhh`
+2. **4.2 Costos de Software y Tecnologías** — `sec:costos-software` / `tab:costos-software`
+3. **4.3 Costos de Infraestructura Tecnológica** — `sec:costos-infraestructura` / `tab:costos-infraestructura`
+4. **4.4 Costos de Soporte y Mantenimiento** — `sec:costos-soporte` / `tab:costos-soporte`
+5. **4.5 Resumen Total de Costos** — `sec:costos-total` / `tab:costos-total`
 
 ---
 
