@@ -1271,6 +1271,162 @@ La Figura~\ref{fig:pruebas-invicti} presenta el reporte de \textit{Invicti} con 
 \end{figure}
 
 % ============================================
+% CAPÍTULO IV: COSTOS
+% ============================================
+\chapter{Costos}
+\label{cap:costos}
+
+Un componente clave de la planificación consiste en estimar los recursos financieros que serán necesarios para llevarla a cabo. En este capítulo se presentan los costos relacionados con el desarrollo del sistema, organizados en distintas categorías para mostrar de manera ordenada la inversión realizada.
+
+% ----------------------------------------
+% SECCIÓN 4.1: COSTOS DE RECURSOS HUMANOS
+% ----------------------------------------
+\section{Costos de Recursos Humanos}
+\label{sec:costos-rrhh}
+
+Esta sección detalla los costos del equipo de trabajo que participó en el desarrollo del sistema durante los 11 meses que duró el proyecto. Se considera el rol de cada integrante, la cantidad de personas por rol, la tarifa mensual y el subtotal calculado para todo el período. La Tabla~\ref{tab:costos-rrhh} resume estos valores.
+
+\begin{table}[H]
+\centering
+\caption{Costos de recursos humanos del proyecto ExpedientIA}
+\label{tab:costos-rrhh}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{8cm}
+                   >{\centering\arraybackslash}p{2cm}
+                   >{\centering\arraybackslash}p{3cm}
+                   >{\centering\arraybackslash}p{3cm}@{}}
+\toprule
+\textbf{Rol} & \textbf{Cantidad} & \textbf{Tarifa mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Jefe de proyecto & 1 & 15{,}000.00 & 165{,}000.00 \\
+Arquitecto de software & 1 & 12{,}000.00 & 132{,}000.00 \\
+Administrador de base de datos & 1 & 10{,}000.00 & 110{,}000.00 \\
+Desarrollador \textit{backend} & 3 & 8{,}000.00 & 264{,}000.00 \\
+Desarrollador \textit{frontend} & 1 & 8{,}000.00 & 88{,}000.00 \\
+Especialista en IA (LLM) & 2 & 8{,}000.00 & 176{,}000.00 \\
+Especialista en QA & 1 & 6{,}000.00 & 66{,}000.00 \\
+Analista funcional & 2 & 8{,}000.00 & 176{,}000.00 \\
+Documentador & 1 & 6{,}000.00 & 66{,}000.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total Recursos Humanos}} & \textbf{1{,}243{,}000.00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ----------------------------------------
+% SECCIÓN 4.2: COSTOS DE SOFTWARE Y TECNOLOGÍAS
+% ----------------------------------------
+\section{Costos de Software y Tecnologías}
+\label{sec:costos-software}
+
+En esta sección se identifican los costos asociados al uso de herramientas de desarrollo, licencias de software y servicios de inteligencia artificial empleados durante el ciclo de vida del proyecto. Se incluyen tanto herramientas de uso continuo como las requeridas en fases específicas. El detalle se presenta en la Tabla~\ref{tab:costos-software}.
+
+\begin{table}[H]
+\centering
+\caption{Costos de software y tecnologías utilizadas en el proyecto ExpedientIA}
+\label{tab:costos-software}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
+                   >{\raggedright\arraybackslash}p{4.6cm}
+                   >{\centering\arraybackslash}p{2.5cm}
+                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\toprule
+\textbf{Herramienta / Servicio} & \textbf{Tipo} & \textbf{Costo unitario (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+API de modelo de lenguaje (LLM) & SaaS & 0.00 & 0.00 \\
+Servicio de OCR & SaaS & 0.00 & 0.00 \\
+Licencia \textit{SonarQube} (análisis estático) & Licencia & 0.00 & 0.00 \\
+Licencia \textit{Invicti} (análisis de seguridad) & Licencia & 0.00 & 0.00 \\
+Repositorio de código (control de versiones) & SaaS & 0.00 & 0.00 \\
+Herramientas de diseño UX/UI & Licencia & 0.00 & 0.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total Software y Tecnologías}} & \textbf{S/ 0.00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ----------------------------------------
+% SECCIÓN 4.3: COSTOS DE INFRAESTRUCTURA TECNOLÓGICA
+% ----------------------------------------
+\section{Costos de Infraestructura Tecnológica}
+\label{sec:costos-infraestructura}
+
+Esta sección presenta los costos vinculados a la infraestructura necesaria para el despliegue, operación y procesamiento del sistema. Se consideran los recursos de cómputo, almacenamiento y redes requeridos tanto para los ambientes de desarrollo como para el entorno de producción, según se muestra en la Tabla~\ref{tab:costos-infraestructura}.
+
+\begin{table}[H]
+\centering
+\caption{Costos de infraestructura tecnológica del proyecto ExpedientIA}
+\label{tab:costos-infraestructura}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{4.6cm}
+                   >{\raggedright\arraybackslash}p{4.6cm}
+                   >{\centering\arraybackslash}p{2.5cm}
+                   >{\centering\arraybackslash}p{2.5cm}@{}}
+\toprule
+\textbf{Componente} & \textbf{Descripción} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Servidor de producción (GPU) & Procesamiento de modelos de IA & 0.00 & 0.00 \\
+Base de datos relacional Oracle & Ambiente de producción & 0.00 & 0.00 \\
+Base de datos vectorial \textit{Qdrant} & Búsqueda semántica de jurisprudencia & 0.00 & 0.00 \\
+Servidor SFTP & Almacenamiento de documentos PDF & 0.00 & 0.00 \\
+Ambiente de calidad (QA) & Servidor de pruebas & 0.00 & 0.00 \\
+Conexión y ancho de banda & Red y comunicaciones & 0.00 & 0.00 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Total Infraestructura Tecnológica}} & \textbf{S/ 0.00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ----------------------------------------
+% SECCIÓN 4.4: COSTOS DE SOPORTE Y MANTENIMIENTO
+% ----------------------------------------
+\section{Costos de Soporte y Mantenimiento}
+\label{sec:costos-soporte}
+
+Esta sección contempla los costos del soporte técnico y funcional brindado al sistema durante su fase de estabilización. El servicio se activó 2 meses antes del despliegue en producción, se mantuvo activo durante el mismo y se extendió 2 meses adicionales posteriores al lanzamiento, sumando un total de 6 meses de cobertura. La Tabla~\ref{tab:costos-soporte} detalla los valores correspondientes.
+
+\begin{table}[H]
+\centering
+\caption{Costos de soporte y mantenimiento del proyecto ExpedientIA}
+\label{tab:costos-soporte}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{9.5cm}
+                   >{\centering\arraybackslash}p{3cm}
+                   >{\centering\arraybackslash}p{3cm}@{}}
+\toprule
+\textbf{Concepto} & \textbf{Costo mensual (S/)} & \textbf{Subtotal (S/)} \\
+\midrule
+Soporte Técnico & 4{,}000.00 & 24{,}000.00 \\
+Soporte Funcional & 4{,}000.00 & 24{,}000.00 \\
+\midrule
+\multicolumn{2}{r}{\textbf{Total Soporte y Mantenimiento}} & \textbf{S/ 48{,}000.00} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ----------------------------------------
+% SECCIÓN 4.5: RESUMEN TOTAL DE COSTOS
+% ----------------------------------------
+\section{Resumen Total de Costos}
+\label{sec:costos-total}
+
+La Tabla~\ref{tab:costos-total} consolida los subtotales de cada categoría y presenta la inversión total estimada para el desarrollo e implementación del sistema ExpedientIA.
+
+\begin{table}[H]
+\centering
+\caption{Resumen total de costos del proyecto ExpedientIA}
+\label{tab:costos-total}
+\begin{tabularx}{0.75\textwidth}{@{}Xr@{}}
+\toprule
+\textbf{Categoría} & \textbf{Subtotal (S/)} \\
+\midrule
+4.1 Costos de Recursos Humanos & 1{,}243{,}000.00 \\
+4.2 Costos de Software y Tecnologías & 0.00 \\
+4.3 Costos de Infraestructura Tecnológica & 0.00 \\
+4.4 Costos de Soporte y Mantenimiento & 48{,}000.00 \\
+\midrule
+\textbf{Total general del proyecto} & \textbf{S/ 1{,}291{,}000.00} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+% ============================================
 % BIBLIOGRAFÍA
 % ============================================
 \printbibliography[heading=bibintoc,title={Bibliografía}]
