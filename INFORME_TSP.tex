@@ -1497,4 +1497,34 @@ Registro de los casos de prueba de regresión ejecutados durante la Iteración 2
 
 \clearpage
 
+% ============================================
+% ANEXO G: INFORME COMPLETO DE PRUEBAS DE RENDIMIENTO — LOCUST
+% ============================================
+\chapter{Informe de Pruebas de Rendimiento con Locust}
+\label{anexo:pruebas-rendimiento}
+
+Informe completo de las pruebas de estrés ejecutadas con \textit{Locust} sobre los dos \textit{endpoints} de mayor carga computacional del sistema ExpedientIA: \texttt{POST /calificar-expediente} (hasta 600 peticiones concurrentes, 97.3\% de éxito, tiempo promedio 2.5 min) y \texttt{POST /resolucion/generar-resolucion} (primer error a las 120 peticiones concurrentes, tiempo promedio 2.8 min).
+
+\includepdf[pages=-]{anexos/reporte_locust_completo.pdf}
+
+% ============================================
+% ANEXO H: REPORTE DE ANÁLISIS ESTÁTICO — SONARQUBE
+% ============================================
+\chapter{Reporte de Análisis Estático de Código con SonarQube}
+\label{anexo:sonarqube}
+
+Reporte completo del análisis estático de código (\textit{SAST}) ejecutado con \textit{SonarQube} sobre el \textit{backend} del sistema ExpedientIA. El informe detalla los indicadores de calidad, vulnerabilidades de seguridad clasificadas por severidad, \textit{code smells} y deuda técnica identificados a lo largo del desarrollo del proyecto.
+
+\includepdf[pages=-]{anexos/SonarQube_Report.pdf}
+
+% ============================================
+% ANEXO I: REPORTE DE ANÁLISIS DINÁMICO — INVICTI
+% ============================================
+\chapter{Reporte de Análisis Dinámico de Seguridad con Invicti}
+\label{anexo:invicti}
+
+Reporte completo del análisis dinámico de seguridad (\textit{DAST}) ejecutado con \textit{Invicti} sobre el dominio de producción del sistema ExpedientIA. El informe presenta el resumen de vulnerabilidades detectadas, su clasificación por severidad (crítica, alta, media y baja) y las recomendaciones de mitigación correspondientes.
+
+\includepdf[pages=-]{anexos/invicti-report.pdf}
+
 \end{document}
