@@ -437,163 +437,47 @@ El proceso de levantamiento de requerimientos se llevó a cabo mediante sesiones
 \section{Requerimientos funcionales}
 \label{sec:req-funcionales}
 
-Los requerimientos funcionales de ExpedientIA describen las capacidades y comportamientos específicos que debe exhibir el sistema para satisfacer las necesidades operativas del proceso de calificación de expedientes electorales. Estos requisitos se organizan por módulo funcional, facilitando su trazabilidad durante el desarrollo, pruebas y mantenimiento del sistema. A continuación se presenta el primer requisito de cada módulo como muestra representativa de la especificación; la lista completa se encuentra en el Anexo~\ref{anexo:requerimientos-funcionales}.
+Los requerimientos funcionales de ExpedientIA describen las capacidades y comportamientos específicos que debe exhibir el sistema para satisfacer las necesidades operativas del proceso de calificación de expedientes electorales. Se organizan en nueve módulos funcionales que cubren desde la autenticación de usuarios hasta la integración con sistemas externos. La Tabla~\ref{tab:req-funcionales-muestra} presenta dos ejemplos representativos de cada módulo; la especificación completa de los 74 requerimientos funcionales se encuentra en el Anexo~\ref{anexo:requerimientos-funcionales}.
 
-% --------------------------------------------
-% Subsección 2.1.1: Módulo de Autenticación
-% --------------------------------------------
-\subsection{Módulo de Autenticación y Acceso}
-\label{subsec:modulo-login}
-
-El módulo de autenticación garantiza el acceso seguro al sistema ExpedientIA mediante integración con la plataforma jurisdiccional, validando las credenciales de los usuarios autorizados.
-
-\begin{itemize}
-    \item \textbf{RF-1}: El sistema debe permitir al usuario ingresar su nombre de usuario en un campo de texto.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.2: Módulo de Expedientes
-% --------------------------------------------
-\subsection{Módulo de Gestión de Expedientes}
-\label{subsec:modulo-expedientes}
-
-Este módulo proporciona la funcionalidad para acceder y gestionar la bandeja de expedientes electorales que requieren calificación.
-
-\begin{itemize}
-    \item \textbf{RF-12}: El sistema debe permitir acceder al módulo de mesa de partes desde el menú principal.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.3: Módulo de Parametrización
-% --------------------------------------------
-\subsection{Módulo de Parametrización}
-\label{subsec:modulo-parametrizacion}
-
-El módulo de parametrización permite configurar los parámetros maestros necesarios para el correcto funcionamiento del sistema de calificación.
-
-\begin{itemize}
-    \item \textbf{RF-15}: El sistema debe mostrar la opción de acceso a ExpedientIA dentro de la bandeja de expedientes.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.4: Módulo de Calificación
-% --------------------------------------------
-\subsection{Módulo de Calificación}
-\label{subsec:modulo-calificacion}
-
-El módulo de calificación constituye el núcleo funcional de ExpedientIA, permitiendo la evaluación automatizada asistida por inteligencia artificial de los expedientes de inscripción.
-
-\begin{itemize}
-    \item \textbf{RF-19}: El sistema debe mostrar la opción de calificar expedientes dentro de la bandeja.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.5: Módulo de Edición
-% --------------------------------------------
-\subsection{Módulo de Edición de Expedientes}
-\label{subsec:modulo-edicion}
-
-Este módulo permite la modificación controlada de expedientes previamente calificados, manteniendo trazabilidad completa de los cambios realizados.
-
-\begin{itemize}
-    \item \textbf{RF-26}: El sistema ExpedientIA debe mostrar la opción de habilitar edición cuando el expediente se encuentre en estado editable.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.6: Módulo de Resoluciones
-% --------------------------------------------
-\subsection{Módulo de Resoluciones}
-\label{subsec:modulo-resoluciones}
-
-El módulo de resoluciones permite visualizar las resoluciones generadas y producir automáticamente proyectos de resolución basados en la calificación realizada.
-
-\begin{itemize}
-    \item \textbf{RF-33}: El sistema debe mostrar la opción de análisis de expedientes dentro del módulo de resoluciones generadas.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.7: Módulo de Trazabilidad
-% --------------------------------------------
-\subsection{Módulo de Trazabilidad y Auditoría}
-\label{subsec:modulo-trazabilidad}
-
-Este módulo garantiza la trazabilidad completa de todas las operaciones realizadas en el sistema, elemento crítico para la transparencia electoral.
-
-\begin{itemize}
-    \item \textbf{RF-42}: El sistema debe registrar automáticamente la fecha y hora de inicio y fin del proceso de calificación de expediente.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.8: Módulo de Administración
-% --------------------------------------------
-\subsection{Módulo de Administración}
-\label{subsec:modulo-administracion}
-
-El módulo de administración proporciona herramientas para la supervisión y gestión operativa del sistema por parte de los administradores.
-
-\begin{itemize}
-    \item \textbf{RF-47}: El sistema debe permitir visualizar la información del sistema, incluyendo versión, entorno y servidor.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.9: Interfaces Externas
-% --------------------------------------------
-\subsection{Interfaces Externas}
-\label{subsec:interfaces-externas}
-
-Las interfaces externas garantizan la integración de ExpedientIA con los sistemas del órgano electoral y servicios externos necesarios para su operación.
-
-\begin{itemize}
-    \item \textbf{RF-56}: El sistema debe poder conectarse con la plataforma jurisdiccional mediante su interfaz de programación de aplicaciones para obtener información de expedientes.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.10: Gestión de Datos
-% --------------------------------------------
-\subsection{Gestión de Datos}
-\label{subsec:gestion-datos}
-
-Este módulo especifica los requisitos relacionados con el almacenamiento, integridad y gestión de los datos del sistema ExpedientIA.
-
-\begin{itemize}
-    \item \textbf{RF-109}: El sistema debe almacenar la información del expediente recibido de sistemas externos.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.11: Instalación y Despliegue
-% --------------------------------------------
-\subsection{Instalación y Despliegue}
-\label{subsec:instalacion}
-
-Estos requisitos especifican las condiciones y procedimientos para la instalación del sistema en los ambientes del órgano electoral.
-
-\begin{itemize}
-    \item \textbf{RF-130}: El sistema debe ser desplegado en ambientes diferenciados (desarrollo, calidad, producción).
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.12: Aceptación del Producto
-% --------------------------------------------
-\subsection{Aceptación del Producto}
-\label{subsec:aceptacion}
-
-Estos requisitos establecen los criterios que debe cumplir el sistema para su aceptación formal por parte del órgano electoral.
-
-\begin{itemize}
-    \item \textbf{RF-133}: La aceptación del sistema debe ser formalizada mediante acta de conformidad firmada por las partes.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.1.13: Documentación
-% --------------------------------------------
-\subsection{Documentación}
-\label{subsec:documentacion}
-
-Los requisitos de documentación especifican los entregables documentales que deben acompañar al sistema.
-
-\begin{itemize}
-    \item \textbf{RF-140}: Se debe entregar manual de usuario y manual técnico del sistema ExpedientIA.
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Muestra de requerimientos funcionales por módulo}
+\label{tab:req-funcionales-muestra}
+\begin{tabular}{@{}>{\centering\arraybackslash}p{2cm}
+                   >{\raggedright\arraybackslash}p{12.5cm}@{}}
+\toprule
+\textbf{Código} & \textbf{Descripción} \\
+\midrule
+\multicolumn{2}{@{}l}{\rule{0pt}{2.5ex}\textbf{Módulo de Autenticación y Acceso}} \\[2pt]
+RF-8  & El sistema debe permitir iniciar el proceso de autenticación al presionar el botón de inicio de sesión. \\
+RF-9  & El sistema debe validar las credenciales ingresadas contra la base de datos de la plataforma jurisdiccional. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Gestión de Expedientes}} \\[2pt]
+RF-13 & El sistema debe mostrar la opción de bandeja de expedientes dentro del módulo de mesa de partes. \\
+RF-14 & El usuario debe poder seleccionar dicha bandeja para visualizar los expedientes disponibles para calificación. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Parametrización}} \\[2pt]
+RF-17 & El sistema ExpedientIA debe permitir modificar, registrar o actualizar los parámetros asociados al expediente. \\
+RF-18 & El sistema ExpedientIA debe permitir guardar los cambios realizados en la parametrización. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Calificación}} \\[2pt]
+RF-23 & El sistema debe permitir visualizar toda la información del expediente. \\
+RF-24 & El sistema ExpedientIA debe permitir registrar la calificación del expediente (admisible, inadmisible, observado u otro). \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Edición de Expedientes}} \\[2pt]
+RF-26 & El sistema ExpedientIA debe mostrar la opción de habilitar edición cuando el expediente se encuentre en estado editable. \\
+RF-30 & El sistema ExpedientIA debe registrar al usuario que modificó la calificación con marca de tiempo. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Resoluciones}} \\[2pt]
+RF-35 & El sistema ExpedientIA debe mostrar la opción de generar proyecto de resolución cuando el expediente esté listo para emitir resolución. \\
+RF-36 & Al seleccionar generar proyecto de resolución con observaciones registradas, el sistema debe solicitar confirmación de continuidad. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Trazabilidad y Auditoría}} \\[2pt]
+RF-42 & El sistema debe registrar automáticamente la fecha y hora de inicio y fin del proceso de calificación de expediente. \\
+RF-43 & El sistema debe registrar automáticamente la fecha y hora de inicio y fin de la generación del proyecto de resolución. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Módulo de Administración}} \\[2pt]
+RF-48 & El sistema debe permitir visualizar los estados del proceso, señalizados con colores según su estado de avance. \\
+RF-52 & El sistema debe mostrar los expedientes con error, detallando código de expediente, organización política, código de error y hora de análisis. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Interfaces Externas}} \\[2pt]
+RF-56 & El sistema debe conectarse con la plataforma jurisdiccional mediante su interfaz de programación de aplicaciones para obtener información de expedientes. \\
+RF-57 & El sistema debe conectarse con el servicio de ventanilla única para acceder a documentación del candidato. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % ============================================
 % SECCIÓN 2.2: REQUERIMIENTOS NO FUNCIONALES
@@ -601,91 +485,41 @@ Los requisitos de documentación especifican los entregables documentales que de
 \section{Requerimientos no funcionales}
 \label{sec:req-no-funcionales}
 
-Los requerimientos no funcionales de ExpedientIA establecen las restricciones, atributos de calidad y características operacionales que debe satisfacer el sistema para garantizar un desempeño adecuado en el contexto crítico de los procesos electorales. A continuación se presenta el primer requisito de cada categoría como muestra representativa; la lista completa de los 81 requisitos no funcionales se encuentra en el Anexo~\ref{anexo:requerimientos-no-funcionales}.
+Los requerimientos no funcionales de ExpedientIA establecen las restricciones, atributos de calidad y características operacionales que debe satisfacer el sistema para garantizar un desempeño adecuado en el contexto crítico de los procesos electorales. Se organizan en siete categorías de calidad derivadas de los estándares internacionales de ingeniería de software. La Tabla~\ref{tab:req-no-funcionales-muestra} presenta dos ejemplos representativos de cada categoría; la especificación completa de los 81 requerimientos no funcionales se encuentra en el Anexo~\ref{anexo:requerimientos-no-funcionales}.
 
-% --------------------------------------------
-% Subsección 2.2.1: Rendimiento
-% --------------------------------------------
-\subsection{Rendimiento y Escalabilidad}
-\label{subsec:rnf-rendimiento}
-
-Los requisitos de rendimiento establecen los tiempos de respuesta esperados y la capacidad de procesamiento del sistema bajo condiciones normales y de alta demanda.
-
-\begin{itemize}
-    \item \textbf{RNF-1}: El sistema debe procesar un expediente completo en un tiempo máximo de 5 minutos.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.2: Seguridad
-% --------------------------------------------
-\subsection{Seguridad y Protección}
-\label{subsec:rnf-seguridad}
-
-Los requisitos de seguridad garantizan la protección de la información sensible y la integridad de los datos procesados por el sistema.
-
-\begin{itemize}
-    \item \textbf{RNF-5}: El sistema debe contar con respaldos automáticos diarios de la base de datos.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.3: Usabilidad
-% --------------------------------------------
-\subsection{Usabilidad y Factores Humanos}
-\label{subsec:rnf-usabilidad}
-
-Los requisitos de usabilidad aseguran que el sistema sea accesible, intuitivo y eficiente para los usuarios finales.
-
-\begin{itemize}
-    \item \textbf{RNF-26}: El sistema debe contar con una interfaz amigable y de fácil navegación.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.4: Integridad de Datos
-% --------------------------------------------
-\subsection{Integridad y Calidad de Datos}
-\label{subsec:rnf-datos}
-
-Los requisitos de integridad de datos garantizan la consistencia, exactitud y disponibilidad de la información almacenada.
-
-\begin{itemize}
-    \item \textbf{RNF-36}: La base de datos debe mantener integridad referencial entre tablas relacionadas mediante llaves foráneas.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.5: Instalación
-% --------------------------------------------
-\subsection{Instalación y Despliegue}
-\label{subsec:rnf-instalacion}
-
-Los requisitos de instalación especifican las condiciones del ambiente de despliegue y los procedimientos de implementación.
-
-\begin{itemize}
-    \item \textbf{RNF-56}: El sistema debe ser desplegado en ambientes diferenciados y aislados (desarrollo, calidad, producción).
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.6: Pruebas y Aceptación
-% --------------------------------------------
-\subsection{Pruebas y Aceptación}
-\label{subsec:rnf-pruebas}
-
-Los requisitos de aceptación establecen los criterios de calidad que debe satisfacer el sistema para su aceptación formal.
-
-\begin{itemize}
-    \item \textbf{RNF-59}: La aceptación debe ser formalizada mediante acta de conformidad firmada por representantes del órgano electoral y el proveedor.
-\end{itemize}
-
-% --------------------------------------------
-% Subsección 2.2.7: Documentación
-% --------------------------------------------
-\subsection{Documentación}
-\label{subsec:rnf-documentacion}
-
-Los requisitos de documentación especifican la calidad, completitud y formato de los entregables documentales.
-
-\begin{itemize}
-    \item \textbf{RNF-66}: Se debe entregar manual de usuario con lenguaje claro y manual técnico con especificaciones detalladas.
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Muestra de requerimientos no funcionales por categoría}
+\label{tab:req-no-funcionales-muestra}
+\begin{tabular}{@{}>{\centering\arraybackslash}p{2cm}
+                   >{\raggedright\arraybackslash}p{12.5cm}@{}}
+\toprule
+\textbf{Código} & \textbf{Descripción} \\
+\midrule
+\multicolumn{2}{@{}l}{\rule{0pt}{2.5ex}\textbf{Rendimiento y Escalabilidad}} \\[2pt]
+RNF-1  & El sistema debe procesar un expediente completo en un tiempo máximo de 5 minutos. \\
+RNF-4  & El sistema debe soportar alta demanda de solicitudes concurrentes sin degradar el servicio. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Seguridad y Protección}} \\[2pt]
+RNF-22 & El sistema debe mantener las instrucciones de IA encriptadas en base de datos. \\
+RNF-24 & El sistema debe contar con un servidor de transferencia segura de archivos. \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Usabilidad y Factores Humanos}} \\[2pt]
+RNF-28 & El sistema debe cumplir con criterios de accesibilidad WCAG 2.1 nivel AA. \\
+RNF-34 & El sistema debe ser compatible con equipos de recursos limitados (mínimo 4~GB RAM, procesador dual-core). \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Integridad y Calidad de Datos}} \\[2pt]
+RNF-36 & La base de datos debe mantener integridad referencial entre tablas relacionadas mediante llaves foráneas. \\
+RNF-38 & El sistema debe almacenar información completa de la calificación (fecha, hora, usuario, resultado, criterios evaluados, observaciones). \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Instalación y Despliegue}} \\[2pt]
+RNF-56 & El sistema debe ser desplegado en ambientes diferenciados y aislados (desarrollo, calidad, producción). \\
+RNF-58 & El sistema debe ser compatible con infraestructura institucional local o despliegue en la nube (AWS, GCP). \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Pruebas y Aceptación}} \\[2pt]
+RNF-59 & La aceptación debe ser formalizada mediante acta de conformidad firmada por representantes del órgano electoral y el proveedor. \\
+RNF-62 & El sistema debe mostrar estabilidad operativa durante el período de prueba (mínimo 30 días sin errores críticos). \\[4pt]
+\multicolumn{2}{@{}l}{\textbf{Documentación}} \\[2pt]
+RNF-66 & Se debe entregar manual de usuario con lenguaje claro y manual técnico con especificaciones detalladas. \\
+RNF-71 & Se debe entregar cronograma de actividades en formato MS Project o Primavera. \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 % ============================================
 % SECCIÓN 2.3: DESARROLLO ITERATIVO
