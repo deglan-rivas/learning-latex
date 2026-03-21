@@ -1,0 +1,1675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonarQube Report — ExpedientIA Backend</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f6fa; color: #333; }
+    header { background: #1f2d3d; color: white; padding: 24px 40px; }
+    header h1 { font-size: 1.6em; font-weight: 600; }
+    header p { opacity: 0.7; font-size: 0.9em; margin-top: 4px; }
+    .badge { display:inline-block; padding: 4px 12px; border-radius: 12px;
+              font-weight: bold; font-size: 0.85em; color: white; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px; }
+    .section { background: white; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+                margin-bottom: 28px; overflow: hidden; }
+    .section-header { background: #f0f2f5; padding: 14px 24px; font-weight: 600;
+                       font-size: 1.05em; border-bottom: 1px solid #e0e3ea; }
+    .section-body { padding: 24px; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                     gap: 16px; }
+    .metric-card { background: #f8f9fc; border-radius: 8px; padding: 16px 20px;
+                    text-align: center; border: 1px solid #e8eaf0; }
+    .metric-value { font-size: 2em; font-weight: 700; line-height: 1.1; }
+    .metric-label { font-size: 0.78em; color: #888; margin-top: 6px; text-transform: uppercase;
+                     letter-spacing: 0.04em; }
+    .rating-circle { display: inline-flex; align-items: center; justify-content: center;
+                      width: 52px; height: 52px; border-radius: 50%; color: white;
+                      font-size: 1.6em; font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88em; }
+    th { background: #f0f2f5; padding: 10px 14px; text-align: left; font-weight: 600;
+          color: #555; border-bottom: 2px solid #dde0e8; }
+    td { padding: 9px 14px; border-bottom: 1px solid #f0f2f5; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafbff; }
+    .count-pill { display: inline-block; padding: 2px 10px; border-radius: 10px;
+                   font-size: 0.9em; font-weight: 600; }
+    footer { text-align: center; padding: 20px; color: #aaa; font-size: 0.82em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SonarQube — Reporte de Calidad</h1>
+  <p>Proyecto: <strong>ExpedientIA Backend</strong> &nbsp;|&nbsp; Generado: 21/03/2026 01:41 &nbsp;|&nbsp;
+     Quality Gate: <span style='color:#00aa00;font-weight:bold'>OK</span></p>
+</header>
+
+<div class="container">
+
+  <!-- Resumen de ratings -->
+  <div class="section">
+    <div class="section-header">Resumen ejecutivo</div>
+    <div class="section-body">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-value" style="color:#c00">9</div>
+          <div class="metric-label">Bugs</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#e00">6</div>
+          <div class="metric-label">Vulnerabilidades</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#e07000">1186</div>
+          <div class="metric-label">Code Smells</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#555">22</div>
+          <div class="metric-label">Security Hotspots</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#2270b8">0.0%</div>
+          <div class="metric-label">Cobertura de tests</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#666">41.7%</div>
+          <div class="metric-label">Duplicaciones</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-value" style="color:#333">58426</div>
+          <div class="metric-label">Líneas de código</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ratings -->
+  <div class="section">
+    <div class="section-header">Ratings</div>
+    <div class="section-body">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="rating-circle" style="background:#666">3.0</div>
+          <div class="metric-label" style="margin-top:10px">Fiabilidad</div>
+        </div>
+        <div class="metric-card">
+          <div class="rating-circle" style="background:#666">4.0</div>
+          <div class="metric-label" style="margin-top:10px">Seguridad</div>
+        </div>
+        <div class="metric-card">
+          <div class="rating-circle" style="background:#666">1.0</div>
+          <div class="metric-label" style="margin-top:10px">Mantenibilidad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bugs -->
+  <div class="section">
+    <div class="section-header">
+      Bugs
+      <span class="count-pill" style="background:#fde;color:#c00;margin-left:8px">9</span>
+    </div>
+    <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Severidad</th><th>Archivo</th><th>Línea</th><th>Mensaje</th><th>Regla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/main.py</td>
+          <td style='text-align:center'>159</td>
+          <td>Save this task in a variable to prevent premature garbage collection.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S7502</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>503</td>
+          <td>Remove or rework this redundant alternative.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5855</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>500</td>
+          <td>Remove or rework this redundant alternative.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5855</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/jee_repository.py</td>
+          <td style='text-align:center'>98</td>
+          <td>Verify this is the key that was intended; a value has already been saved for it on line 83.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S4143</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/test_logs_routes.py</td>
+          <td style='text-align:center'>111</td>
+          <td>Use an asynchronous file API instead of synchronous open() in this async function.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S7493</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/ws_client.py</td>
+          <td style='text-align:center'>125</td>
+          <td>Ensure that the asyncio.CancelledError exception is re-raised after your cleanup code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S7497</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/ws_client.py</td>
+          <td style='text-align:center'>176</td>
+          <td>Ensure that the asyncio.CancelledError exception is re-raised after your cleanup code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S7497</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/ws_client.py</td>
+          <td style='text-align:center'>193</td>
+          <td>Save this task in a variable to prevent premature garbage collection.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S7502</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/tilin/seed_service.py</td>
+          <td style='text-align:center'>272</td>
+          <td>Remove or correct this useless self-assignment.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1656</td>
+        </tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- Vulnerabilidades -->
+  <div class="section">
+    <div class="section-header">
+      Vulnerabilidades
+      <span class="count-pill" style="background:#feeaea;color:#e00;margin-left:8px">6</span>
+    </div>
+    <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Severidad</th><th>Archivo</th><th>Línea</th><th>Mensaje</th><th>Regla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/utils/crypto/aes_cbc.py</td>
+          <td style='text-align:center'>66</td>
+          <td>Use secure mode and padding scheme.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5542</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/utils/crypto/aes_cbc.py</td>
+          <td style='text-align:center'>84</td>
+          <td>Use secure mode and padding scheme.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5542</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/utils_db/encryption_utils.py</td>
+          <td style='text-align:center'>15</td>
+          <td>Use a strong cipher algorithm.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5547</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/utils_db/encryption_utils.py</td>
+          <td style='text-align:center'>15</td>
+          <td>Use secure mode and padding scheme.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5542</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/utils_db/encryption_utils.py</td>
+          <td style='text-align:center'>25</td>
+          <td>Use a strong cipher algorithm.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5547</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/utils_db/encryption_utils.py</td>
+          <td style='text-align:center'>25</td>
+          <td>Use secure mode and padding scheme.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5542</td>
+        </tr></tbody>
+    </table></div>
+  </div>
+
+  <!-- Code Smells (top 100) -->
+  <div class="section">
+    <div class="section-header">
+      Code Smells
+      <span class="count-pill" style="background:#fff3e0;color:#e07000;margin-left:8px">500</span>
+      <span style='font-size:0.8em;color:#aaa;font-weight:normal'>&nbsp;(mostrando primeros 200)</span>
+    </div>
+    <div class="section-body">
+    <table>
+      <thead>
+        <tr>
+          <th>Severidad</th><th>Archivo</th><th>Línea</th><th>Mensaje</th><th>Regla</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>19</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 30 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>39</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>57</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>70</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>182</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 20 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>256</td>
+          <td>Remove the unused local variable "documentos_subidos".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>259</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>301</td>
+          <td>Return a value of type "str" instead of "NoneType" or update function "_recuperar_ruta_publica_resolucion" type hint.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5886</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>312</td>
+          <td>Return a value of type "str" instead of "NoneType" or update function "_recuperar_ruta_publica_resolucion" type hint.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5886</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/apelacion_strategy.py</td>
+          <td style='text-align:center'>328</td>
+          <td>Return a value of type "str" instead of "NoneType" or update function "_recuperar_ruta_publica_resolucion" type hint.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S5886</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>19</td>
+          <td>Define a constant instead of duplicating this literal "No fue posible validar el documento con firma digital por un inconveniente técnico." 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>57</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/apelacion/comprobante_pago_evaluador.py</td>
+          <td style='text-align:center'>25</td>
+          <td>Replace the unused local variable "nombre_comprobante" with "_".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/apelacion/escrito_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 55 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>19</td>
+          <td>Define a constant instead of duplicating this literal "No fue posible validar el documento con firma digital por un inconveniente técnico." 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/apelacion/apelacion_firma_abogado_evaluador.py</td>
+          <td style='text-align:center'>57</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/apelacion/comprobante_pago_evaluador.py</td>
+          <td style='text-align:center'>25</td>
+          <td>Replace the unused local variable "nombre_comprobante" with "_".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/apelacion/escrito_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 55 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/veredicto_service.py</td>
+          <td style='text-align:center'>75</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/procedimiento_reporte_posterior_strategy.py</td>
+          <td style='text-align:center'>50</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 32 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/procedimiento_reporte_posterior_strategy.py</td>
+          <td style='text-align:center'>72</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/requisito_repository.py</td>
+          <td style='text-align:center'>167</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 146 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>88</td>
+          <td>Define a constant instead of duplicating this literal "Año del proceso electoral" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>89</td>
+          <td>Define a constant instead of duplicating this literal "ID del tipo de proceso" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>90</td>
+          <td>Define a constant instead of duplicating this literal "ID del tipo de expediente" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>91</td>
+          <td>Define a constant instead of duplicating this literal "ID del tipo de elección" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>92</td>
+          <td>Define a constant instead of duplicating this literal "ID de materia (opcional)" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>307</td>
+          <td>Define a constant instead of duplicating this literal "application/json" 16 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>424</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>425</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>426</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>427</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>428</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>429</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>481</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>533</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>534</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>570</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>570</td>
+          <td>Define a constant instead of duplicating this literal "ID de la programación" 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>578</td>
+          <td>Define a constant instead of duplicating this literal "Programación no encontrada" 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>602</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>614</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>615</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>645</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>689</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>714</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>715</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>716</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>717</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>718</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>719</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/preparar_lote_service.py</td>
+          <td style='text-align:center'>94</td>
+          <td>Either merge this branch with the identical one on line "92" or change one of the implementations.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1871</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/programacion_runner.py</td>
+          <td style='text-align:center'>41</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_models_eleccia.py</td>
+          <td style='text-align:center'>231</td>
+          <td>Define a constant instead of duplicating this literal 'ELECCIA.ELECCIA_TBL_EXPEDIENTES.id_expediente' 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_models_eleccia.py</td>
+          <td style='text-align:center'>396</td>
+          <td>Remove this commented out code.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S125</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/programacion_calificacion_repository.py</td>
+          <td style='text-align:center'>60</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/tarea_expediente_repository.py</td>
+          <td style='text-align:center'>187</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>17</td>
+          <td>Define a constant instead of duplicating this literal "ID del proceso electoral" 9 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>18</td>
+          <td>Define a constant instead of duplicating this literal "ID del tipo de expediente" 8 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>693</td>
+          <td>Document this HTTPException with status code 500 in the "responses" parameter.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8415</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>870</td>
+          <td>Document this HTTPException with status code 500 in the "responses" parameter.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8415</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>899</td>
+          <td>Document this HTTPException with status code 500 in the "responses" parameter.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8415</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>925</td>
+          <td>Document this HTTPException with status code 500 in the "responses" parameter.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8415</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/reporte_routes.py</td>
+          <td style='text-align:center'>951</td>
+          <td>Document this HTTPException with status code 500 in the "responses" parameter.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8415</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_procedures_eleccia.py</td>
+          <td style='text-align:center'>100</td>
+          <td>Define a constant instead of duplicating this literal "ID del proceso electoral" 10 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_procedures_eleccia.py</td>
+          <td style='text-align:center'>112</td>
+          <td>Define a constant instead of duplicating this literal "ID del tipo de expediente" 9 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_procedures_eleccia.py</td>
+          <td style='text-align:center'>446</td>
+          <td>Define a constant instead of duplicating this literal "Código de resultado (1 = éxito, otro = error)" 21 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>40</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 33 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>835</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>1146</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>1203</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>1246</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>1289</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/middleware/interceptormiddleware.py</td>
+          <td style='text-align:center'>48</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 76 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/ftp_service.py</td>
+          <td style='text-align:center'>111</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 38 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/pipelines/publicidad_estatal_pipeline.py</td>
+          <td style='text-align:center'>36</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/pipelines/publicidad_estatal_pipeline.py</td>
+          <td style='text-align:center'>98</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 112 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/pipelines/publicidad_estatal_pipeline.py</td>
+          <td style='text-align:center'>160</td>
+          <td>Either merge this branch with the identical one on line "154" or change one of the implementations.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1871</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/pipelines/publicidad_estatal_pipeline.py</td>
+          <td style='text-align:center'>174</td>
+          <td>Define a constant instead of duplicating this literal "solicitud_escrito.pdf" 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/ftp/sftp_client.py</td>
+          <td style='text-align:center'>131</td>
+          <td>Define a constant instead of duplicating this literal "No hay conexión SFTP activa" 6 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resultados/analisis_service.py</td>
+          <td style='text-align:center'>197</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 98 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resultados/analisis_service.py</td>
+          <td style='text-align:center'>395</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resultados/analisis_service.py</td>
+          <td style='text-align:center'>410</td>
+          <td>Extract this nested conditional expression into an independent statement.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3358</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/link_desc_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/link_desc_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/link_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/link_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>222</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 78 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/repositories/generacion_resolucion_repository.py</td>
+          <td style='text-align:center'>304</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 52 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/veredicto_service.py</td>
+          <td style='text-align:center'>186</td>
+          <td>Fix this reluctant quantifier that will only ever match 1 repetition.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6019</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/fecha_escrito_base.py</td>
+          <td style='text-align:center'>22</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/resumen_escrito_base.py</td>
+          <td style='text-align:center'>13</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/neutralidad/inicio_procedimiento_sancionador_informe_fiscalizacion/escrito_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/neutralidad/inicio_procedimiento_sancionador_informe_fiscalizacion/escrito_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/neutralidad/inicio_procedimiento_sancionador_informe_fiscalizacion/escrito_evaluador.py</td>
+          <td style='text-align:center'>8</td>
+          <td>Remove the unused function parameter "documentos".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_autorizacion_previa/link_desc_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_autorizacion_previa/link_desc_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_autorizacion_previa/link_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_autorizacion_previa/link_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/procedimiento_reporte_posterior_strategy.py</td>
+          <td style='text-align:center'>91</td>
+          <td>Replace the unused local variable "req_desc" with "_".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/strategies/publicidad_estatal/procedimiento_reporte_posterior_strategy.py</td>
+          <td style='text-align:center'>95</td>
+          <td>Replace the unused local variable "req_ejem" with "_".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>536</td>
+          <td>Fix this reluctant quantifier that will only ever match 1 repetition.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6019</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>762</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>763</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>764</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>765</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/repositories/generacion_resolucion_repository.py</td>
+          <td style='text-align:center'>47</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/publicidad_estatal_analisis_service.py</td>
+          <td style='text-align:center'>41</td>
+          <td>Define a constant instead of duplicating this literal "Error en servicio" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/link_desc_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/link_desc_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/link_evaluador.py</td>
+          <td style='text-align:center'>33</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/link_evaluador.py</td>
+          <td style='text-align:center'>37</td>
+          <td>Add replacement fields or use a normal string instead of an f-string.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3457</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/config.py</td>
+          <td style='text-align:center'>34</td>
+          <td>Define a constant instead of duplicating this literal 'ELECCIA-Engine/1.0' 29 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/external_services/config.py</td>
+          <td style='text-align:center'>35</td>
+          <td>Define a constant instead of duplicating this literal 'application/json' 16 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>41</td>
+          <td>Define a constant instead of duplicating this literal "Código del expediente" 5 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>295</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>324</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>325</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>354</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>355</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>356</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>357</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>358</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>359</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>360</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>361</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>390</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>391</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>392</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>393</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>394</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>395</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>396</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>778</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#c00;font-weight:bold'>BLOCKER</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/expediente_routes.py</td>
+          <td style='text-align:center'>845</td>
+          <td>Use "Annotated" type hints for FastAPI dependency injection</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S8410</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/recalificacion_requisitos_service.py</td>
+          <td style='text-align:center'>115</td>
+          <td>Remove the unused local variable "resumen".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/recalificacion_requisitos_service.py</td>
+          <td style='text-align:center'>166</td>
+          <td>Replace the unused local variable "resolucion_anterior" with "_".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1481</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>26</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>82</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>115</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 24 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>151</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>154</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/tarea_recalificacion_store.py</td>
+          <td style='text-align:center'>168</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_models_eleccia.py</td>
+          <td style='text-align:center'>28</td>
+          <td>Define a constant instead of duplicating this literal 'ELECCIA.ELECCIA_TRF_ESTADOS.id_estado' 10 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/tarea_calificacion_masiva_repository.py</td>
+          <td style='text-align:center'>26</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 35 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/tarea_calificacion_masiva_repository.py</td>
+          <td style='text-align:center'>53</td>
+          <td>Don't use `datetime.datetime.utcnow` to create this datetime object.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6903</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/tarea_calificacion_masiva_repository.py</td>
+          <td style='text-align:center'>179</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/reporte_service.py</td>
+          <td style='text-align:center'>88</td>
+          <td>Method "obtener_expedientes_sije" has 16 parameters, which is greater than the 13 authorized.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S107</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>41</td>
+          <td>Method "obtener_expedientes" has 16 parameters, which is greater than the 13 authorized.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S107</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/adapters/plataforma_routes.py</td>
+          <td style='text-align:center'>85</td>
+          <td>Define a constant instead of duplicating this literal "Error en operación de plataforma" 4 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/plataforma/tipo_requisito_service.py</td>
+          <td style='text-align:center'>43</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/publicidad_estatal_analisis_service.py</td>
+          <td style='text-align:center'>45</td>
+          <td>Define a constant instead of duplicating this literal "Error interno" 3 times.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1192</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/models/db_procedures_eleccia.py</td>
+          <td style='text-align:center'>1443</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/rop_repository.py</td>
+          <td style='text-align:center'>77</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>213</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>256</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>299</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>339</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>382</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>429</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>472</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>515</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>569</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>677</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>787</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>913</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/sije_expedientes_repository.py</td>
+          <td style='text-align:center'>1348</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/tipo_requisito_repository.py</td>
+          <td style='text-align:center'>53</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/session/db_session.py</td>
+          <td style='text-align:center'>54</td>
+          <td>Replace this generic exception class with a more specific one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S112</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resultados/analisis_service.py</td>
+          <td style='text-align:center'>268</td>
+          <td>Merge this if statement with the enclosing one.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1066</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/expediente/ftp_service.py</td>
+          <td style='text-align:center'>209</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/link_base.py</td>
+          <td style='text-align:center'>16</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/link_base.py</td>
+          <td style='text-align:center'>102</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 59 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/link_base.py</td>
+          <td style='text-align:center'>181</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/base/link_base.py</td>
+          <td style='text-align:center'>198</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 22 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/infrastructure/database/oracle/repositories/requisito_repository.py</td>
+          <td style='text-align:center'>488</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 48 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>503</td>
+          <td>Fix this reluctant quantifier that will only ever match 1 repetition.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6019</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>553</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/resolucion/generacion_resolucion_service.py</td>
+          <td style='text-align:center'>581</td>
+          <td>Fix this reluctant quantifier that will only ever match 1 repetition.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S6019</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e00;font-weight:bold'>CRITICAL</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/contexto_documentos_service.py</td>
+          <td style='text-align:center'>314</td>
+          <td>Refactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S3776</td>
+        </tr>
+        <tr>
+          <td><span style='color:#888;font-weight:bold'>MINOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/application/services/shared/contexto_documentos_service.py</td>
+          <td style='text-align:center'>322</td>
+          <td>Use the opposite operator ("not in") instead.</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1940</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/conclusiones_evaluador.py</td>
+          <td style='text-align:center'>30</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/conclusiones_evaluador.py</td>
+          <td style='text-align:center'>32</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/fecha_presentacion_evaluador.py</td>
+          <td style='text-align:center'>18</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/fecha_presentacion_evaluador.py</td>
+          <td style='text-align:center'>20</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/fondo_evaluador.py</td>
+          <td style='text-align:center'>34</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/fondo_evaluador.py</td>
+          <td style='text-align:center'>36</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/forma_evaluador.py</td>
+          <td style='text-align:center'>34</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/forma_evaluador.py</td>
+          <td style='text-align:center'>36</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_aprobadas_evaluador.py</td>
+          <td style='text-align:center'>30</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_aprobadas_evaluador.py</td>
+          <td style='text-align:center'>32</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_deaprobadas_evaluador.py</td>
+          <td style='text-align:center'>30</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_deaprobadas_evaluador.py</td>
+          <td style='text-align:center'>32</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_excluidas_evaluador.py</td>
+          <td style='text-align:center'>30</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_generales/publicidad_estatal/procedimiento_reporte_posterior/publicaciones_excluidas_evaluador.py</td>
+          <td style='text-align:center'>32</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/conclusiones_evaluador.py</td>
+          <td style='text-align:center'>27</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/conclusiones_evaluador.py</td>
+          <td style='text-align:center'>29</td>
+          <td>Remove the unused function parameter "parametros".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr>
+        <tr>
+          <td><span style='color:#e07000;font-weight:bold'>MAJOR</span></td>
+          <td style='font-family:monospace;font-size:0.85em'>src/domain/evaluators/elecciones_regionales_municipales/publicidad_estatal/procedimiento_reporte_posterior/fecha_presentacion_evaluador.py</td>
+          <td style='text-align:center'>15</td>
+          <td>Remove the unused function parameter "expediente".</td>
+          <td style='font-family:monospace;font-size:0.8em;color:#888'>python:S1172</td>
+        </tr></tbody>
+    </table></div>
+  </div>
+
+</div>
+
+<footer>
+  Generado con SonarQube Community Edition · Proyecto: expedientia_backend
+</footer>
+
+</body>
+</html>
