@@ -172,7 +172,7 @@ learning-latex/
 - **REGLA DE ANONIMIZACIÓN**: NO mencionar nombres específicos de instituciones PERUANAS. Usar descripciones funcionales genéricas:
   - **SOLO anonimizar instituciones peruanas**, NO organizaciones/proyectos internacionales
   - ❌ JNE (Jurado Nacional de Elecciones)
-  - ✅ "el máximo órgano de administración de justicia electoral del Perú"
+  - ✅ "el máximo órgano de administración de justicia electoral del Perú" / "el órgano electoral"
   - ❌ ONPE (Oficina Nacional de Procesos Electorales)
   - ✅ "el organismo responsable de la administración y ejecución de los procesos electorales"
   - ❌ RENIEC (Registro Nacional de Identificación y Estado Civil)
@@ -181,8 +181,12 @@ learning-latex/
   - ✅ "el órgano superior del sistema nacional de control"
   - ❌ "integrante del Gabinete de Asesores del JNE"
   - ✅ "especialista en temas electorales"
-  - **Mantener nombres de**: organizaciones internacionales, proyectos extranjeros (Proyecto Victor, Pretoria, INE México, etc.)
-  - **Regla general**: Reemplazar nombres de instituciones peruanas por descripciones funcionales, mantener consistencia en las referencias
+  - ❌ SIJE (Sistema Integrado de Justicia Electoral)
+  - ✅ "la plataforma jurisdiccional"
+  - ❌ DECLARA+ / Declara+
+  - ✅ "la plataforma documental"
+  - **Mantener nombres de**: organizaciones internacionales, proyectos extranjeros (Proyecto Victor, Pretoria, INE México, etc.), tecnologías (Gemini, AWS, GCP, Angular, Python, etc.)
+  - **Regla general**: Reemplazar nombres de instituciones/sistemas peruanos por descripciones funcionales, mantener consistencia en las referencias
 - **Consistencia de metadatos**: Verificar que título, autor y palabras clave sean coherentes en:
   - Líneas 65-67: `\title`, `\author`, `\date`
   - Líneas 71-76: `\hypersetup` (metadatos PDF)
