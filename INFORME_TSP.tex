@@ -18,7 +18,7 @@
 
 % Gráficos y figuras
 \usepackage{graphicx}
-\graphicspath{{imagenes/}}
+\graphicspath{{imagenes/}{anexos/}}
 \usepackage{float}
 \usepackage{pdflscape}
 \usepackage{afterpage}
@@ -60,6 +60,9 @@
 
 % Color para resaltar
 \usepackage{xcolor}
+
+% Inclusión de PDFs externos (anexos en formato PDF)
+\usepackage{pdfpages}
 
 % ============================================
 % INFORMACIÓN DEL DOCUMENTO
@@ -1449,5 +1452,49 @@ El presente anexo reúne las pantallas complementarias del sistema ExpedientIA q
     \caption{Vista de configuración de parámetros por requisito. Permite al administrador del sistema ajustar los criterios de evaluación asociados a cada requisito legal elegible, garantizando que el sistema se adapte a las disposiciones normativas vigentes para cada proceso electoral.}
     \label{fig:ui-configuracion-parametros}
 \end{figure}
+
+% ============================================
+% ANEXO D: INFORME COMPLETO DE COBERTURA — PRUEBAS UNITARIAS
+% ============================================
+\chapter{Informe de Cobertura de Pruebas Unitarias}
+\label{anexo:cobertura-unitaria}
+
+Reporte completo de cobertura generado con \textit{pytest-cov} (marker \texttt{unit}) sobre el \textit{backend} principal del sistema ExpedientIA. El informe detalla la cobertura por módulo, alcanzando un total de 26.6\% sobre 17\,829 sentencias ejecutables (4\,734 cubiertas, 13\,095 faltantes).
+
+\includepdf[pages=-]{anexos/coverage_unit.pdf}
+
+% ============================================
+% ANEXO E: INFORME COMPLETO DE COBERTURA — PRUEBAS DE INTEGRACIÓN
+% ============================================
+\chapter{Informe de Cobertura de Pruebas de Integración}
+\label{anexo:cobertura-integracion}
+
+Reporte completo de cobertura generado con \textit{pytest-cov} (marker \texttt{integration}) sobre el \textit{backend} principal del sistema ExpedientIA. El informe registra qué porcentaje del código es ejercido por flujos de extremo a extremo, con una cobertura total de 27.6\% sobre 17\,829 sentencias ejecutables (4\,920 cubiertas, 12\,909 faltantes).
+
+\includepdf[pages=-]{anexos/coverage_integration.pdf}
+
+% ============================================
+% ANEXO F: BITÁCORAS DE PRUEBAS DE REGRESIÓN — ITERACIONES 2 Y 3
+% ============================================
+\chapter{Bitácoras de Pruebas de Regresión — Iteraciones 2 y 3}
+\label{anexo:regresion-iteraciones-2-3}
+
+Registro de los casos de prueba de regresión ejecutados durante la Iteración 2 (Solicitud de Inscripción de Listas) y la Iteración 3 (Otras Materias del Expediente), incluyendo resultado esperado, comentario del equipo de programación y estado final por cada caso de uso.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{pruebas_regresion_2.png}
+    \caption{Bitácora de pruebas de regresión — Iteración 2: Solicitud de Inscripción de Listas}
+    \label{fig:pruebas-regresion-iter2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{pruebas_regresion_3.png}
+    \caption{Bitácora de pruebas de regresión — Iteración 3: Otras Materias del Expediente}
+    \label{fig:pruebas-regresion-iter3}
+\end{figure}
+
+\clearpage
 
 \end{document}
