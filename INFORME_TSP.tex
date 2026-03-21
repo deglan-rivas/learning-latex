@@ -427,9 +427,9 @@ La aplicación de RUP al proyecto EleccIA permitió validar progresivamente el e
 \chapter{Ingeniería de Requerimientos}
 \label{cap:requerimientos}
 
-La ingeniería de requerimientos constituye una fase fundamental en el desarrollo de cualquier sistema de software, particularmente en el caso de ExpedientIA, donde la precisión y trazabilidad de los requisitos son críticas dado el contexto electoral en el que opera. Este capítulo presenta la especificación de los requerimientos funcionales y no funcionales del sistema ExpedientIA, organizados según el enfoque iterativo e incremental adoptado en el proyecto.
+Este capítulo presenta la especificación de los requerimientos funcionales y no funcionales del sistema ExpedientIA, cuya precisión y trazabilidad son críticas en el contexto electoral en el que opera.
 
-El proceso de levantamiento de requerimientos se llevó a cabo mediante sesiones de trabajo colaborativo con los interesados del órgano electoral, incluyendo especialistas en procesos electorales, analistas funcionales y usuarios finales. Este proceso dio como resultado un total de 155 requisitos —74 funcionales y 81 no funcionales— que fueron documentados formalmente en el documento OGTI-6-ExpedientIA-154-2025 REQ001, los cuales fueron organizados en 3 iteraciones de desarrollo para facilitar la implementación progresiva del sistema. La especificación completa de cada conjunto de requisitos se presenta en el Anexo~\ref{anexo:requerimientos-funcionales} y el Anexo~\ref{anexo:requerimientos-no-funcionales}, respectivamente.
+El levantamiento de requerimientos se realizó mediante sesiones colaborativas con especialistas electorales, analistas funcionales y usuarios finales del órgano electoral. Se obtuvo un total de 155 requisitos —74 funcionales y 81 no funcionales— documentados en el informe OGTI-6-ExpedientIA-154-2025 REQ001 y organizados en 3 iteraciones de desarrollo. La especificación completa se presenta en el Anexo~\ref{anexo:requerimientos-funcionales} y el Anexo~\ref{anexo:requerimientos-no-funcionales}, respectivamente.
 
 % ============================================
 % SECCIÓN 2.1: REQUERIMIENTOS FUNCIONALES
@@ -437,7 +437,15 @@ El proceso de levantamiento de requerimientos se llevó a cabo mediante sesiones
 \section{Requerimientos funcionales}
 \label{sec:req-funcionales}
 
-Los requerimientos funcionales de ExpedientIA describen las capacidades y comportamientos específicos que debe exhibir el sistema para satisfacer las necesidades operativas del proceso de calificación de expedientes electorales. Se organizan en nueve módulos funcionales que cubren desde la autenticación de usuarios hasta la integración con sistemas externos. La Tabla~\ref{tab:req-funcionales-muestra} presenta dos ejemplos representativos de cada módulo; la especificación completa de los 74 requerimientos funcionales se encuentra en el Anexo~\ref{anexo:requerimientos-funcionales}.
+Los requerimientos funcionales describen las capacidades y comportamientos que debe exhibir el sistema, organizados en nueve módulos que abarcan desde la autenticación hasta la integración con sistemas externos. La Tabla~\ref{tab:req-funcionales-muestra} presenta dos ejemplos por módulo; la especificación completa se encuentra en el Anexo~\ref{anexo:requerimientos-funcionales}.
+
+% ============================================
+% SECCIÓN 2.2: REQUERIMIENTOS NO FUNCIONALES
+% ============================================
+\section{Requerimientos no funcionales}
+\label{sec:req-no-funcionales}
+
+Los requerimientos no funcionales establecen los atributos de calidad y restricciones operacionales del sistema, organizados en siete categorías según estándares internacionales de ingeniería de software. La Tabla~\ref{tab:req-no-funcionales-muestra} presenta dos ejemplos por categoría; la especificación completa se encuentra en el Anexo~\ref{anexo:requerimientos-no-funcionales}.
 
 \begin{table}[H]
 \centering
@@ -479,13 +487,7 @@ RF-57 & El sistema debe conectarse con el servicio de ventanilla única para acc
 \end{tabular}
 \end{table}
 
-% ============================================
-% SECCIÓN 2.2: REQUERIMIENTOS NO FUNCIONALES
-% ============================================
-\section{Requerimientos no funcionales}
-\label{sec:req-no-funcionales}
-
-Los requerimientos no funcionales de ExpedientIA establecen las restricciones, atributos de calidad y características operacionales que debe satisfacer el sistema para garantizar un desempeño adecuado en el contexto crítico de los procesos electorales. Se organizan en siete categorías de calidad derivadas de los estándares internacionales de ingeniería de software. La Tabla~\ref{tab:req-no-funcionales-muestra} presenta dos ejemplos representativos de cada categoría; la especificación completa de los 81 requerimientos no funcionales se encuentra en el Anexo~\ref{anexo:requerimientos-no-funcionales}.
+\clearpage
 
 \begin{table}[H]
 \centering
@@ -520,6 +522,8 @@ RNF-71 & Se debe entregar cronograma de actividades en formato MS Project o Prim
 \bottomrule
 \end{tabular}
 \end{table}
+
+\clearpage
 
 % ============================================
 % SECCIÓN 2.3: DESARROLLO ITERATIVO
@@ -745,7 +749,7 @@ La integración de estos tres sistemas permite a ExpedientIA combinar eficiencia
 \section{Diseño de Interfaces de Usuario}
 \label{sec:diseno-interfaces}
 
-El diseño de interfaces de usuario de ExpedientIA prioriza la usabilidad y claridad en la presentación de información compleja, facilitando a los evaluadores del órgano electoral la calificación eficiente de expedientes electorales. La interfaz proporciona acceso intuitivo a funcionalidades críticas del sistema, visualización estructurada de resultados de calificación automatizada, gestión de jurisprudencia aplicable y generación de proyectos de resolución. Cada pantalla se diseñó considerando los flujos de trabajo reales de los usuarios y los requerimientos de usabilidad especificados en la Sección~\ref{subsec:rnf-usabilidad}.
+El diseño de interfaces de usuario de ExpedientIA prioriza la usabilidad y claridad en la presentación de información compleja, facilitando a los evaluadores del órgano electoral la calificación eficiente de expedientes electorales. La interfaz proporciona acceso intuitivo a funcionalidades críticas del sistema, visualización estructurada de resultados de calificación automatizada, gestión de jurisprudencia aplicable y generación de proyectos de resolución. Cada pantalla se diseñó considerando los flujos de trabajo reales de los usuarios y los requerimientos de usabilidad especificados en la Sección~\ref{sec:req-no-funcionales}.
 
 \subsection*{Dashboard de expedientes calificados}
 
@@ -1395,5 +1399,55 @@ RNF-81 & Documentación & Se debe entregar el informe de cierre y acta de confor
 \end{longtable}
 \endgroup
 
+% ============================================
+% ANEXO C: VISTAS ADICIONALES DE INTERFAZ DE USUARIO
+% ============================================
+\chapter{Vistas Adicionales de la UI}
+\label{anexo:vistas-ui}
+
+El presente anexo reúne las pantallas complementarias del sistema ExpedientIA que amplían las funcionalidades descritas en la Sección~\ref{sec:diseno-interfaces}. Estas vistas corresponden a módulos de administración, automatización y reportería que soportan las operaciones avanzadas del sistema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_A_1.png}
+    \caption{Vista de recalificación masiva de expedientes. Permite al operador seleccionar un conjunto de expedientes y aplicar el proceso de calificación asistida por inteligencia artificial de forma simultánea, reduciendo el tiempo de procesamiento en escenarios de alta carga.}
+    \label{fig:ui-recalificacion-masiva}
+\end{figure}
+
+% \clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_A_2.png}
+    \caption{Vista de gestión de tareas en segundo plano. Muestra el estado de las tareas activas o pendientes de ejecución, permitiendo al usuario monitorear el progreso de operaciones de larga duración sin interrumpir su flujo de trabajo habitual.}
+    \label{fig:ui-tareas-segundo-plano}
+\end{figure}
+
+% \clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_A_3.png}
+    \caption{Vista de programación de frecuencia de tareas. Facilita la configuración de la periodicidad con la que se ejecutan procesos automáticos del sistema, como la sincronización con la plataforma jurisdiccional o la actualización de modelos de análisis.}
+    \label{fig:ui-programacion-tareas}
+\end{figure}
+
+% \clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_A_4.png}
+    \caption{Vista de reportería para Secretaría General. Presenta los indicadores y métricas de gestión disponibles para el perfil administrativo, incluyendo estadísticas de expedientes calificados, tiempos promedio de procesamiento y tasas de observación por período.}
+    \label{fig:ui-reporteria-secretaria}
+\end{figure}
+
+% \clearpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{UI_A_5.png}
+    \caption{Vista de configuración de parámetros por requisito. Permite al administrador del sistema ajustar los criterios de evaluación asociados a cada requisito legal elegible, garantizando que el sistema se adapte a las disposiciones normativas vigentes para cada proceso electoral.}
+    \label{fig:ui-configuracion-parametros}
+\end{figure}
 
 \end{document}
